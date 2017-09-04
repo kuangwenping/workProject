@@ -1,0 +1,1013 @@
+@import "./var";
+@import "./mixin";
+@import "./icon";
+@import "common-module"
+
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption,form {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  &:focus {
+    outline: none;
+  }
+}
+
+body{
+  background:$bg3;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a:hover, a:focus{
+  text-decoration:none;
+}
+
+a{
+  color:$mc;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.float-l{
+  float:left;
+}
+.float-r{
+  float:right;
+}
+
+.margin-b{
+  margin-bottom:10px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//最大宽
+.ui-max-width{
+  max-width:1440px;
+  margin:0 auto;
+}
+
+//字号
+.ui-f14{
+  font-size:14px;
+}
+
+.ui-f12{
+  font-size:12px;
+}
+
+  //颜色
+.ui-fac{
+  color:$ac;
+}
+
+//-----------------------布局切断分割------------------------//
+//侧面
+.aside-panel{
+  position:fixed;
+  width:280px;
+  bottom:0;
+  top:0;
+  background:$bg8;
+}
+
+//内容块
+.content{
+  margin-left: 280px;
+  padding:18px 0;
+}
+
+
+//-----------------------ui点击分割------------------------//
+
+//按钮
+.ui-btn[disabled="disabled"]{
+  &:hover{
+    background:$bg2;
+    color:$fc3;
+    cursor:default;
+  }
+  background:$bg2;
+  color:$fc3;
+  opacity :0.5;
+}
+
+.ui-btn{
+  height:28px;
+  line-height:28px;
+  text-align: center;
+  border-radius: 4px;
+  font-size:12px;
+  display:inline-block;
+  vertical-align middle;
+}
+
+.ui-btn-wide{
+  width:100px;
+}
+
+.ui-btn-narrow{
+  width:80px;
+}
+
+
+.ui-btn-full{
+  &:hover{
+    background: $bg5;
+  }
+  background: $bg4;
+  color: $fc3;
+}
+
+.ui-btn-empty{
+  &:hover{
+    background:$bg5;
+    color:$fc3;
+  }
+  background:$fc3;
+  color:$bg4;
+  border:1px solid $bg4;
+}
+
+.ui-btn-wring{
+  &:hover{
+    background:#d93c36;
+  }
+  background: $ac1;
+  color:$fc3;
+}
+
+.ui-btn-search{
+  &:hover{
+    background: #ffe792;
+  }
+  background: $ac2;
+  font-size:14px;
+  color:$mc;
+}
+
+.ui-btn-stop{
+  background:$bg2;
+  color:$fc3;
+}
+
+.ui-btn-go{
+  &:hover{
+    opacity :.9;
+  }
+  color:$fc3;
+  background:$ac3;
+}
+
+//提示
+.ui-hint{
+  height:24px;
+  line-height:24px;
+  padding-left:10px;
+  padding-right:10px;
+  background:$bg1;
+  color:$mc;
+  display:inline-block;
+  vertical-align middle;
+  .ui-icon-close{
+    sbg('../../img/icon/icon_close_3.png');
+    width:10px;
+    height:10px;
+    margin-bottom:3px;
+    margin-left:10px;
+  }
+  &:hover{
+    background:$bg4;
+    color:$fc3;
+    .ui-icon-close{
+      sbg('../../img/icon/icon_close_4.png');
+      width:10px;
+      height:10px;
+    }
+  }
+}
+.active.ui-hint{
+  background:$bg4;
+  color:$fc3;
+  .ui-icon-close{
+    sbg('../../img/icon/icon_close_4.png');
+    width:10px;
+    height:10px;
+  }
+}
+
+
+//表单
+//文本输入框
+input.ui-input{
+  border:1px solid $bm;
+  height:28px;
+  border-radius: 0;
+  padding-left:10px;
+  font-size:12;
+}
+
+
+//单选
+.ui-radio-as{
+  width:16px;
+  height:16px;
+  border:1px solid $bc;
+  background:$bg8;
+  border-radius 50%;
+  display:inline-block;
+  vertical-align middle;
+  position:relative;
+  &:after{
+    position:absolute;
+    addWC(' ');
+    width:12px;
+    height:12px;
+    background:$bg8;
+    border-radius 50%;
+    top:2px;
+    left:2px;
+  }
+}
+
+.ui-radio{
+  @extend .ui-radio-as
+  width:18px;
+  height:18px;
+  border:1px solid $bm;
+  background:$bgb;
+  &:after{
+    background:$bgb;
+    top:3px;
+    left:3px;
+  }
+}
+input[type="radio"]{
+   display:none;
+}
+input[type="radio"]:checked + .ui-radio-as{
+  &:after{
+    background:$bg4;
+  }
+}
+input[type="radio"]:checked + .ui-radio{
+  &:after{
+    background:$bg4;
+  }
+}
+
+.ui-radio.select{
+  position:relative;
+  &:after{
+    addWC(' ');
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:$bg4;
+    border-radius 50%;
+    top:3px;
+    left:3px;
+  }
+}
+.ui-radio-as.select{
+  position:relative;
+  &:after{
+    position:absolute;
+    addWC(' ');
+    width:12px;
+    height:12px;
+    background:$bg4;
+    border-radius 50%;
+    top:2px;
+    left:2px;
+  }
+}
+
+
+//复选
+.ui-check-label{
+  width:18px;
+  height:18px;
+  display:inline-block;
+  border:1px solid $bm;
+  background:$bgb;
+  vertical-align: middle;
+}
+input[type="checkbox"]{
+  display:none;
+}
+input[type="checkbox"]:checked + .ui-check-label{
+  &:after{
+    addWC(' ');
+    height:10px;
+    width:5px;
+    border-bottom: 1px solid $ac;
+    border-right: 1px solid $ac;
+    transform: rotate(45deg);
+    margin-left:6px;
+    margin-bottom:7px;
+  }
+}
+
+.ui-check-label.check{
+  &:after{
+    addWC(' ');
+    height:10px;
+    width:5px;
+    border-bottom: 1px solid $ac;
+    border-right: 1px solid $ac;
+    transform: rotate(45deg);
+    margin-left:6px;
+    margin-bottom:2px;
+  }
+}
+
+
+input[disabled="disabled"]{
+  background:$bg2;
+}
+
+//表单
+.ui-form{
+  label{
+    margin-right:5px;
+  }
+}
+
+
+//textarea
+.ui-textarea{
+  resize:none;
+  border:1px solid $bm;
+  background:$bgb;
+  font-size:12;
+}
+
+//修改记录
+.amend-record{
+  padding-top:10px;
+  border-bottom:1px solid $mc;
+  padding-bottom:5px;
+}
+
+//----------------------bui修改暴力拆改线------------------------//
+
+//表格
+.table-thunk-check{
+//操作头列
+  .bui-grid-table tr td:first-child, .bui-grid-table tr th:first-child{
+    width:80px !important;
+  }
+}
+.table-thunk {
+  //尾列
+  .bui-grid-border .bui-grid-cell-empty, .bui-grid-border .bui-grid-hd-empty{
+    display:none;
+  }
+
+  //-----cheeck-----//
+    //check框
+  .bui-grid .x-grid-checkbox{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    border:1px solid $bm;
+    background:$bgb;
+    vertical-align: middle;
+  }
+      //选中
+  .bui-grid-row-selected,.checked{
+    .x-grid-checkbox{
+      border-color:$ac;
+      &:after{
+        addWC(' ');
+        width:5px;
+        height:10px;
+        border-bottom: 1px solid $ac;
+        border-right: 1px solid $ac;
+        transform: rotate(45deg);
+        margin-bottom:18px;
+      }
+    }
+  }
+    //-----选中----//
+  .bui-grid .bui-grid-table{
+    .bui-grid-row-hover,.bui-grid-hd-hover{
+      background:$bg6;
+      .x-grid-checkbox{
+        border:1px solid $ac;
+      }
+    }
+  }
+  .bui-grid-header-hover .bui-grid-table{
+    .bui-grid-hd-hover{
+      .bui-grid-hd-inner{
+        background:$bg6 ;
+      }
+    }
+  }
+  .bui-simple-grid .bui-grid-table .bui-grid-row-selected, .bui-grid .bui-grid-table .bui-grid-row-selected{
+    background:$bg6 ;
+  }
+
+    //-----单元格-----//
+  .bui-grid-table{
+    .bui-grid-hd{
+        border-color:$bm;
+        border-bottom: none;
+      }
+    .bui-grid-cell{
+      border-color:$bm;
+    }
+    .bui-grid-hd-inner{
+      background:$bg1;
+    }
+    .bui-grid-hd-inner,.bui-grid-cell-inner{
+      text-align:center;
+      height:28px;
+      line-height:26px;
+      padding-top:0;
+      padding-bottom:0;
+    }
+    .bui-grid-cell-text,.bui-grid-hd-title{
+      text-overflow ellipsis;
+      white-space:nowrap;
+      overflow:hidden;
+      max-width:80%;
+      display:inline-block;
+      vertical-align middle;
+    }
+    .bui-grid-cell-text{
+      .ui-form-radio{
+        .ui-form{
+          >div{
+            setMar0();
+            display:inline-block;
+            margin:0 3px;
+          }
+        }
+      }
+    }
+
+    //表头排序图标
+    .sort-asc{
+      .bui-grid-sort-icon{
+        border-bottom:6px solid $fc1;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        border-top:none;
+      }
+    }
+    .bui-grid-sort-icon{
+      width:0;
+      height:0;
+      border-top:6px solid $fc1;
+      border-left:5px solid transparent;
+      border-right:5px solid transparent;
+      vertical-align: middle;
+      margin-left:5px;
+    }
+    .sort-desc{
+      .bui-grid-sort-icon{
+        border-top:6px solid $fc1;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        border-bottom:none;
+      }
+    }
+  }
+
+  //-----表头-----//
+  .bui-grid-header-container{
+    .bui-grid-header{
+      width:100% !important;
+    }
+  //表头全选
+    .bui-grid-hd{
+      .bui-grid-checkBox-container{
+        &:after{
+          addWC('全选');
+          color:$mc;
+          margin-left:5px;
+        }
+      }
+    }
+  }
+
+  //表身
+  .bui-grid-body{
+    width:100% !important;
+    .bui-grid-checkBox-container{
+      span{
+        margin-right:28px;
+      }
+    }
+    //操作块
+    .grid-command{
+      setPad0()
+      &:last-child{
+        border:none;
+      }
+      border-right:1px solid $bm;
+      padding-right:10px;
+      padding-left:10px;
+      margin-right:0;
+      margin-bottom: 5px;
+      line-height: 1;
+      color:$mc;
+      .ui-icon{
+        margin-right:10px;
+      }
+    }
+
+      //输入框错误
+      //
+    .not-found{
+      text-align: center;
+      padding: 20px;
+      background:$bgb;
+      color:$ac1;
+    }
+  }
+
+    //加减号
+  .bui-grid-cascade{
+    &:before{
+      content:"+";
+      font-size:30px;
+    }
+    .bui-grid-cascade-icon{
+      display:none;
+    }
+  }
+  .bui-grid-cascade.bui-grid-cascade-expand{
+    &:before{
+      content:"—";
+      font-size:18px;
+      font-weight:bold;
+      color:$ac1;
+    }
+  }
+}
+
+//表格编辑层
+.bui-record-editor{
+  background:$bg3;
+  padding-top:0;
+  padding-bottom:0;
+  padding-left:2px;
+  z-index:1060;
+  .bui-form-field{
+    &:last-child{
+      bordet-right:0;
+    }
+    height:28px;
+    line-height:28px;
+    border-right:1px solid $bm;
+    text-align: center;
+    padding-right:0;
+    input{
+      &:focus{
+        background:$bg6;
+        border:1px solid $ac;
+      }
+      margin: 0 auto;
+      border:none;
+      height:28px;
+      font-size: 14px;
+      background:$bg3;
+      text-align center;
+    }
+    .x-form-text{
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #d7d7d7;
+      background: #fff;
+      vertical-align: middle;
+      margin-right:28px;
+      margin-bottom:2px;
+    }
+  }
+
+  .bui-form-field-error{
+      input{
+        &:focus{
+          border:1px solid $ac1;
+        }
+        border:1px solid $ac1;
+      }
+  }
+  .bui-bar{
+    background:$bg3;
+    width:265px;
+    text-align: center;
+    border-radius: 0;
+    top:28px;
+    padding:10px 0;
+    height:50px;
+
+    li{
+      display:inline-block;
+      button{
+        box-shadow:none;
+        text-shadow:none;
+        font-weight:100;
+        border:none;
+        background:none;
+        color:$mc;
+        height:28px;
+        width:80px;
+        padding:0;
+      }
+
+      .cancel-btn{
+        &:hover{
+          color:$ac1;
+          &:before{
+            color:$ac1;
+          }
+        }
+
+        &:before{
+          addWC('+');
+          font-size:30px;
+          transform :rotate(45deg);
+          vertical-align: text-top;
+          color:$mc;
+        }
+      }
+
+      .button-primary{
+        &:hover{
+          background: $bg5;
+        }
+        background:$bg4;
+        color:$fc3;
+        border-radius: 4px;
+      }
+
+      &:first-child{
+        .button-primary{
+          &:hover{
+            opacity :.9;
+          }
+          background:$ac1;
+          color:$fc3;
+        }
+      }
+    }
+  }
+}
+
+.bui-ext-mask{
+  background:$bg7;
+  opacity: .4;
+}
+
+/*弹框*/
+.bui-dialog{
+  background:$bgb;
+  border-radius:0;
+  border:none;
+  .bui-stdmod-header{
+    height:37px;
+    background:$bg1;
+    border-bottom:1px solid $bm;
+    text-align: center;
+    font-size: 14px;
+    line-height:36px;
+    padding-left: 0;
+    font-weight: 300;
+  }
+  .bui-stdmod-body{
+    font-size: 12px;
+    position:relative;
+    border: none;
+    margin: 0;
+    >.ui-hint-text{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width:100%;
+      text-align: center;
+      left:0;
+    }
+  }
+  .bui-stdmod-footer{
+    .ui-btn{
+      margin:10px 14px 20px 14px;
+      setMar0();
+    }
+  }
+  a.bui-ext-close{
+    &:hover{
+      &:after{
+        color:$ac;
+      }
+    }
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    &:after{
+      content:'+';
+      display:inline-block;
+      color:$fc1;
+      font-size:30px;
+      transform:rotate(45deg);
+    }
+    .x-icon-normal{
+      display:none;
+    }
+  }
+}
+
+
+//-----------进度条------------//
+.ui-strip-wrap{
+  background:$bg1;
+  height:8px;
+  border-radius: 4px ;
+  text-align: left;
+  display:inline-block;
+  position:relative;
+  >.ui-strip{
+    height:8px;
+    border-radius: 4px ;
+    position: absolute;
+    left: 0;
+    background: $ac;
+  }
+}
+
+
+//-----------日历------------//
+.take-time{
+  position:relative;
+  >i{
+    position:absolute;
+    top:8px;
+    right:118px;
+  }
+  .calendar{
+    padding-left:30px;
+  }
+}
+
+.bui-datepicker{
+  .x-datepicker-month{
+    background:$bg4;
+  }
+  .x-datepicker-selected{
+    a{
+      &:hover{
+        background:$bg6;
+      }
+      background:$bg6;
+    }
+  }
+  input.x-datepicker-time{
+    width: 26px;
+    height: 22px;
+    margin:0 2px;
+  }
+  .bui-calendar-footer .button, .x-monthpicker-footer .button{
+    &:hover{
+      background:$bg6;
+      color:$mc;
+    }
+    background:$bg4;
+  }
+}
+
+input.calendar{
+  width:140px;
+}
+
+
+//-----------分页样式------------//
+.aside-pages.pages-thunk{
+  position:absolute;
+  bottom:45px;
+  padding:0 8px;
+  .bui-bar-item{
+    setMar0();
+    margin-right:1px;
+    a{
+      &:hover{
+        background:$bg5-1;
+      }
+      border:none;
+      background:$bg9;
+      color:$fc3;
+    }
+  }
+  #prev,#next{
+
+    a{
+      &:before{
+        background:$bg9;
+      }
+    }
+    a{
+      &:after{
+        border-color:$fc3;
+      }
+    }
+  }
+  #prev.disabled,#next.disabled{
+    a{
+      &:after{
+        border-color:$mc;
+      }
+    }
+  }
+}
+.pages-thunk{
+  .bui-bar-item.active{
+    a{
+      background:$ac;
+      color:$fc3;
+      border:none;
+    }
+  }
+  .bui-bar-item{
+    width:32px;
+    height:32px;
+    text-align: center;
+    line-height:30px;
+    display:inline-block;
+    a{
+      display:inline-block;
+      width:100%;
+      height:100%;
+      color:$mc;
+      padding:0;
+      border-color: $bm;
+      background: $bgb;
+    }
+  }
+
+  .disabled#prev{
+    a{
+      &:after{
+        border-bottom: 1px solid $bg1;
+        border-left: 1px solid $bg1;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .disabled#next{
+    a{
+      &:after{
+        border-bottom: 1px solid $bg1;
+        border-left: 1px solid $bg1;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  #prev,#next{
+    a{
+      position: relative;
+      &:hover{
+        opacity: .9;
+      }
+      &:before{
+         addWC('');
+        position: absolute;
+        width: 100%;
+        height:100%;
+        background:$bgb;
+        top:0;
+        left:0;
+      }
+      &:after{
+         addWC('');
+        position: absolute;
+        top:10px;
+        left:12px;
+        width:10px;
+        height:10px;
+      }
+    }
+  }
+  #prev{
+    a{
+      &:after{
+        border-bottom: 1px solid $ac;
+        border-left: 1px solid $ac;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  #next{
+    a{
+      &:after{
+        border-bottom: 1px solid $ac;
+        border-left: 1px solid $ac;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
+
+
+//-------------下拉选择----------------//
+//bui 暴力拆改
+.bui-select{
+  .bui-select-input{
+    height:28px;
+  }
+  .x-icon-normal{
+    height:28px;
+    width:24px;
+    .icon-caret{
+      width:0;
+      height:0;
+      border-top:8px solid $fc1;
+      border-left:6px solid transparent;
+      border-right:6px solid transparent;
+      margin-top:2px;
+    }
+  }
+}
+.bui-select-list{
+  .bui-list-item-hover{
+    background:$bg6;
+  }
+}
+
+
+//--------------滚动条暴力拆改
+
+//table下的滚动条
+.bui-grid-body{
+  .mCSB_inside > .mCSB_container{
+    margin-right:0;
+  }
+  .mCSB_scrollTools .mCSB_draggerContainer{
+    right:-10px;
+  }
+}
+
+  //-----------搜索联想下拉框
+  .ui-widget{
+    border-radius 4px;
+    z-index: 1080;
+    background:$bg3;
+    li.ui-menu-item{
+      border-radius :2px;
+      .ui-state-active{
+        background:$bg6;
+        border:none;
+        border-radius 2px;
+        color:$mc;
+      }
+    }
+  }
+
+ //编辑器
+ .editor-thunk.edui-default{
+     .edui-editor{
+       border-radius :0;
+       border:1px solid $bm;
+     }
+     .edui-editor-toolbarbox{
+       box-shadow:none;
+     }
+     .edui-editor-toolbarboxouter{
+       background:$bg1;
+       border-color:$bm;
+     }
+    .edui-editor-bottomContainer{
+        display:none;
+     }
+   }
+
+

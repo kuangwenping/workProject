@@ -1,0 +1,151 @@
+@import "../assets/css/common/var.styl";
+@import "../assets/css/common/mixin.styl";
+
+.airlineset-wrap{
+
+  //tab切换
+  .content-wrap{
+    display:none;
+  }
+  .active.content-wrap{
+    display:block;
+  }
+
+  //侧边内容块
+  .aside-wrap{
+    .query-form-chunk{
+      display:block;
+      margin-top:0;
+    }
+    .result-thunk{
+      top:170px;
+    }
+    query-result-wrap{
+      li.active{
+        background:$bg3;
+        color:$mc;
+        padding-right:8px;
+        margin-right:-8px;
+        .air-name{
+          color:$ac1;
+        }
+        .ui-icon-airplane{
+          sbg('../../assets/img/icon/icon_air_2.png');
+        }
+      }
+      li{
+        .air-name{
+          width:104px;
+          text-align: center;
+          margin-right:5px;
+        }
+        span{
+          &:last-child{
+            width:40px;
+            margin-left:10px;
+            text-align: center;
+          }
+          .ui-icon-airplane{
+            sbg('../../assets/img/icon/icon_air_1.png');
+          }
+          i{
+            width:14px;
+            height:13px;
+            margin:0 7px;
+          }
+        }
+      }
+    }
+  }
+  /*右侧内容*/
+  .content-wrap {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .ui-key-start{
+      width:100px;
+      text-align :right;
+      display:inline-block;
+      vertical-align middle;
+    }
+
+
+    .title-chunk{
+      margin-top:20px;
+      margin-bottom:20px;
+      p{
+        setMar0();
+        margin:0 66px;
+        display:inline-block;
+        vertical-align middle;
+        font-size :14px;
+        font-weight:bold;
+      }
+      .ui-val{
+        color:$ac;
+        font-size:22px;
+        font-weight:100;
+      }
+    }
+
+
+    .form-gloup{
+      .ui-form{
+        margin-right:10px;
+        setMar0();
+        input{
+          width:56px;
+        }
+      }
+      .weight-select{
+        setMar0();
+        margin-right:5px;
+        input{
+          width:75px;
+        }
+      }
+        .form-thunk1{
+          .ui-form{
+            &:last-child{
+              margin-left:35px;
+            }
+          }
+        }
+    }
+
+    .select-thunk{
+      border-bottom:none;
+      .check-thunk1,.check-thunk2{
+        margin-left:110px;
+        .ui-val{
+          min-width:100px;
+        }
+      }
+    }
+
+    .textarea-thunk{
+      margin-bottom:50px;
+      >div{
+        margin-left:110px;
+      }
+      .ui-textarea{
+        height:120px;
+        padding :15px 20px;
+        width:100%;
+        overflow-y:auto;
+        margin-bottom:20px;
+      }
+    }
+      //底部块
+    .foot-thunk{
+      .btn-group{
+        text-align center;
+        .ui-btn{
+          setMar();
+          margin:0 5px;
+        }
+      }
+    }
+  }
+}

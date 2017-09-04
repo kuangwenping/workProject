@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../assets/css/common/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet"
+  href="../assets/css/common/jquery.mCustomScrollbar.css">
+<title>新增风险方案管理</title>
+<link rel="stylesheet" href="../assets/css/common/main.css">
+</head>
+<body>
+    <div class="audit-checklist-wrap czy-container">
+        
+        <form class="pop-infooreport-add-wrap" id="addform">
+            <div class="pop-checkList-add-wrap">
+                <div class="row">
+                    <div class="czy-form-item col-md-12" id="pDutyDept">
+                        <label for="" class="float-l czy-f14">责任部门:</label> <input type="hidden" name="pDutyDept" id="pDutyDept1" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="czy-form-item col-md-12">
+                        <label class="czy-f14">任务内容:</label> <input type="text" name="pTaskDes" class="czy-f14" id="pTaskDes1" />
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    <script type="text/javascript" src="../assets/js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+  <!--滚动条-->
+  <script type="text/javascript"src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!--bui-->
+  <script type="text/javascript" src="../assets/js/bui-min.js"></script>
+  <script type="text/javascript" src="../assets/js/sea.js"></script>
+  
+  <script type="text/javascript">
+    BUI.use([ 'bui/data', 'bui/select' ], function(Data, Select) {
+      var items = [ {
+          text : '新开航线',
+          value : '0'
+      }, {
+          text : '组织变更',
+          value : '1'
+      }, {
+          text : '新产品/服务',
+          value : '2'
+      }];
+
+      var item2 = [ {
+          text : '必填项',
+          value : '0'
+      }, {
+          text : '要求项',
+          value : '1'
+      }, {
+          text : '建议项',
+          value : '2'
+      }];
+
+     var select3 = new Select.Select({
+          render : '#pDutyDept',
+          valueField : '#pDutyDept1',
+          multipleSelect : true, // 是否多选
+          items : items
+      });
+      // 改变items
+        select3.render();
+        select3.set('items', item2);
+        select3.updateContent();
+  });
+  </script>
+  
+  
+</body>
+</html>

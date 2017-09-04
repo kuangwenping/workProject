@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/common/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 6]>
+    <link href="../assets/css/common/bootstrap-ie6.css" rel="stylesheet">
+    <link href="../assets/css/common/ie.css" rel="stylesheet">
+    <![endif]-->
+    <!--滚动条-->
+    <link rel="stylesheet" href="../assets/css/common/jquery.mCustomScrollbar.css">
+    <title>报告编辑</title>
+    <link rel="stylesheet" href="../assets/css/common/main.css">
+</head>
+<body>
+<div class="czy-container correct-report-wrap">
+    <!--tab切换-->
+    <div class="czy-tab clear" id="tab">
+        <div class="czy-btn-group float-r mar-t10">
+            <button class="czy-btn czy-btn-empty czy-btn-x">原始报告</button>
+            <button class="czy-btn czy-btn-empty czy-btn-x">关联报告</button>
+            <button class="czy-btn czy-btn-empty czy-btn-x">流转&抄送</button>
+        </div>
+    </div>
+    <!--tab内容-->
+    <div id="panel" class="czy-tab-content">
+        <div class="body-thunk">
+            <div class="report-title-thunk clear">
+                <span class="title-list">报告编号： <i>Mr-7898-12335</i></span>
+                <span class="title-list">报告日期： <i>2017-02-23 12:00</i></span>
+                <span class="title-list">报告来源： <i>微信</i></span>
+                <button class="czy-btn-text-success float-r">打印报告单</button>
+            </div>
+
+            <div class="unit-thunk fold-thunk  mar-b10">
+                <h3 class="title-thunk  fold-btn">基本信息 <i class="fold-arrows"></i></h3>
+                <div class="content-thunk  clear">
+                    <div class="clear row gather-thunk">
+                        <div class="czy-content-item col-md-3 mar-b10 clear">
+                            <label for="" class="czy-key">填报人</label>
+                            <span class="czy-val">张三</span>
+                        </div>
+                        <div class="czy-content-item col-md-3 mar-b10 clear">
+                            <label for="" class="czy-key">填报人</label>
+                            <span class="czy-val">张三</span>
+                        </div>
+                        <div class="czy-content-item col-md-3 mar-b10 clear">
+                            <label for="" class="czy-key">填报人</label>
+                            <span class="czy-val">张三</span>
+                        </div>
+                    </div>
+                    <div class="clear  row gather-thunk">
+                        <div class="czy-content-item col-md-3 mar-b10 clear">
+                            <label for="" class="czy-key">填报人</label>
+                            <span class="czy-val">张三</span>
+                        </div>
+                        <div class="czy-content-item col-md-3 mar-b10 clear">
+                            <label for="" class="czy-key">填报人</label>
+                            <span class="czy-val">张三</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">报告内容<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class="czy-content-item  mar-b10 clear">
+                        <label for="" class="czy-key float-l">报告类型 <span class="must-sign">*</span></label>
+                        <div class="czy-val float-l clear" id="reportType"></div>
+                    </div>
+
+                    <div class="czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key float-l">报告标题<span class="must-sign">*</span></label>
+                        <div class="czy-val float-l clear">
+                            <input type="text" class="czy-input float-l input-l mar-r5"/>
+                            <div class="float-l mar-r5" id="s1">
+                                <input type="hidden"/>
+                            </div>
+                            <!--<div class="czy-upload-thunk btn-upload float-l" id="J_Uploader"></div>-->
+                        </div>
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key">发生地点</label>
+                        <input type="text" class="czy-input czy-val"/>
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key">发生日期</label>
+                        <input type="text" class="calendar"/>
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label class="czy-key float-l">本系统问题</label>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" class="czy-radio" name="issue" id="ra-issueTrue"/>
+                            <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i> 是</label>
+                        </div>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" disabled class="czy-radio" name="issue" id="ra-issueFalse"/>
+                            <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>否</label>
+                        </div>
+                    </div>
+
+                    <div class="czy-content-item  mar-b10 clear">
+                        <label for="" class="czy-key float-l">报告类型</label>
+                        <div class="czy-tab-type czy-val clear" id="reportTypeTab"></div>
+                    </div>
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label class="czy-key float-l">危险品</label>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" class="czy-radio" name="issue" id="ra-issueTrue"/>
+                            <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i> 是</label>
+                        </div>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" disabled class="czy-radio" name="issue" id="ra-issueFalse"/>
+                            <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>否</label>
+                        </div>
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="float-l czy-key">航班号</label>
+                        <div class="czy-val par-wrap">
+
+                            <div id="s3" class="clear mar-b10">
+                                <input type="hidden">
+                                <button class="czy-btn czy-btn-empty mar-l10">航班查询</button>
+                            </div>
+
+                            <div class="key-val-group mar-b10">
+                                <span class="key-val-item">机型: <i>A320</i></span>
+                                <span class="key-val-item">机号: <i>B1340</i></span>
+                                <p class="key-val-item"><span class="mar-r5"> 贵阳龙洞堡</span><i class="mar-r5 czy-icon czy-icon-point"></i><span>石家庄正定</span></p>
+                                <p class="key-val-item"><span class="mar-r5">2016-01-05 14:00:00</span><i class="mar-r5 czy-icon czy-icon-point"></i><span>2016-01-05 17:00:00</span></p>
+                            </div>
+                            <div class="table-thunk pad-b0" id="grid"></div>
+                        </div>
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key float-l">事件经过<span class="must-sign">*</span></label>
+                        <div class="czy-val par-wrap ">
+                            <textarea class="czy-textarea  l-input" placeholder="请完整叙述事发经过"></textarea>
+                        </div>
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key float-l">附件：</label>
+                        <div class="czy-val czy-upload-thunk btn-upload" id="J_Uploader"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">纠正预防<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class="table-thunk" id="correct"></div>
+                </div>
+            </div>
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">报告处理<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class="czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key float">飞行数据分析</label>
+                        <div class="table-thunk czy-val" id="flight"></div>
+                    </div>
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="czy-key float-l">事件经过<span class="must-sign">*</span></label>
+                        <div class="czy-val par-wrap ">
+                            <textarea class="czy-textarea  l-input" placeholder="请完整叙述事发经过"></textarea>
+                        </div>
+                    </div>
+                    <div class="clear row gather-thunk">
+                        <div class=" czy-content-item col-md-3 mar-b10 clear" id="s4">
+                            <label for="" class="czy-key float-l">飞行阶段 <span class="must-sign">*</span></label>
+                            <input type="hidden">
+                        </div>
+                        <div class=" czy-content-item col-md-3 mar-b10 clear" id="s5">
+                            <label for="" class="czy-key float-l">飞行阶段 <span class="must-sign">*</span></label>
+                            <input type="hidden">
+                        </div>
+                    </div>
+
+                    <div class="czy-content-item input-selected-thunk mar-b10 clear" >
+                        <label for="" class="czy-key float-l czy-f14">事件类型 <span class="must-sign">*</span></label>
+                        <div class="par-wrap">
+                            <div class="input-selected-wrap" id="searchSelect"></div>
+                        </div>
+                    </div>
+
+                    <div class="czy-content-item clear mar-b10">
+                        <label for="" class="czy-key float-l">代理人</label>
+                        <div class="par-wrap czy-val clear">
+                            <div class="czy-form-thunnk clear">
+                                <div class="czy-form-item col-md-1">
+                                    <input type="radio" class="czy-radio" name="issue" id="ra-agentTrue">
+                                    <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i>相关</label>
+                                </div>
+                                <div class="czy-form-item col-md-1">
+                                    <input type="radio" disabled="" class="czy-radio" name="issue" id="ra-agentFalse">
+                                    <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>无关</label>
+                                </div>
+                            </div>
+                            <div class="table-thunk" id="grid">表格</div>
+                        </div>
+                    </div>
+
+                    <div class="czy-content-item clear mar-b10">
+                        <label for="" class="czy-key float-l">危险品</label>
+                        <div class="czy-form-item czy-val col-md-1">
+                            <input type="radio" class="czy-radio" name="issue" id="ra-riskTrue">
+                            <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i>相关</label>
+                        </div>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" disabled="" class="czy-radio" name="issue" id="ra-riskFalse">
+                            <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>无关</label>
+                        </div>
+                    </div>
+                    <div class="czy-content-item clear mar-b10">
+                        <label for="" class="czy-key float-l">直接经济损失</label>
+                        <div class="par-wrap czy-val clear">
+                            <div class="czy-form-thunnk clear">
+                                <div class="czy-form-item col-md-1">
+                                    <input type="radio" class="czy-radio" name="issue" id="ra-lossesTrue">
+                                    <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i>相关</label>
+                                </div>
+                                <div class="czy-form-item col-md-1">
+                                    <input type="radio" disabled="" class="czy-radio" name="issue" id="ra-lossesFalse">
+                                    <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>无关</label>
+                                </div>
+                            </div>
+                            <!--表格-->
+                            <div class="table-thunk" id="">表格</div>
+                        </div>
+                    </div>
+                    <div class="czy-content-item clear mar-b10">
+                        <label for="" class="czy-key width-a float-l">航空器，设施设备损坏</label>
+                        <div class="par-wrap czy-val clear">
+                            <div class="czy-form-thunnk">
+                                <div class="czy-form-item col-md-1">
+                                    <input type="radio" class="czy-radio" name="issue" id="ra-aircraftTrue">
+                                    <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i>相关</label>
+                                </div>
+                                <div class="czy-form-item col-md-1">
+                                    <input type="radio" disabled="" class="czy-radio" name="issue" id="ra-aircraftFalse">
+                                    <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>无关</label>
+                                </div>
+                            </div>
+                            <!--表格-->
+                            <div class="table-thunk" id="checkedListEl"></div>
+                        </div>
+                    </div>
+                    <div class="czy-content-item clear mar-b10">
+                        <label for="" class="czy-key float-l">人员伤亡</label>
+                        <div class="czy-form-item czy-val col-md-1">
+                            <input type="radio" class="czy-radio" name="issue" id="ra-crewTrue">
+                            <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i>有</label>
+                        </div>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" disabled="" class="czy-radio" name="issue" id="ra-crewFalse">
+                            <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>无</label>
+                        </div>
+                        <div class="czy-form-item  col-md-3 mar-b10">
+                            <label for="" class="czy-key czy-f14">伤</label>
+                            <input type="text" id="" class="czy-input input-xs">
+                        </div>
+                        <div class="czy-form-item  col-md-3 mar-b10">
+                            <label for="" class="czy-key czy-f14">亡</label>
+                            <input type="text" id="" class="czy-input input-xs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">报告处理<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class=" czy-content-item mar-b10 clear" id="s6">
+                        <label for="" class="czy-key float-l">调成方式</label>
+                        <input type="hidden">
+                    </div>
+                    <div class="czy-content-item input-selected-thunk mar-b10 clear" >
+                        <label for="" class="czy-key float-l czy-f14">事件类型</label>
+                        <div class="par-wrap">
+                            <div class="search-select-wrap clear" id="searchSelect1"></div>
+                        </div>
+                    </div>
+                    <div class="czy-content-item input-selected-thunk mar-b10 clear" >
+                        <label for="" class="czy-key float-l czy-f14">调查情况</label>
+                        <textarea class="czy-textarea  l-input" placeholder="请完整叙述事发经过"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">发现问题与关联危险源<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class="float-l width-a czy-key">是否需要风险管理</label>
+                        <ul class="czy-val czy-select-gulp-thunk float-l clear">
+                            <li class="select-item selected">风险管理</li>
+                            <li class="select-item">纠正预防</li>
+                            <li class="select-item">无风险/措施</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-select-thunk mar-b">
+                        <h3 class="mar-b20 main-title-text">风险管理启动条件判断</h3>
+                        <div class="section-item">
+                            <h4 class="mar-b20 title-text">此事件是否瞒住一下条件（请勾选）</h4>
+                            <div id="riskManagement-2"></div>
+                        </div>
+
+                        <div class="section-item">
+                            <h4 class="mar-b20 title-text">此事件是否瞒住一下条件（请勾选）</h4>
+                            <ul class="section-condition-list section-check">
+                                <li class="section-condition-item selected" >
+                                    <i class="czy-checkbox"></i>
+                                    很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述
+                                    很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述很多的描述</li>
+                                <li class="section-condition-item"><i class="czy-checkbox"></i> 条件er</li>
+                                <li class="section-condition-item"><i class="czy-checkbox"></i> 条件san</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label for="" class=" czy-key width-a">发现问题</label>
+                        <div class="margin-b10 table-thunk czy-val table-fold-thunk" id="foldChildable"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">措施评估意见<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class="czy-content-item  mar-b10 clear">
+                        <label for="" class="czy-key width-a">请判断风险控制措施或纠正预防措施的一下要素是否合理</label>
+                        <div class="czy-val czy-select-thunk" id="riskJudgement"></div>
+                    </div>
+                    <div class="czy-content-item  mar-b10 clear">
+                        <label for="" class="czy-key width-a">请判断风险控制措施或纠正</label>
+                        <textarea class="czy-textarea  l-input" placeholder="请完整叙述事发经过"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-thunk fold-thunk mar-b10">
+                <h3 class="title-thunk fold-btn">关联绩效预警<i class="fold-arrows"></i></h3>
+                <div class="content-thunk clear">
+                    <div class=" czy-content-item mar-b10 clear">
+                        <label class="czy-key width-a float-l">是否关联关键风险</label>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" class="czy-radio" name="issue" id="ra-riskCriticalTrue">
+                            <label class=" czy-f12" for="ra-issueTrue"> <i class="icon-radio"></i> 是</label>
+                        </div>
+                        <div class="czy-form-item col-md-1">
+                            <input type="radio" disabled="" class="czy-radio" name="issue" id="ra-riskCriticalFalse">
+                            <label class=" czy-f12" for="ra-issueFalse"> <i class="icon-radio"></i>否</label>
+                        </div>
+                    </div>
+                    <div class="table-thunk" id="riskCritical1"></div>
+                </div>
+            </div>
+
+            <div class="czy-btn-group content-center">
+                <button class="czy-btn czy-btn-success  czy-btn-l ">同意归档</button>
+                <button class="czy-btn czy-btn-success  czy-btn-l ">回退</button>
+                <button class="czy-btn czy-btn-success  czy-btn-l ">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<!--[if lt IE 6]>
+<script type="text/javascript" src="../assets/js/bootstrap-ie.js"></script>
+<![endif]-->
+<!--滚动条-->
+<script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!--bui-->
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/common/pageconfig.js"></script>
+<script type="text/javascript" src="../assets/js/sea.js"></script>
+</body>
+</html>

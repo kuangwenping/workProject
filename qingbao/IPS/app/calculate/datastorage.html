@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 数据新周期入库</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/common/common.styl">
+    <link rel="stylesheet" href="css/datastorage.styl">
+</head>
+<body>
+<div class="datastorage-wrap">
+  <!--侧板-->
+  <aside id="J-aside-panel" class="aside-panel aside-wrap">
+    <!-- 标 -->
+    <div class="query-title-chunk margin-b clear">
+     <div class="query-title float-l">
+      <div class="effect ui-strip1">
+       <div class="ui-strip2">
+        <span class="ui-strip-text"> 预生效</span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- 日起选择 -->
+    <div class="select-thunk clear">
+      <p class="margin-b">选择期数</p>
+      <form class="ui-form float-l year-selece" id="s1">
+        <input type="hidden">
+      </form>
+      <form class="ui-form float-l month-selece " id="s2">
+        <input type="hidden">
+      </form>
+      <p class="filer float-l">
+        <i class="ui-icon ui-icon-filer"></i>
+        <span>424</span>
+      </p>
+      <span class="sign float-l">
+          <i class="ui-icon ui-yes"></i>
+          已上传
+      </span>
+    </div>
+    <!-- 设置 -->
+    <div class="set-thunk clear margin-b">
+      <p class="margin-b">差异对比范围设置</p>
+
+      <textarea class="ui-textarea margin-b" placeholder="ZB ZT ZP ZS"></textarea>
+
+      <form class="ui-form float-r">
+          <label class="ui-check-label">
+            <input type="checkbox"/>
+          </label>
+          开启双核功能
+      </form>
+    </div>
+    <a class="ui-btn ui-btn-search float-r ui-btn-wide">开始导入</a>
+  </aside>
+
+  <section id="J-content" class="content">
+    <!--实际展示内容-->
+    <div class="content-wrap">
+        <form class="ui-form year-selece margin-b" id="s3">
+            <label >年份选择</label>
+            <input type="hidden">
+        </form>
+        <div class="table-thunk" id="grid"></div>
+    </div>
+  </section>
+</div>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="js/datastorage-cg.js"></script>
+</body>
+</html>

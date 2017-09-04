@@ -1,0 +1,246 @@
+@charset "UTF-8";
+@import "./var";
+@import "./mixin";
+//@import "./icon";
+@import "layout";
+
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  &:focus {
+    outline: none;
+  }
+}
+
+body{
+  background:$bg3;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a:hover, a:focus{
+  text-decoration:none;
+}
+
+a{
+  color:$mc;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.float-l{
+  float:left;
+}
+.float-r{
+  float:right;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//按钮
+.ui-btn{
+  &:hover{
+    opacity: .7;
+  }
+  height:28px;
+  line-height:28px;
+  text-align: center;
+  border-radius: 4px;
+  font-size:12px;
+  display:inline-block;
+}
+
+.ui-btn-wide{
+  width:100px;
+}
+
+ui-btn-narrow{
+  width:80px;
+}
+
+.ui-btn-full{
+  background: $bg4;
+  color: $fc3;
+}
+
+.ui-btn-empty{
+  background:$fc3;
+  color:$bg4;
+  border:1px solid $bg4;
+}
+
+.ui-btn-wring{
+  background: $ac1;
+  color:$fc3;
+}
+
+.ui-btn-search{
+  background: $ac2;
+  font-size:14px;
+  color:$mc;
+}
+
+
+//input框
+input.ui-input{
+  border:1px solid $bm;
+  height:28px;
+  border-radius: 0;
+  padding-left:10px;
+}
+
+//最大宽
+.ui-max-width{
+  max-width:1440px;
+  margin:0 auto;
+}
+
+//字号
+.ui-f14{
+  font-size:14px;
+}
+
+.ui-f12{
+  font-size:12px;
+}
+
+//表单
+.ui-form{
+  label{
+    margin-right:5px;
+  }
+}
+
+//表格
+.ui-table{
+  border:1px solid $bm;
+  width:100%;
+  empty-cells:show;
+  border-collapse: collapse;
+  background:$fc3;
+  text-align: center;
+  font-size:12px;
+  thead{
+    background:$bg1;
+    th{
+      font-weight:100;
+    }
+  }
+  td,th{
+    padding:8px 10px;
+  }
+  table, td, th
+  {
+    border:1px solid $bm;
+  }
+}
+
+.heaer-nav-wrap{
+  background:$bg7;
+  height:35px;
+  width:100%;
+  .label-container{
+    padding:0 15px;
+  }
+  .ui-arrows-left{
+    float:left;
+    height:14px;
+    width:10px;
+    margin: 10px 8px 10px 0;
+  }
+  .ui-arrows-right{
+    float:right;
+    padding-right:12px;
+    height:14px;
+    margin: 10px 0;
+  }
+  .label-wrap{
+    float:left;
+    padding-top:5px;
+    li{
+      float:left;
+      background:$bg8;
+      height:30px;
+      line-height:30px;
+      text-align: center;
+      min-width:140px;
+      padding:0 15px;
+      margin-right:5px;
+      border-radius: 3px 3px 0 0;
+      position:relative;
+      span{
+        font-size:14px;
+        color:$fc3;
+      }
+      >i{
+        width:10px;
+        height:10px;
+        position:absolute;
+        transform: translateY(-50%);
+        top:50%;
+        right:15px;
+      }
+    }
+
+    //选中标签
+    li.active{
+      background:$bg3;
+      margin:0 17px;
+      &:after{
+        right:-12px;
+        border-left:6px solid $bg3;
+        border-bottom:14px solid $bg3;
+        border-right:6px solid transparent;
+        border-top:14px solid transparent;
+      }
+      &:before,&:after{
+        position:absolute;
+
+        top:2px;
+        content: '';
+        display:inline-block;
+        z-index: 10;
+      }
+      &:before{
+        left:-12px;
+        border-right:6px solid $bg3;
+        border-bottom:14px solid $bg3;
+        border-left:6px solid transparent;
+        border-top:14px solid transparent;
+        background:#000;
+        height:20;
+      }
+      span{
+        color:$mc;
+      }
+    }
+  }
+}
+
+
+
+
+
+

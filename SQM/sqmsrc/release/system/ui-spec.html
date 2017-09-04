@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/common/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 6]>
+    <link href="../assets/css/common/bootstrap-ie6.css" rel="stylesheet">
+    <link href="../assets/css/common/ie.css" rel="stylesheet">
+    <![endif]-->
+    <title>UI-SPEC</title>
+    <link rel="stylesheet" href="../assets/css/common/main.css">
+</head>
+<body>
+    <h2 class="czy-center-thunk">sqm前端界面使用范例</h2>
+    <div class="czy-container">
+        <p>使用技术：</p>
+        <p class="mar-l10">jQuery 1.9.1</p>
+        <p class="mar-l10">Bui</p>
+            <p>官方文档：http://www.builive.com/docs/api/index.html#!/api/BUI</p>
+            <p>官方例子：http://www.builive.com/index.php</p>
+        <p class="mar-l10 mar-b30">bootstorp3</p>
+
+        <p class="mar-b10">ui组件使用范例：f12 查看相关类的作用</p>
+        <!--包裹成-->
+        <div class="wrap-thunk mar-b10">这是一个外层包裹框  wrap-thunk</div>
+        <!--按钮-->
+        <button class="czy-btn mar-b10 czy-btn-success  czy-btn-l">成功按钮</button>
+        <h3 class="mar-b10 mar-t10">图标集</h3>
+        <div>
+            <i class="czy-icon czy-error-icon"></i>
+            <i class="czy-icon czy-warning-icon"></i>
+            <i class="czy-icon czy-cite-icon"></i>
+            <i class="czy-icon czy-close-selected">×</i>
+            <i class="czy-icon czy-icon-tooltip"></i>
+            <i class="czy-icon icon-file-conten"></i>
+            <i class="czy-icon czy-file-icon"></i>
+            <i class="czy-icon czy-icon-point"></i>
+            <i class="czy-icon line-arrows-dowm"></i>
+            <i class="czy-icon line-arrows-up"></i>
+            <i class="czy-icon lump-arrows-down"></i>
+            <i class="czy-icon lump-arrows-up"></i>
+            <i class="czy-icon czy-icon-seleced"></i>
+            <i class="czy-icon czy-icon-search-grey"></i>
+        </div>
+
+        <h3 class="mar-b10 mar-t10">分页栏</h3>
+        <div class="pages-thunk" id="barPages"></div>
+
+        <h3 class="mar-b10 mar-t10">树多选</h3>
+        <div class="tree-selected-dispaly clear">
+            <div class="col-md-6 tree-thunk" id="selectedDisplay"></div>
+            <ul class="tree-selected-list col-md-6"></ul>
+        </div>
+
+        <h3 class="mar-b10">搜索下拉 选择后，呈现选择标签1</h3>
+        <div class="czy-form-item input-selected-thunk mar-b10 clear" >
+            <label for="" class="czy-key float-l czy-f14">事件类型</label>
+            <div class="par-wrap">
+                <div class="input-selected-wrap" id="searchSelect"></div>
+            </div>
+        </div>
+
+        <h3 class="mar-b10">搜索下拉 选择后，呈现选择标签2</h3>
+        <div class="czy-form-item input-selected-thunk mar-b10 clear" >
+            <label for="" class="czy-key float-l czy-f14">事件类型</label>
+            <div class="par-wrap">
+                <div class="search-select-wrap clear" id="searchSelect1"></div>
+            </div>
+        </div>
+
+        <h3 class="mar-b10">动态搜索下拉</h3>
+        <div class="czy-form-item input-selected-thunk mar-b10 clear" >
+            <label for="" class="czy-key float-l czy-f14">事件类型</label>
+            <div class="par-wrap">
+                <div class="search-select-wrap clear" id="searchSelect2"></div>
+            </div>
+        </div>
+
+        <h3 class="mar-b10">下拉全选</h3>
+        <div class="czy-form-item input-selected-thunk mar-b10 clear" >
+            <label for="" class="czy-key float-l czy-f14">事件类型</label>
+            <div class="par-wrap">
+                <div class="search-select-wrap clear" id="SelectAll"></div>
+            </div>
+        </div>
+
+        <h3>级联下拉</h3>
+        <p>可以通过<code>BUI.Form.Group.Select.addType</code>来给内部的 <code>TreeStore</code>自定义数据源，进行无限级的扩展：</p>
+        <div class="control-group">
+            <label class="control-label">级联下拉：</label>
+            <div class="controls bui-form-group-select" data-type="type2">
+                <select class="input-small" value="山东省"><option>省份</option></select>&nbsp;&nbsp;
+                <select class="input-small"><option>城市</option></select>
+                <select class="input-small"><option>区</option></select>
+            </div>
+        </div>
+        <p><label class="label">注意：</label>没有下一级节点的是叶子节点</p>
+
+        <!--表单-->
+        <h3 class="mar-b10">表单</h3>
+        <form class="czy-form mar-b20 clear row">
+            <div class="czy-form-item  col-md-3 mar-b10">
+                <label for="" class="czy-key czy-f14">表单</label>
+                <input type="text" id="" class="czy-input"/>
+            </div>
+            <div class="czy-form-item col-md-3 mar-b10">
+                <label for="" class="czy-key width-a czy-f14">第二个表单</label>
+                <input type="text" class="czy-input"/>
+            </div>
+        </form>
+
+        <h3 class="mar-b10">错误</h3>
+        <form class=" czy-content-item mar-b10 clear">
+            <label for="" class="czy-key">发生地点</label>
+            <input type="text" class="czy-input czy-val error-inpur">
+            <span class="error-text">密码错误</span>
+        </form>
+
+        <!--表格带分页/周边按钮-->
+        <h3 class="mar-b10">表格1</h3>
+        <div class="table-thunk pad-b75" id="checkedListEl">
+            <div class="pages-thunk" id="barPages"></div>
+        </div>
+
+        <h3 class="mar-b10">表格2(折叠下拉子表格)</h3>
+        <div class="margin-b10 table-thunk table-fold-thunk mar-b20" id="foldChildable"></div>
+
+        <h3 class="mar-b10">表格3(序号表格)</h3>
+        <div class="table-thunk pad-b75" id="dictionariesEl"></div>
+
+        <h3 class="mar-b10 mar-t10 ">表格4(行内编辑表格)</h3>
+        <div class="table-thunk" id="rowEditorEl"></div>
+
+        <h3 class="mar-b10 mar-t10">表格5(提示表格)</h3>
+        <div class="table-thunk" id="riskCritical1"></div>
+
+        <h3 class="mar-b10">选择下拉框</h3>
+        <div class="czy-form-item  mar-b10 clear" id="s1">
+            <label for="" class="czy-key float-l czy-f14">是否可用</label>
+            <input type="hidden">
+        </div>
+
+
+        <h3 class="mar-b10">多选框</h3>
+        <div class="czy-select-thunk clear" id="checkSelect">
+
+        </div>
+        <h3 class="mar-b10">单选组</h3>
+        <div id="radioSelect"></div>
+
+        <h3 class="mar-b10">日期选择</h3>
+        <div>
+            <label class="czy-key czy-f14">发现日期</label>
+            <input type="text" class=" calendar" />
+        </div>
+
+        <h3 class="mar-b10">日期时间选择</h3>
+        <div>
+            <label class="czy-key czy-f14">发现日期</label>
+            <input type="text" class="calendar-time" />
+        </div>
+
+        <h3 class="mar-b10">日期选择区间选择</h3>
+        <div class="czy-form-item calendar-space">
+            <label class="czy-key czy-f14">发布日期</label>
+            <input type="text" class="czy-input calendar mar-r5">
+            <span class="czy-f14 mar-r5">到</span>
+            <input type="text" class="czy-input calendar">
+        </div>
+
+        <h3 class="mar-b10">文件上传</h3>
+        <!--按钮上传-->
+        <div class="czy-upload-thunk btn-upload" id="J_Uploader"></div>
+        <h3 class="mar-b10 mar-t10">文件上传</h3>
+        <!--图标上传-->
+        <div class="czy-upload-thunk clear icon-upload" id="J_IconUploader"></div>
+
+        <h3 class="mar-b10 mar-t10">错误弹框</h3>
+        <p  class="czy-btn czy-btn-success " id="popError">错误</p>
+        <div class="czy-none" id="errorPopContent">
+            <p>这是一段提示文本（成功，失败，警告）</p>
+        </div>
+
+        <h3 class="mar-b10 mar-t10">警告弹框</h3>
+        <p  class="czy-btn czy-btn-success" id="popWarning">警告</p>
+        <div class="czy-none" id="warningPopContent">
+            <p>这是一段提示文本（成功，失败，警告）</p>
+        </div>
+
+        <h3 class="mar-b10 mar-t10">成功弹框</h3>
+        <p  class="czy-btn czy-btn-success" id="popSuccess">成功</p>
+        <div class="czy-none" id="successPopContent">
+            <p>这是一段提示文本（成功，失败，警告）</p>
+        </div>
+
+        <h3 class="mar-b10 mar-t10">流转日志</h3>
+
+        <div  class="">
+            <div class="pop-wrap flow-thunk">
+                <div class="czy-tab-type clear" id="flowTab"></div>
+                <div class="" id="flowConten">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../assets/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <!--[if lt IE 6]>
+    <script type="text/javascript" src="../assets/js/bootstrap-ie.js"></script>
+    <![endif]-->
+    <!--滚动条-->
+    <script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--bui-->
+    <script type="text/javascript" src="../assets/js/bui-min.js"></script>
+    <script type="text/javascript" src="../assets/js/sea.js"></script>
+    <script type="text/javascript" src="../assets/js/common/pageconfig.js"></script>
+</body>
+</html>

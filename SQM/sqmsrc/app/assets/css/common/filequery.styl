@@ -1,0 +1,129 @@
+.file-query-wrap{
+  .title-thunk{
+    color:ft1;
+    .fold-arrows{
+      sbg('/assets/img/arrows-up-down.png',0,-7px);
+      width: 9px;
+      height: 5px;
+      margin-top:18px;
+    }
+    .fold-arrows-down{
+      background-position 0 0;
+    }
+  }
+  .info-list{
+    padding-left:20px;
+    background:mcb;
+    .info-item{
+      &:first-child{
+        border-top:none;
+      }
+      border-top:1px solid mbd;
+      height:33px;
+      line-height:33px;
+      font-size:12px;
+      .intro-info{
+        width:50%;
+        background-size:initial;
+      }
+      .suffix-info{
+        padding-right:20px;
+        span{
+          margin-left:10px;
+        }
+      }
+    }
+  }
+  .menu-tab-thunk{
+    background:mcb;
+    height:40px;
+    bottom:-1px;
+    border-bottom:1px solid mbd;
+    position relative;
+    .slide-btn-group{
+      position absolute;
+      right:10px;
+      top:12px;
+      .disabled{
+        background :mtbg;
+      }
+      a{
+        width:18px;
+        height:18px;
+        line-height:18px;
+        display:inline-block;
+        background:mc;
+        text-align center;
+        border-radius 3px;
+        cursor pointer;
+        i{
+          border-top:5px solid transparent;
+          border-bottom:5px solid transparent;
+        }
+      }
+      .slide-btn-left{
+        margin-right:5px;
+        i{
+          display:inline-block;
+          border-left:none;
+          border-right:5px solid mcb;
+        }
+      }
+      .slide-btn-right{
+        i{
+          display:inline-block;
+          border-right:none;
+          border-left:5px solid mcb;
+        }
+      }
+    }
+    .menu-tab{
+      overflow hidden;
+      margin-right:60px;
+    }
+
+    .tab-item{
+      height:40px;
+      line-height 50px;
+      width:104px;
+      overflow :hidden;
+      text-overflow :ellipsis;
+      white-space nowrap;
+      display inline-block;
+      cursor pointer;
+      &:first-child{
+        span{
+          border-left:none;
+        }
+      }
+      span{
+        width:100%;
+        overflow :hidden;
+        text-overflow :ellipsis;
+        white-space nowrap;
+        font-size:12px;
+        display:inline-block;
+        padding:0 15px;
+        border-left:1px solid mbd;
+        height:12px;
+        line-height:1;
+      }
+    }
+    .tab-all{
+      width:auto;
+    }
+
+    .menu-tab-list{
+      font-size 0;
+      display: inline-block;
+      white-space: nowrap;
+      .active.tab-item{
+        border-bottom:2px solid mc;
+      }
+    }
+
+  }
+  .menu-content-thunk{
+
+  }
+}

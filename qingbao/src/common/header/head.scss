@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@import "../../style/mixin";
+
+.header-wrap{
+  background:$bg4;
+}
+
+.header-container{
+  background:$bg4;
+  height:60px;
+  width:100%;
+  margin:0 auto;
+  min-width:1200px;
+  max-width:1440px;
+  a{
+    color:$fc3;
+  }
+}
+
+.head-logo{
+  float:left;
+  display:block;
+  width:18%;
+  min-width:260px;
+  height:60px;
+  text-align: center;
+  padding:8px 15px;
+  .head-text{
+    display:inline-block;
+  }
+  >i{
+    margin-right:10px;
+  }
+  >a{
+    color:$fc3;
+    font-size:18px;
+    vertical-align: middle;
+  }
+  span{
+    display:block;
+    text-align: left;
+    font-size:12px;
+  }
+}
+
+.head-nav{
+  float:left;
+  width:60%;
+  text-align: center;
+  >li.active{
+    background:$bg5;
+  }
+  >li{
+    &:nth-child(1),&:nth-child(2),&:nth-child(3){
+      .secondary-muen{
+        text-align: left;
+      }
+    }
+    height:60px;
+    display:inline-block;
+    padding:10px 27px;
+    text-align: center;
+    >i{
+      display:block;
+      height:20px;
+    }
+    a{
+      font-size:14px;
+    }
+  }
+}
+
+.head-info{
+  float:left;
+  width:19.5%;
+  min-width:280px;
+  padding:18px 45px 18px 0;
+  text-align: right;
+  a{
+    display: inline-block;
+  }
+  .head-set{
+    width:20px;
+    margin:0 5px;
+  }
+  .head-record{
+    margin:0 20px;
+    width:18px;
+  }
+  .ui-icon{
+    height:20px;
+  }
+  .head-user{
+    vertical-align: middle;
+    >i{
+      margin-right:10px;
+      padding-left:20px;
+    }
+    width:130px;
+    font-size:12px;
+  }
+}
+
+.muen-wrap{
+  display:none;
+  position:absolute;
+  top:60px;
+  left:0;
+  right:0;
+  background:$bg5;
+  z-index: 15;
+}
+
+.secondary-muen{
+  width:100%;
+  max-width: 1000px;
+  margin:0 auto;
+  text-align: center;
+  >li{
+    display:inline-block;
+    left:0;
+    right:0;
+    color:$fc3;
+    height:38px;
+    font-size:14px;
+    padding:10px 20px;
+  }
+  .down-menu-btn{
+
+  }
+  >li.hover{
+    position:relative;
+    background:$bg5-1;
+  }
+  .pull-down-menu{
+    position:absolute;
+    background:$bg5-1;
+    font-size:14px;
+    width:100%;
+    left:0;
+    top:38px;
+    >li{
+      padding:10px 15px;
+    }
+  }
+}

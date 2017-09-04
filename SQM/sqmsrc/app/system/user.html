@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/common/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 6]>
+    <link href="../assets/css/common/bootstrap-ie6.css" rel="stylesheet">
+    <link href="../assets/css/common/ie.css" rel="stylesheet">
+    <![endif]-->
+    <!--<link rel="stylesheet" href="../assets/css/bui-min.css">
+    <link rel="stylesheet" href="../assets/css/dpl-min.css">-->
+
+    <!--滚动条-->
+    <link rel="stylesheet" href="../assets/css/common/jquery.mCustomScrollbar.css">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="../assets/css/common/main.styl">
+</head>
+<body>
+    <div class="czy-container sys-user-wrap">
+        <div class="head-thunk wrap-thunk mar-b20 clear">
+            <form class="czy-form  float-l col-md-9  col-xs-12 pad-l0">
+                <div class="czy-form-item float-l mar-b10 mar-t10">
+                    <label for="" class="czy-key float-l  czy-f14">工号</label>
+                    <input type="text" class="czy-input float-l"/>
+                </div>
+                <div class="czy-form-item float-l mar-b10 mar-t10 ">
+                    <label for="" class="czy-key float-l  czy-f14">姓名</label>
+                    <input type="text" class="czy-input float-l"/>
+                </div>
+                <div class="czy-form-item float-l mar-b10 mar-t10" id="s1">
+                    <label for="" class="czy-key float-l czy-f14">是否可用</label>
+                    <input type="hidden">
+                </div>
+                <button class="czy-btn czy-btn-success mar-b10 mar-t10  float-r czy-btn-l">查询</button>
+            </form>
+            <div class="czy-btn-group float-r col-md-3 col-xs-12  mar-b10 mar-t10 pad-r0">
+                <button class="czy-btn czy-btn-success  czy-btn-l">手工同步PS</button>
+                <button class="czy-btn czy-btn-success czy-btn-l" id="addRoleBtn">新增</button>
+            </div>
+        </div>
+
+        <div class="body-thunk">
+            <div class="table-thunk" id="grid">
+            </div>
+        </div>
+
+        <div class="foot-thunk czy-center-thunk">
+            <div class="pages-thunk">
+                <ul class="pagination float-l">
+                    <li class="disabled" id="prev">
+                        <a href="">上一页</a>
+                    </li>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li id="next">
+                        <a href="">下一页</a>
+                    </li>
+                </ul>
+                <div class="pagination-input float-l">
+                    <input type="text">
+                    / <span>100</span>
+                    <button>跳转</button>
+                </div>
+            </div>
+        </div>
+
+        <!--树结构-->
+        <div class="tree-thunk">
+            <a href="" id="J-labelBtn" class="tree-label">角色分配 <i class=""></i></a>
+            <div class="tree-wrap" id="J-moveThunk">
+                <div class="tree-head clear">
+                    <h3>角色分配</h3>
+                    <button class="czy-btn czy-btn-success">保存</button>
+                </div>
+                <div class="tree-body" id="t1"></div>
+            </div>
+        </div>
+
+        <!--新增弹框-->
+        <div  id="addRole" class="czy-none">
+            <form class="form-thunk pop-add-role">
+                <div class="czy-form-item mar-b10 clear">
+                    <label for="" class="czy-key float-l ">角色名称</label>
+                    <div class="par-wrap">
+                        <input type="text" class="czy-input l-input" id="inp"/>
+                    </div>
+                </div>
+                <div class="czy-form-item clear">
+                    <label for="" class="czy-key float-l">角色描述</label>
+                    <div class="par-wrap">
+                        <textarea class="czy-textarea l-input"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../assets/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <!--[if lt IE 6]>
+    <script type="text/javascript" src="../assets/js/bootstrap-ie.js"></script>
+    <![endif]-->
+    <!--滚动条-->
+    <script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--bui-->
+    <script type="text/javascript" src="../assets/js/bui-min.js"></script>
+    <script type="text/javascript" src="../assets/js/sea.js"></script>
+    <script type="text/javascript" src="../assets/js/common/pageconfig.js"></script>
+</body>
+</html>

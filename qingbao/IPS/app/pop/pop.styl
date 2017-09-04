@@ -1,0 +1,150 @@
+@import "../assets/css/common/var.styl";
+@import "../assets/css/common/mixin.styl";
+
+.cover-block{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.6);
+  .pop-wap{
+    width:740px;
+    height:570px;
+    background:$bgb;
+    .pop-body{
+      padding:20px;
+    }
+  }
+}
+
+.pop-editor-wrap{
+  width:616px;
+  margin:0 auto;
+  .ui-key-start{
+    display:inline-block;
+    text-align right;
+    width:40px;
+    margin-right:10px;
+  }
+  .input-l{
+    width:560px;
+  }
+  .input-m{
+    width:210px;
+  }
+}
+
+.pop-wrap{
+  max-width:1200px;
+  margin:40px auto;
+  background:$bmb;
+}
+
+.pop-amend-list{
+  .amend-item{
+    &:hover{
+      color:$ac1;
+    }
+      text-align :left;
+    color:$mc;
+    width:100%;
+    font-size:12px;
+    line-height:1.3;
+    margin-bottom:5px;
+    overflow :hidden;
+    text-overflow :ellipsis;
+    white-space :nowrap;
+  }
+}
+
+  //备降机场维护
+.pop-prepare-airport{
+  .title-text{
+    text-align left;
+  }
+}
+
+
+  //CAT选择
+.pop-CAT-select{
+  .bui-select{
+    width:100%;
+  }
+  .bui-select-input{
+    width:274px;
+  }
+}
+
+  //人员选择
+.pop-personSelect-wrap{
+  .table-thunk{
+    width:70%;
+    .bui-grid-body{
+      max-height:400px;
+    }
+  }
+  .selece-yet{
+    width:30%;
+    padding-left:20px;
+    .ui-icon-clones{
+      border:none;
+    }
+    h3{
+      font-size:14px;
+      padding:5px;
+      background:$bg1;
+      border:1px solid $bm;
+      border-bottom:none;
+    }
+    .selece-list{
+      border:1px solid $bm;
+      padding:5px;
+      height:400px;
+      li{
+        &:last-child{
+          border-bottom:none;
+        }
+        border-bottom:1px solid $bm;
+        padding:5px 0;
+      }
+    }
+  }
+
+    .pages-thunk{
+      position:absolute;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+}
+
+  //文件上传
+  .pop-file-load{
+    text-align center;
+    .pop-text{
+      margin-bottom:80px;
+      span{
+        setMar0();
+        margin-right:10px;
+      }
+    }
+      .ui-file-btn{
+        &:after{
+          addWC('文件上传');
+        }
+        display:inline-block;
+        border:none;
+        background:none;
+        background:$ac;
+        width:80px;
+        height:28px;
+        line-height:24px;
+        color:$fc3;
+        text-align center;
+      }
+      .ui-file-btn+input{
+        display:none;
+      }
+  }
+

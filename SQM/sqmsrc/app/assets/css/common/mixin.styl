@@ -1,0 +1,31 @@
+//设置beijing
+sbg($url,x = 0,y){
+  background:url($url) no-repeat x y;
+}
+
+//头尾padding设0
+setPad0(){
+  &:first-child{
+    padding-left:0;
+  }
+  &:last-child{
+    padding-right:0;
+  }
+}
+
+//头尾margin设0
+setMar0(){
+  &:first-child{
+    margin-left:0;
+  }
+  &:last-child{
+    margin-right:0;
+  }
+}
+
+//伪类元素
+pseudo($c=''){
+  content:$c;
+  display:inline-block;
+  vertical-align middle;
+}

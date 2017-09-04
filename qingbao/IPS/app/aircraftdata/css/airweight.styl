@@ -1,0 +1,103 @@
+//@import "../../assets/css/common/common";
+@import "../../assets/css/common/var";
+@import "../../assets/css/common/mixin";
+
+/*内容展示*/
+.content-wrap{
+  maxWidth(1240+65);
+  padding:30px 45px 45px 20px;
+}
+.weigh-wrap{
+  //查询
+  .search-chunk{
+    margin-bottom:40px;
+    >form{
+      float:left;
+      margin-right:10px;
+      >input{
+        width:89px;
+      }
+    }
+    .ui-icon{
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  //称重
+  .data-chunk{
+    margin-bottom:67px;
+    >.ui-key{
+      font-weight: bold;
+      margin-bottom:14px;
+    }
+    .form-group{
+      margin-bottom:20px;
+      form{
+         setPad0();
+        float:left;
+        padding: 0 15px;
+      }
+      input{
+        width:140px;
+      }
+      .export-item{
+        float:right;
+      }
+    }
+  }
+  .table-thunk{
+    margin-bottom:20px;
+    .bui-grid-body{
+      .grid-command{
+        border-right:none;
+        padding-right:0;
+      }
+    }
+  }
+  //操作按钮
+  .btn-chunk{
+    text-align: center;
+    a{
+      margin:0 35px;
+    }
+  }
+}
+
+.schedule-wrap{
+  margin:0 40px;
+  text-align: center;
+   center();
+  left:0;
+  right:0;
+  >p,>div{
+    display:inline-block;
+  }
+  .ui-valkey{
+    width:150px;
+  }
+  .ui-strip-wrap{
+    width:170px;
+    span{
+      display:inline-block;
+    }
+  }
+  .schedule-text{
+    margin:0 15px;
+  }
+  .break-text{
+    color:$ac1;
+    display:none;
+  }
+  .ui-icon-refresh{
+    display:block;
+  }
+  .error.schedule-wrap{
+    .break-text,.ui-icon-refresh{
+      display:block;
+    }
+    .ui-strip{
+      background: $ac1;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>数据同步</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/common/common.css">
+    <link rel="stylesheet" href="/systemset/css/JETPLANdata.css">
+</head>
+<body>
+<div class="JETPLANdata-wrap">
+    <section class="content">
+        <div class="clear margin-b search-thunk">
+            <form class="ui-form float-l">
+                <label>同步项目</label>
+                <input class="ui-input" type="text">
+            </form>
+            <button class="ui-btn ui-btn-search ui-btn-wide float-l">查询</button>
+        </div>
+        <div class="tab-thunk">
+            <div class="tab-btn-wrap margin-b clear">
+                <div id="tab"></div>
+                <form class="ui-form  take-time float-r" id="s1">
+                    <label>来源筛选</label>
+                    <input type="hidden"/>
+                </form>
+            </div>
+            <div id="log"></div>
+        </div>
+        <div class="btn-group">
+            <button class="ui-btn ui-btn-full ui-btn-wide">批量同步</button>
+            <button class="ui-btn ui-btn-full ui-btn-wide">批量恢复</button>
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="/systemset/js/JETPLANdata-cg.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.31.196:8132/livereload.js"></script></body>
+</html>

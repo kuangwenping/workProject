@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/common/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 6]>
+    <link href="../assets/css/common/bootstrap-ie6.css" rel="stylesheet">
+    <link href="../assets/css/common/ie.css" rel="stylesheet">
+    <![endif]-->
+    <!--滚动条-->
+    <link rel="stylesheet" href="../assets/css/common/jquery.mCustomScrollbar.css">
+    <title>信息报告数据维护</title>
+    <link rel="stylesheet" href="../assets/css/common/main.css">
+</head>
+<body>
+    <div class="czy-container sys-info-wrap">
+        <div class="head-thunk wrap-thunk mar-b20 clear">
+            <h3 class="thunk-title col-md-12"><i class="czy-icon czy-icon-search-grey mar-r5"></i>查询条件</h3>
+            <form class="czy-form  clear">
+                <div class="czy-form-item col-md-4">
+                    <label class="czy-key czy-f14">中文名称</label>
+                    <input type="text" class="czy-input"/>
+                </div>
+                <div class="czy-form-item col-md-4">
+                    <label class="czy-key czy-f14">英文名称</label>
+                    <input type="text" class="czy-input"/>
+                </div>
+                <div class="czy-form-item col-md-4">
+                    <label class="czy-key czy-f14">基础信息类型</label>
+                    <input type="text" class="czy-input"/>
+                </div>
+            </form>
+
+            <form class="czy-form  mar-b10 clear">
+                <div class="czy-form-item col-md-4" id="s1">
+                    <label for="" class="czy-key float-l czy-f14">所属一级类型</label>
+                    <input type="hidden">
+                </div>
+
+                <div class="czy-form-item col-md-4" id="s2">
+                    <label for="" class="czy-key float-l czy-f14">是否启用</label>
+                    <input type="hidden">
+                </div>
+            </form>
+
+            <div class="czy-btn-group col-md-12 mar-b10">
+                <button class="czy-btn czy-btn-success  czy-btn-l ">查询</button>
+                <button class="czy-btn czy-btn-success czy-btn-l " id="infooreportAddBtn">新建</button>
+            </div>
+        </div>
+        <div class="body-thunk">
+            <div class="table-thunk table-responsive">
+                <table class="table table-bordered table-condensed table-responsive table-center">
+                    <thead>
+                    <tr>
+                        <th>基本信息类型</th>
+                        <th>一级</th>
+                        <th>二级</th>
+                        <th>英文名称</th>
+                        <th>是否启用</th>
+                        <th>创建人</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>飞机</td>
+                        <td>航空部</td>
+                        <td>维修部</td>
+                        <td>机师</td>
+                        <td>休息</td>
+                        <td>休息</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="" class="czy-btn czy-btn-text-success">禁用</a>
+                                <a href="" class="czy-btn czy-btn-text-success">修改</a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="foot-thunk czy-center-thunk">
+            <div class="pages-thunk">
+                <ul class="pagination float-l">
+                    <li class="disabled" id="prev">
+                        <a href="">上一页</a>
+                    </li>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li id="next">
+                        <a href="">下一页</a>
+                    </li>
+                </ul>
+                <div class="pagination-input float-l">
+                    <input type="text">
+                    / <span>100</span>
+                    <button>跳转</button>
+                </div>
+            </div>
+        </div>
+        <!--新增信息报告-->
+        <div  id="infooreportAdd" class="czy-none">
+            <div class="pop-infooreport-add-wrap">
+                <form class="czy-form  clear">
+                    <div class="czy-form-item col-md-6">
+                        <label class="czy-key czy-f14">中文名称</label>
+                        <input type="text" class="czy-input"/>
+                    </div>
+                    <div class="czy-form-item col-md-6">
+                        <label class="czy-key czy-f14">英文名称</label>
+                        <input type="text" class="czy-input"/>
+                    </div>
+
+                    <div class="czy-form-item col-md-6">
+                        <label class="czy-key czy-f14">英文名称</label>
+                        <span class="czy-f12">不知道</span>
+                    </div>
+
+                </form>
+                <form class="czy-form  clear">
+                    <div class="czy-form-item col-md-6">
+                        <label class="czy-key czy-f14">基础信息类型</label>
+                        <input type="text" class="czy-input"/>
+                    </div>
+                    <div class="czy-form-item col-md-6" id="s3">
+                        <label for="" class="czy-key float-l czy-f14">所属一级类别</label>
+                        <input type="hidden">
+                    </div>
+                </form>
+
+                <form class="czy-form  mar-b10 clear">
+                    <div class="czy-form-item col-md-6" id="s4">
+                        <label for="" class="czy-key float-l czy-f14">所属二级类别</label>
+                        <input type="hidden">
+                    </div>
+                    <div class="czy-form-item col-md-6" id="s5">
+                        <label for="" class="czy-key float-l czy-f14">所属三级类别</label>
+                        <input type="hidden">
+                    </div>
+                </form>
+
+                <form class="czy-form  mar-b10 clear">
+                    <div class="czy-form-item col-md-6" id="s6">
+                        <label for="" class="czy-key float-l czy-f14">所属四级类别</label>
+                        <input type="hidden">
+                    </div>
+                    <div class="czy-form-item col-md-6" id="s7">
+                        <label for="" class="czy-key float-l czy-f14">是否启用</label>
+                        <input type="hidden">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="../assets/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<!--[if lt IE 6]>
+<script type="text/javascript" src="../assets/js/bootstrap-ie.js"></script>
+<![endif]-->
+<!--滚动条-->
+<script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!--bui-->
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+    <script type="text/javascript" src="../assets/js/sea.js"></script>
+<script type="text/javascript" src="../assets/js/common/pageconfig.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.31.196:8132/livereload.js"></script></body>
+</html>

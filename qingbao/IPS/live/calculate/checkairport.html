@@ -1,0 +1,521 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>校核机场</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/common/common.css">
+    <link rel="stylesheet" href="/calculate/css/checkairport.css">
+</head>
+<body>
+<div class="checkairport-wrap">
+    <div class="check-wrap clear">
+        <div class="air-check-left float-l">
+            <div class="up-thunk margin-b">
+                <div class="basis-thunk">
+                    <h3 class="title-text margin-b ui-f14">基础数据</h3>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">AIRPORT  ID</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA">
+                        </form>
+
+                        <form class="ui-form float-l form-2">
+                            <label class="">PUBLIC/MILITARY</label>
+                            <input class="ui-input input-l" type="text" placeholder="C">
+                        </form>
+
+                        <form class="ui-form float-r form-last">
+                            <label class="">IFR</label>
+                            <input class="ui-input input-l" type="text" placeholder="Y">
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">IATA/ATA</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA－ZSSSGYIG">
+                        </form>
+
+                        <div class="ui-coordinate form-2 float-l ui-pad0">
+                            <form class="ui-form input-selece-x" id="s2">
+                                <label>纬度</label>
+                                <input type="hidden"/>
+                            </form>
+                            <form class="ui-form">
+                                <input type="text" class="ui-input input-s"/>
+                                <label>度</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>分</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>秒</label>
+                            </form>
+                        </div>
+
+                        <form class="ui-form float-r form-last ui-pad0">
+                            <label class="">机场标高</label>
+                            <input class="ui-input input-l" type="text" placeholder="Y">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">ICAO CODE(2)</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZC">
+                        </form>
+
+                        <div class="ui-coordinate form-2 float-l ui-pad0">
+                            <form class="ui-form input-selece-x" id="s3">
+                                <label>经度</label>
+                                <input type="hidden"/>
+                            </form>
+                            <form class="ui-form">
+                                <input type="text" class="ui-input input-s"/>
+                                <label>度</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>分</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>秒</label>
+                            </form>
+                        </div>
+
+                        <form class="ui-form float-r form-last ">
+                            <label class="">磁差</label>
+                            <input class="ui-input input-l" type="text" placeholder="W5.0">
+                        </form>
+                    </div>
+
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">时区</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA">
+                        </form>
+                        <form class="ui-form float-l form-2 ui-pad0">
+                            <label class="">TRANS ALTITUDE</label>
+                            <input class="ui-input input-l" type="text" placeholder="9800">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">夏令时</label>
+                            <input class="ui-input input-l" type="text" placeholder="N">
+                        </form>
+                        <form class="ui-form float-l form-2 ui-pad0">
+                            <label class="">TRANS LEVEL</label>
+                            <input class="ui-input input-l" type="text" placeholder="9800">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">DATUM</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA">
+                        </form>
+                        <form class="ui-form float-l form-2 ui-pad0">
+                            <label class="">LONGEST RWY</label>
+                            <input class="ui-input input-l" type="text" placeholder="131100">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                </div>
+                <div class="client-thunk">
+                    <h3 class="title-text margin-b ui-f14">客户化数据</h3>
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">机场中文名</label>
+                            <input class="ui-input input-xl" type="text" placeholder="上海浦东">
+                        </form>
+                        <form class="ui-form float-r form-last">
+                            <label class="">LONGEST RWY</label>
+                            <input class="ui-input input-l" type="text" placeholder="131100">
+                        </form>
+                    </div>
+
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">机场英文名</label>
+                            <input class="ui-input input-xl" type="text" placeholder="PUDONG">
+                        </form>
+                        <form class="ui-form float-r form-last">
+                            <label class="">IATA2</label>
+                            <input class="ui-input input-l" type="text" placeholder="无">
+                        </form>
+                    </div>
+
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s4">
+                            <label class="ui-key-start">国内/国外</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s5">
+                            <label class="">是否对外开放</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s6">
+                            <label class="">是否外籍可执行</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s9">
+                            <label class="ui-key-start">高原机场</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s7">
+                            <label class="">高高原机场</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s8">
+                            <label class="">无刹车风扇飞机</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" >
+                            <label class="ui-key-start">机场一字缩写</label>
+                            <input type="text" class="ui-input input-l">
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s10">
+                            <label class="">气象区域</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s11">
+                            <label class="ui-key-start">特殊机场</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s12">
+                            <label class="ui-key-start">所属国家/地区</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s13">
+                            <label class="ui-key-start">所属情报区</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s14">
+                            <label class="ui-key-start">使用场压</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s15">
+                            <label class="ui-key-start">是否外籍有航图</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s16">
+                            <label class="ui-key-start">无GPS飞机</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">复飞梯度</label>
+                            <input class="ui-input input-xl" type="text" placeholder="PUDONG">
+                        </form>
+                    </div>
+
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">公布运行时间</label>
+                            <input class="ui-input input-xl" type="text" placeholder="H24">
+                        </form>
+                    </div>
+                    <div class="ui-file margin-b">
+                        <span class="ui-key-start">运行特点</span>
+                        <a href="">文件名.pdf</a>
+                    </div>
+                    <div class="check-group margin-b clear">
+                        <span class="ui-key-start float-l">3PN类型</span>
+                        <form class="ui-form">
+                            <div>
+                                <input name="3PN" id="RNAV1" type="checkbox" value="RNAV1">
+                                <label  for="RNAV1" class="ui-check-label"></label>
+                                RNAV1
+                            </div>
+                            <div>
+                                <input name="3PN" id="RNP1" type="checkbox" value="RNP1">
+                                <label  for="RNP1" class="ui-check-label"></label>
+                                RNP1
+                            </div>
+                        </form>
+                    </div>
+                    <div class=" margin-b">
+                        <h3 class="title-text ui-f14">跑道信息</h3>
+                        <div class="table-thunk" id="grid"></div>
+                    </div>
+
+                    <div>
+                        <h3 class="title-text ui-f14">备注</h3>
+                        <div class="ui-texearera-thunk">
+                            <textarea class="ui-text-area"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="down-thunk">
+                <p>操作人 ：<span>鲁鹏</span></p>
+                <button class="ui-btn ui-btn-full ui-btn-wide">选用</button>
+            </div>
+        </div>
+        <div class="air-check-right float-l">
+            <div class="up-thunk margin-b">
+                <div class="basis-thunk">
+                    <h3 class="title-text margin-b ui-f14">基础数据</h3>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">AIRPORT  ID</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA">
+                        </form>
+
+                        <form class="ui-form float-l form-2">
+                            <label class="">PUBLIC/MILITARY</label>
+                            <input class="ui-input input-l" type="text" placeholder="C">
+                        </form>
+
+                        <form class="ui-form float-r form-last">
+                            <label class="">IFR</label>
+                            <input class="ui-input input-l" type="text" placeholder="Y">
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">IATA/ATA</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA－ZSSSGYIG">
+                        </form>
+
+                        <div class="ui-coordinate form-2 float-l ui-pad0">
+                            <form class="ui-form input-selece-x" id="s17">
+                                <label>纬度</label>
+                                <input type="hidden"/>
+                            </form>
+                            <form class="ui-form">
+                                <input type="text" class="ui-input input-s"/>
+                                <label>度</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>分</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>秒</label>
+                            </form>
+                        </div>
+
+                        <form class="ui-form float-r form-last ui-pad0">
+                            <label class="">机场标高</label>
+                            <input class="ui-input input-l" type="text" placeholder="Y">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">ICAO CODE(2)</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZC">
+                        </form>
+
+                        <div class="ui-coordinate form-2 float-l ui-pad0">
+                            <form class="ui-form input-selece-x" id="s18">
+                                <label>经度</label>
+                                <input type="hidden"/>
+                            </form>
+                            <form class="ui-form">
+                                <input type="text" class="ui-input input-s"/>
+                                <label>度</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>分</label>
+                                <input type="text" class="ui-input input-s"/>
+                                <label>秒</label>
+                            </form>
+                        </div>
+
+                        <form class="ui-form float-r form-last ">
+                            <label class="">磁差</label>
+                            <input class="ui-input input-l" type="text" placeholder="W5.0">
+                        </form>
+                    </div>
+
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">时区</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA">
+                        </form>
+                        <form class="ui-form float-l form-2 ui-pad0">
+                            <label class="">TRANS ALTITUDE</label>
+                            <input class="ui-input input-l" type="text" placeholder="9800">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">夏令时</label>
+                            <input class="ui-input input-l" type="text" placeholder="N">
+                        </form>
+                        <form class="ui-form float-l form-2 ui-pad0">
+                            <label class="">TRANS LEVEL</label>
+                            <input class="ui-input input-l" type="text" placeholder="9800">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                    <div class=" form-size clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="ui-key-start">DATUM</label>
+                            <input class="ui-input input-l" type="text" placeholder="ZBAA">
+                        </form>
+                        <form class="ui-form float-l form-2 ui-pad0">
+                            <label class="">LONGEST RWY</label>
+                            <input class="ui-input input-l" type="text" placeholder="131100">
+                            <span>FT</span>
+                        </form>
+                    </div>
+                </div>
+                <div class="client-thunk">
+                    <h3 class="title-text margin-b ui-f14">客户化数据</h3>
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">机场中文名</label>
+                            <input class="ui-input input-xl" type="text" placeholder="上海浦东">
+                        </form>
+                        <form class="ui-form float-r form-last">
+                            <label class="">LONGEST RWY</label>
+                            <input class="ui-input input-l" type="text" placeholder="131100">
+                        </form>
+                    </div>
+
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">机场英文名</label>
+                            <input class="ui-input input-xl" type="text" placeholder="PUDONG">
+                        </form>
+                        <form class="ui-form float-r form-last">
+                            <label class="">IATA2</label>
+                            <input class="ui-input input-l" type="text" placeholder="无">
+                        </form>
+                    </div>
+
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s19">
+                            <label class="ui-key-start">国内/国外</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s20">
+                            <label class="">是否对外开放</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s21">
+                            <label class="">是否外籍可执行</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s22">
+                            <label class="ui-key-start">高原机场</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s23">
+                            <label class="">高高原机场</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s24">
+                            <label class="">无刹车风扇飞机</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" >
+                            <label class="ui-key-start">机场一字缩写</label>
+                            <input type="text" class="ui-input input-l">
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s25">
+                            <label class="">气象区域</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s26">
+                            <label class="ui-key-start">特殊机场</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s27">
+                            <label class="ui-key-start">所属国家/地区</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s28">
+                            <label class="ui-key-start">所属情报区</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-r form-last input-selece-s" id="s29">
+                            <label class="ui-key-start">使用场压</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+
+                    <div class=" form-size  clear">
+                        <form class="ui-form float-l form-first input-selece-s" id="s30">
+                            <label class="ui-key-start">是否外籍有航图</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form float-l form-2 input-selece-s" id="s31">
+                            <label class="ui-key-start">无GPS飞机</label>
+                            <input type="hidden"/>
+                        </form>
+                    </div>
+
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">复飞梯度</label>
+                            <input class="ui-input input-xl" type="text" placeholder="PUDONG">
+                        </form>
+                    </div>
+
+                    <div class="form-size form-group1 clear">
+                        <form class="ui-form float-l form-first">
+                            <label class="">公布运行时间</label>
+                            <input class="ui-input input-xl" type="text" placeholder="H24">
+                        </form>
+                    </div>
+                    <div class="ui-file margin-b">
+                        <span class="ui-key-start">运行特点</span>
+                        <a href="">文件名.pdf</a>
+                    </div>
+                    <div class="check-group margin-b clear">
+                        <span class="ui-key-start float-l">3PN类型</span>
+                        <form class="ui-form">
+                            <div>
+                                <input name="3PN" id="RNAV1" type="checkbox" value="RNAV1">
+                                <label  for="RNAV1" class="ui-check-label"></label>
+                                RNAV1
+                            </div>
+                            <div>
+                                <input name="3PN" id="RNP1" type="checkbox" value="RNP1">
+                                <label  for="RNP1" class="ui-check-label"></label>
+                                RNP1
+                            </div>
+                        </form>
+                    </div>
+                    <div class=" margin-b">
+                        <h3 class="title-text ui-f14">跑道信息</h3>
+                        <div class="table-thunk" id="grid1"></div>
+                    </div>
+
+                    <div>
+                        <h3 class="title-text ui-f14">备注</h3>
+                        <div class="ui-texearera-thunk">
+                            <textarea class="ui-text-area"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="down-thunk">
+                <p>操作人 ：<span>鲁鹏</span></p>
+                <button class="ui-btn ui-btn-full ui-btn-wide">选用</button>
+            </div>
+        </div>
+        <i class="close-icon">+</i>
+    </div>
+</div>
+<script type="text/javascript" src="/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="/calculate/js/checkairport-cg.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.31.196:8132/livereload.js"></script></body>
+</html>

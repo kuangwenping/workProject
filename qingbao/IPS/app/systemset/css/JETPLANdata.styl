@@ -1,0 +1,71 @@
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+.JETPLANdata-wrap{
+  .content{
+    max-width:1440px;
+    margin:0 auto;
+  }
+
+  .search-thunk{
+    margin-bottom:30px;
+    .ui-btn{
+      margin-left:10px;
+    }
+  }
+
+  .tab-thunk{
+    .tab-btn-wrap{
+      >div{
+        float:left;
+        margin-bottom:4px;
+      }
+      border-bottom:2px solid $bg4;
+      .bui-tab{
+        overflow: hidden;
+        margin-bottom:-4px;
+        .bui-tab-item-selected{
+          background:$bg4;
+          .bui-tab-item-text{
+            color:$fc3;
+            padding:0;
+            background:none;
+          }
+        }
+      }
+      .bui-tab-item{
+        margin-right:3px;
+        float:left;
+        background:$bg6;
+        width:100px;
+        height:28px;
+        line-height:28px;
+        text-align: center;
+        border:none;
+        .bui-tab-item-text{
+          color:$ac;
+          padding:0;
+          background:none;
+        }
+      }
+      .take-time{
+        margin:0;
+        margin-top:-3px;
+      }
+      .ui-btn-wring{
+        margin-top:-3px;
+      }
+    }
+    .tab-conten{
+      padding-top:15px
+    }
+  }
+
+    .btn-group{
+      text-align center;
+      margin-top:3px;
+      .ui-btn{
+        setMar0();
+        margin:0 14px;
+      }
+    }
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 历史航路点</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/common/common.css">
+    <link rel="stylesheet" href="/calculate/css/waypointcontrast.css">
+</head>
+<body>
+<div class="waypointcontrast-wrap">
+    <!--侧板-->
+    <aside id="J-aside-panel" class="aside-panel aside-wrap">
+        <div class="query-wrap">
+            <!--查询结果-->
+            <div class="result-thunk">
+                <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+                <!--单选-->
+                <form class="ui-form radio-thunk margin-b clear">
+                    <div class="float-l">
+                        <input type="radio" name="editor"  id="currentTask">
+                        <label for="currentTask" class="radio-wrp ui-radio-as"></label>
+                        本期任务
+                    </div>
+                    <div >
+                        <input type="radio" name="editor" id="awaitEditor">
+                        <label for="awaitEditor" class="radio-wrp ui-radio-as">
+                        </label>
+                        待编辑
+                    </div>
+                    <div class="float-r">
+                        <input type="radio" name="editor" id="yetEditor">
+                        <label for="yetEditor" class="radio-wrp  ui-radio-as">
+                        </label>
+                        已编辑
+                    </div>
+                </form>
+                <!--结果跳转-->
+                <ul class="result-list query-result-wrap">
+                    <li class="result-list-item active clear ui-f12">
+                        <span class="num float-l">1</span>
+                        <span class="at">航路1</span>
+                        <span class="at">数据变化</span>
+                        <span class="at float-r">412</span>
+                    </li>
+
+                    <li class="result-list-item clear ui-f12">
+                        <span class="num float-l">1</span>
+                        <span class="at">航路1</span>
+                        <span class="at">数据变化</span>
+                        <span class="at float-r">412</span>
+                    </li>
+
+                    <li class="result-list-item clear ui-f12">
+                        <span class="num float-l">1</span>
+                        <span class="at">航路1</span>
+                        <span class="at">数据变化</span>
+                        <span class="at float-r">412</span>
+                    </li>
+                    <li class="result-list-item clear ui-f12">
+                        <span class="num float-l">1</span>
+                        <span class="at">航路1</span>
+                        <span class="at">数据变化</span>
+                        <span class="at float-r">412</span>
+                    </li>
+                </ul>
+                <div id="bar" class="page-thunk"></div>
+            </div>
+        </div>
+    </aside>
+    <section id="J-content" class="content">
+        <div class="content-wrap">
+            <div class="form-group-thunk search-thunk clear">
+                <form class="ui-form ui-form-unit float-l">
+                    <label  >航路点名</label>
+                    <input class="ui-input" type="text"/>
+                </form>
+                <form class="ui-form ui-coordinate float-l" id="s15">
+                    <label>ICAO区域代码</label>
+                    <input type="hidden"/>
+                </form>
+                <form class="ui-form ui-form-unit float-l" id="s14">
+                    <label>类型</label>
+                    <input type="hidden"/>
+                </form>
+                <a class="ui-btn ui-btn-search ui-btn-wide float-r">查询上一期</a>
+            </div>
+            <div class="form-group-thunk">
+                <div class="form-group1 clear">
+                    <h3 class="margin-b ui-f14">基础数据</h3>
+                    <form class="ui-form ui-form-unit float-l">
+                        <label>WAYPOINT ID</label>
+                        <input type="text" class="ui-input">
+                    </form>
+                    <div class="ui-coordinate float-l">
+                        <form class="ui-form " id="s5">
+                            <label>维度</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form">
+                            <input type="text" class="ui-input">
+                            <label>度</label>
+                            <input type="text" class="ui-input">
+                            <label>分</label>
+                        </form>
+                        <span>N32353950</span>
+                    </div>
+
+                    <form class="ui-form ui-form-unit float-l">
+                        <label>磁差</label>
+                        <input type="text" class="ui-input">
+                    </form>
+                    <form class="ui-form ui-form-unit float-r">
+                        <label>REGION</label>
+                        <input type="text" class="ui-input">
+                    </form>
+                </div>
+                <div class="form-group2 clear">
+                    <form class="ui-form ui-form-unit float-l">
+                        <label>ICAO CODE(2)</label>
+                        <input type="text" class="ui-input">
+                    </form>
+                    <div class="ui-coordinate float-l">
+                        <form class="ui-form " id="s6">
+                            <label>维度</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form">
+                            <input type="text" class="ui-input">
+                            <label>度</label>
+                            <input type="text" class="ui-input">
+                            <label>分</label>
+                        </form>
+                        <span>N32353950</span>
+                    </div>
+
+                    <form class="ui-form ui-form-unit float-l">
+                        <label>DATUM</label>
+                        <input type="text" class="ui-input">
+                    </form>
+                    <form class="ui-form ui-form-unit float-r">
+                        <label>WPT TYPE </label>
+                        <input type="text" class="ui-input">
+                    </form>
+                </div>
+                <div class="form-group3 clear">
+                    <form class="ui-form ui-form-unit  float-l" id="s7">
+                        <label>类型</label>
+                        <input type="hidden"/>
+                    </form>
+                    <div class="ui-coordinate float-l">
+                        <form class="ui-form " id="s8">
+                            <label>DME纬度</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form">
+                            <input type="text" class="ui-input">
+                            <label>度</label>
+                            <input type="text" class="ui-input">
+                            <label>分</label>
+                        </form>
+                        <span>N32353950</span>
+                    </div>
+
+                    <form class="ui-form ui-form-unit float-l">
+                        <label>NAME</label>
+                        <input type="text" class="ui-input">
+                    </form>
+                    <form class="ui-form ui-form-unit float-r">
+                        <label>WPT USAGE </label>
+                        <input type="text" class="ui-input">
+                    </form>
+                </div>
+                <div class="form-group4 clear">
+                    <form class="ui-form ui-form-unit  float-l">
+                        <label>频率 </label>
+                        <input type="text" class="ui-input">
+                        <span>MHZ</span>
+                    </form>
+                    <div class="ui-coordinate float-l">
+                        <form class="ui-form " id="s9">
+                            <label>DME纬度</label>
+                            <input type="hidden"/>
+                        </form>
+                        <form class="ui-form">
+                            <input type="text" class="ui-input">
+                            <label>度</label>
+                            <input type="text" class="ui-input">
+                            <label>分</label>
+                        </form>
+                        <span>N32353950</span>
+                    </div>
+                    <form class="ui-form ui-form-unit float-l" id="s10">
+                        <label>过渡数据 <span class="ui-fac">(1701)</span></label>
+                        <input type="hidden"/>
+                    </form>
+                </div>
+            </div>
+            <!--客户化数据-->
+            <div class="client-data-thunk">
+                <h3 class="margin-b ui-f14">客户化数据</h3>
+                <div class="form-group clear">
+                    <form class="ui-form float-l" id="s11">
+                        <label>对外开放点</label>
+                        <input type="hidden"/>
+                    </form>
+                    <form class="ui-form  float-l" id="s12">
+                        <label>米制英制转换点 </label>
+                        <input type="hidden"/>
+                    </form>
+                    <form class="ui-form  float-l" id="s13">
+                        <label>出入境点</label>
+                        <input type="hidden"/>
+                    </form>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="btn-group">
+                <a class="ui-btn ui-btn-full ui-btn-wide">编辑</a>
+                <a class="ui-btn ui-btn-full ui-btn-wide">提交</a>
+                <a class="ui-btn ui-btn-full ui-btn-wide float-r">保存数据</a>
+                <a class="ui-btn ui-btn-empty ui-btn-wide float-r">删除数据</a>
+            </div>
+            <!--修改记录-->
+            <div class="amend-record clear">
+                <a class="ui-f12 float-l">修改记录</a>
+                <a class="ui-f12 float-r">更多></a>
+            </div>
+            <ul>
+                <li class="ellipsis">2017-03-16  许锻  修改了 ZBAA 12月温度为10℃</li>
+            </ul>
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="/calculate/js/waypointcontrast-cg.js"></script>
+</body>
+</html>

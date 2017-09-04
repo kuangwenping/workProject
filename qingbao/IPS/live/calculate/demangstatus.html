@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>需求状态查询</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/common/common.css">
+    <link rel="stylesheet" href="/calculate/css/demangstatus.css" type="text/css"/>
+</head>
+<body>
+<div class="demangstatus-wrap">
+    <div class="content-wrap">
+        <!--查询-->
+        <div class="search-chunk">
+            <form class="ui-form">
+                <label class="ui-f12" >机场1</label>
+                <input  class="ui-f14 ui-input" type="text" placeholder="ATOM"/>
+            </form>
+            <form class="ui-form">
+                <label class="ui-f12" >机场2</label>
+                <input  class="ui-f14 ui-input" type="text" placeholder="BBGJ"/>
+            </form>
+            <a class="ui-btn ui-btn-search ui-btn-wide">
+                <i class="ui-icon ui-icon-search"></i>
+                查询
+            </a>
+        </div>
+
+        <!--表格-->
+        <div class="table-thunk" id="remangResult"></div>
+        <!--分页-->
+        <div class="pages-thunk clear" id="bar"></div>
+    </div>
+
+</div>
+<script type="text/javascript" src="/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/bui.js"></script>
+<script type="text/javascript" src="/calculate/js/demangstatus-cg.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.31.196:8132/livereload.js"></script></body>
+</html>

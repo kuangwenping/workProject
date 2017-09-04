@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import "var";
+//bg
+sbg($url){
+  background: url($url) no-repeat center;
+  background-size: auto 100%;
+}
+
+//最大宽度
+maxWidth($w){
+  max-width:($w)px;
+  margin:0 auto;
+}
+
+//头尾padding设0
+setPad0(){
+  &:first-child{
+    padding-left:0;
+  }
+  &:last-child{
+    padding-right:0;
+  }
+}
+
+//头尾margin设0
+setMar0(){
+  &:first-child{
+    margin-left:0;
+  }
+  &:last-child{
+    margin-right:0;
+  }
+}
+
+//伪类子元素添加内容
+addWC($C){
+  content:$C;
+  display: inline-block;
+  vertical-align middle;
+}
+
+//居中
+center(){
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+}

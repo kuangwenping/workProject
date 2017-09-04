@@ -1,0 +1,128 @@
+//@import "../../assets/css/common/common";
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+
+.airportmaintain-wrap{
+  /*左侧搜索*/
+  .aside-wrap{
+    padding-top:18px;
+    //查询结果列表
+    .query-result-wrap{
+      top:160px;
+      li.active{
+        .version-num{
+          color:$ac1;
+        }
+        .del-btn{
+          display:none;
+        }
+      }
+      li{
+        height:166px;
+        position:relative;
+        padding-top:10px;
+        padding-bottom:10px;
+        line-height:1;
+        text-align left;
+        .del-btn{
+          position:absolute;
+          bottom:8px;
+          right:5px;
+          color:$ac1;
+          vertical-align: middle;
+          .ui-icon-del{
+            margin-right:5px;
+          }
+        }
+        .version-num{
+          color:$ac;
+        }
+        .aircraft-type{
+          .ui-val:last-child{
+            margin-left:64px;
+          }
+        }
+        .item-key-val{
+          padding-left:22px;
+          line-height:20px;
+          span{
+            vertical-align: middle;
+          }
+          .ui-key{
+            width:60px;
+            display:inline-block;
+            overflow: hidden;
+            text-align right;
+          }
+          &:nth-child(2){
+            span{
+              &:last-child{
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /*右侧内容*/
+  .content-wrap{
+    max-width: 1110px;
+    margin:0 auto;
+    padding:0 20px ;
+    .title-thunk{
+      .airport-name{
+        font-size:18px;
+        color:$ac;
+        font-weight 100;
+        margin-top:5px;
+      }
+      .ui-btn{
+        width:50px;
+        text-align center;
+        line-height:23px;
+        margin:0 7px;
+        setMar();
+      }
+    }
+
+    //结果
+    .result-thunk{
+      margin-bottom:75px;
+      .result-select{
+        padding:10px 0;
+        vertical-align: middle;
+        >p{
+          margin-top:4px;
+        }
+        .ui-form{
+          &:nth-child(2){
+            margin-left:15px;
+          }
+          &:nth-child(3){
+            margin-left:70px;
+            margin-top:4px;
+          }
+          &:nth-child(4){
+            margin-left:50px;
+          }
+        }
+      }
+      //月份选择
+      .month-select{
+        .bui-select{
+          input{
+            width:35px;
+          }
+        }
+      }
+
+    }
+
+    //按钮
+    .btn-group{
+      text-align: center;
+    }
+  }
+
+}

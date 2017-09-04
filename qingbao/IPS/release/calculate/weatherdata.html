@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 气象数据维护</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/common/common.css">
+    <link rel="stylesheet" href="/calculate/css/weatherdata.css">
+</head>
+<body>
+<div class="weather-wrap">
+    <!--侧板-->
+    <aside id="J-aside-panel" class="aside-panel aside-wrap">
+        <div class="query-wrap ">
+            <!--查询输入-->
+            <div class="query-form-chunk">
+                <a class="ui-btn ui-btn-cancel float-r ui-btn-wide ui-f14"> <i class="ui-icon ui-icon-close1"></i>取消</a>
+                <form class="ui-form">
+                    <label class="ui-f12" for="airLineName">航线名</label>
+                    <input id="airLineName" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <form class="ui-form">
+                    <label class="ui-f12" for="takeOff">起飞机场</label>
+                    <input id="takeOff" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <form class="ui-form">
+                    <label class="ui-f12" for="LandingAirport">降落机场</label>
+                    <input id="LandingAirport" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <form class="ui-form">
+                    <label class="ui-f12" for="pass">途径航路点</label>
+                    <input id="pass" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <form class="ui-form">
+                    <label class="ui-f12" for="groupName">组名</label>
+                    <input id="groupName" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <a class="ui-btn ui-btn-wide ui-btn-search">
+                    <i class="ui-icon ui-icon-search"></i>
+                    查询
+                </a>
+            </div>
+            <!--搜索-->
+            <div class="search-yard clear">
+                <form class="ui-form">
+                    <label class="ui-f14">机场四字码</label>
+                    <input  class="ui-f14 ui-input" type="text" placeholder="MAAZ"/>
+                </form>
+                <a class="ui-btn ui-btn-wide ui-btn-search float-r">
+                    <i class="ui-icon ui-icon-search"></i>
+                    查询
+                </a>
+            </div>
+            <!--查询结果-->
+            <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+
+            <ul class="result-list query-result-wrap">
+                <li class="result-list-item active clear ui-f12">
+                    <span class="air-name">ZBAA</span>
+                    <span class="air-name">上海浦东</span>
+                </li>
+                <li class="result-list-item clear ui-f12">
+                    <span class="air-name">ZBAA</span>
+                    <span class="air-name">上海浦东</span>
+                </li>
+                <li class="result-list-item clear ui-f12">
+                    <span class="air-name">ZBAA</span>
+                    <span class="air-name">上海浦东</span>
+                </li>
+                <li class="result-list-item clear ui-f12">
+                    <span class="air-name">ZBAA</span>
+                    <span class="air-name">上海浦东</span>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <section id="J-content" class="content">
+        <!--实际展示内容-->
+        <div class="content-wrap">
+           <div class="table-thunk" id="weatherdata"></div>
+            <div class="btn-group">
+                <a class="ui-btn ui-btn-full ui-btn-wide ">编辑</a>
+                <a class="ui-btn ui-btn-full ui-btn-wide ">保存</a>
+            </div>
+            <!--修改记录-->
+            <div class="amend-record clear">
+                <a class="ui-f12 float-l">修改记录</a>
+                <a class="ui-f12 float-r">更多></a>
+            </div>
+            <ul>
+                <li>2017-03-16  许锻  修改了 ZBAA 12月温度为10℃</li>
+            </ul>
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="/calculate/js/weatherdata-cg.js"></script>
+</body>
+</html>
