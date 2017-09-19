@@ -1,0 +1,1137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>校核机场</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/common/common.styl"/>
+
+    <script type="text/javascript" charset="utf-8" src="../assets/ueditor1.4.3.3/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../assets/ueditor1.4.3.3/ueditor.all.min.js"></script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="../assets/ueditor1.4.3.3/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<div class="pop-wrap">
+    <button id="optab">打开tab</button>
+    <!--不带按钮的提示-->
+    <button class="ui-btn ui-btn-full ui-btn-wide" id="Hint">提示</button>
+    <!--错误的提示-->
+    <p>错误的提示</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide" id="errorHint">提示</button>
+
+    <p>成功的提示</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide" id="succeedHint">提示</button>
+
+    <p>警告的提示</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide" id="warningHint">提示</button>
+
+    <!--带按钮的提示-->
+    <p>带按钮的提示</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide" id="delHint">删除航路点</button>
+
+    <!--修改记录-->
+    <div class="amend-record clear margin-b">
+        <a class="ui-f12 float-l">修改记录</a>
+        <a class="ui-f12 float-r" id="amendMore">更多></a>
+    </div>
+
+    <!--备件机场维护-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="prepareAirportMaintain">备降机场维护</button>
+
+    <!--进离场维护-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="enterLeaveMaintain">进离场维护</button>
+
+    <!--请选择CAT类型-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="CATType">请选择CAT类型</button>
+
+    <!--人员选中-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="personSelect">人员选择</button>
+    <!--编辑通知-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="editor">编辑通知</button>
+    <!--文件上传-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="fileLoad">文件上传</button>
+    <!--表单-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="taskEditor">任务编辑</button>
+    <!--表单-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="query">查询条件</button>
+
+    <!--计算任务进度弹框-->
+    <p>计算任务计算中</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="countTask">计算任务</button>
+
+    <p>机场性能数据维护——新增</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="newAdd">新增</button>
+    <div id="newAddContent" class="ui-pop none">
+        <div class="select-thunk">
+            <form class="ui-form margin-b">
+                <label for="">机场四字码</label>
+                <input type="text" class="ui-input"/>
+            </form>
+            <p class="margin-b">计算条件选择：</p>
+            <div class="item-key-val">
+                <form class="ui-form ait-type">
+                    <span class="ui-key">机型选择</span>
+                    <div class="ui-val checked-item">
+                        <input class="ui-check" name="airtype" id="airType1" type="checkbox" value="ALL">
+                        <label for="airType1" class="ui-check-label"></label>
+                        A320+WINGTIP
+                    </div>
+                    <div class="ui-val">
+                        <input class="ui-check" name="airtype" id="airType2" type="checkbox" value="ALL">
+                        <label for="airType2" class="ui-check-label"></label>
+                        A320+SHARKLETS
+                    </div>
+                </form>
+
+                <form class="ui-form">
+                    <span class="ui-key">月份</span>
+                    <label for="month" class="check ui-check-label">
+                        <input class="ui-check" id="month" type="checkbox" value="1">
+                    </label>
+                    1
+                </form>
+
+                <form class="ui-form">
+                    <span class="ui-key">跑道条件</span>
+                    <label for="condition" class="check ui-check-label">
+                        <input class="ui-check" id="condition" type="checkbox" value="DRY">
+                    </label>
+                    DRY
+                </form>
+
+                <form class="ui-form">
+                    <span class="ui-key">防冰状态</span>
+                    <label for="state1" class="check ui-check-label">
+                        <input class="ui-check" id="state1" type="checkbox" value="OFF">
+                    </label>
+                    OFF
+                </form>
+
+                <form class="ui-form">
+                    <span class="ui-key">起飞构型</span>
+                    <label for="take1" class="check ui-check-label">
+                        <input class="ui-check" id="take1" type="checkbox" value="COMF2">
+                    </label>
+                    COMF2
+                </form>
+
+                <form class="ui-form">
+                    <span class="ui-key">空调状态</span>
+                    <label for="track" class="check ui-check-label">
+                        <input class="ui-check" id="track" type="checkbox" value="18">
+                    </label>
+                    18
+                </form>
+
+                <form class="ui-form">
+                    <label class="ui-key">MEL</label>
+                    <input class="ui-input " type="text">
+                </form>
+
+                <form class="ui-form">
+                    <label class="ui-key">CDL</label>
+                    <input class="ui-input " type="text">
+                </form>
+            </div>
+        </div>
+        <!--计算结果-->
+        <div class="result-thunk margin-b">
+            <div class="result-select clear">
+                <p class="ui-key ui-f14 float-l">计算结果</p>
+                <form id="s1" class="ui-form float-l">
+                    <label>机型</label>
+                    <input type="hidden">
+                </form>
+
+                <form id="s2" class="ui-form float-l month-select">
+                    <div class="float-l form-item">
+                        <input type="radio" name="month" id="monthmin">
+                        <label for="monthmin" class="radio-wrp ui-radio"></label>
+                        <span class="ui-text-form">每月最小值</span>
+                    </div>
+                    <div class="float-l form-item">
+                        <input type="radio" name="month" id="monthselect">
+                        <label for="monthselect" class="radio-wrp ui-radio"></label>
+                        <span class="ui-text-form">月份</span>
+                    </div>
+                    <input type="hidden">
+                </form>
+            </div>
+            <div class="table-thunk margin-b" id="detailsData"></div>
+            <div class="info-thunk"><p>维护人：<span>短短</span></p>
+                <p>日期：<span>2017-12-3</span></p></div>
+        </div>
+
+        <div class="btn-group clear">
+            <span class="float-l">计算进度 :<i>149/150</i></span>
+            <a class="ui-btn ui-btn-full ui-btn-wide">保存版本</a>
+            <a class="ui-btn ui-btn-full ui-btn-wide">后台计算</a>
+            <a class="ui-btn ui-btn-full ui-btn-wide">刷新结果</a>
+        </div>
+    </div>
+
+    <p>线上数据</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="changeName">更名</button>
+    <div id="changeNameContent" class="none">
+        <p class="margin-b old-name"><span>将航线名：</span>AANN-HHBB</p>
+        <form class="ui-form">
+            <span>更改为</span>
+            <input type="text" class="ui-input"/>
+        </form>
+    </div>
+    <!--航路中出现重名航路点提示-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="airditSelect">选择</button>
+    <div id="airditSelectContent" class="none">
+        <form class="ui-form">
+            <div class="form-item margin-b">
+                <input class="ui-check" id="c1" type="checkbox">
+                <label for="c1" class="ui-check-label"></label>
+                <span class="ui-text-form">AAA </span>
+            </div>
+            <div class="form-item">
+                <input class="ui-check" id="c2" type="checkbox">
+                <label for="c2" class="ui-check-label"></label>
+                <span class="ui-text-form">BBB</span>
+            </div>
+        </form>
+    </div>
+    <!--航线备降场-->
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="alternate">备降场</button>
+    <div id="alternateContent" class="none">
+        <div class="ui-pop pop-alternate-content">
+            <p class="margin-b ui-f14">航线名：<span>AZZX-ASSS</span></p>
+            <form class="ui-form margin-b">
+                <label>请输入备降机场四字码</label>
+                <input type="text" class="ui-input"/>
+            </form>
+            <ul class="airprot-case">
+                <li class="float-l">AZZZS <i class="icon-close">+</i></li>
+                <li class="float-l">AZZZS <i class="icon-close">+</i></li>
+                <li class="float-l">AZZZS <i class="icon-close">+</i></li>
+            </ul>
+        </div>
+    </div>
+
+    <p>数据入库</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="chechAirDifference">输入验证码</button>
+    <div id="DifferenceDataCt" class="none">
+        <div class="ui-content-center pop-auth-code clear">
+            <h3 class="margin-b ui-f14">即将进入数据切换!</h3>
+            <form class="ui-form margin-b float-l">
+                <label>请输入验证码</label>
+                <input type="text" class="ui-input"/>
+            </form>
+            <img src="../assets/img/row_text_Bg.png" alt="">
+        </div>
+    </div>
+    <p>航路点数据对比</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="searchUp">查询上一期</button>
+    <div id="searchUpContent" class="none">
+        <div class="ui-pop airdot-search">
+            <!--侧板-->
+            <aside id="J-aside-panel" class="aside-panel aside-wrap">
+                <div class="query-wrap">
+                    <!--查询结果-->
+                    <div class="result-thunk">
+                        <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+                        <!--结果跳转-->
+                        <ul class="result-list query-result-wrap">
+                            <li class="result-list-item active clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+
+                            <li class="result-list-item clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+
+                            <li class="result-list-item clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+                            <li class="result-list-item clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+                        </ul>
+                        <div id="bar" class="page-thunk"></div>
+                    </div>
+                </div>
+            </aside>
+            <section id="J-content" class="content">
+                <div class="content-wrap">
+                    <div class="form-group-thunk">
+                        <h3 class="margin-b ui-f14">基础数据</h3>
+                        <div class="form-group clear">
+                            <form class="ui-form form-first float-l">
+                                <label class="ui-key-start">WAYPOINT ID</label>
+                                <input type="text" class="ui-input input-m">
+                            </form>
+                            <div class="ui-coordinate float-l">
+                                <form class="ui-form " id="s5">
+                                    <label>维度</label>
+                                    <input type="hidden"/>
+                                </form>
+                                <form class="ui-form">
+                                    <input type="text" class="ui-input">
+                                    <label>度</label>
+                                    <input type="text" class="ui-input">
+                                    <label>分</label>
+                                </form>
+                                <span>N32353950</span>
+                            </div>
+
+                            <form class="ui-form form-2 float-l">
+                                <label>磁差</label>
+                                <input type="text" class="ui-input input-m">
+                            </form>
+                            <form class="ui-form form-last float-r">
+                                <label>REGION</label>
+                                <input type="text" class="ui-input input-m  ">
+                            </form>
+                        </div>
+                        <div class="form-group clear">
+                            <form class="ui-form form-first  float-l">
+                                <label>ICAO CODE(2)</label>
+                                <input type="text" class="ui-input  input-m">
+                            </form>
+                            <div class="ui-coordinate float-l">
+                                <form class="ui-form " id="s6">
+                                    <label>维度</label>
+                                    <input type="hidden"/>
+                                </form>
+                                <form class="ui-form">
+                                    <input type="text" class="ui-input">
+                                    <label>度</label>
+                                    <input type="text" class="ui-input">
+                                    <label>分</label>
+                                </form>
+                                <span>N32353950</span>
+                            </div>
+
+                            <form class="ui-form form-2 float-l">
+                                <label>DATUM</label>
+                                <input type="text" class="ui-input  input-m">
+                            </form>
+                            <form class="ui-form form-last float-r">
+                                <label>WPT TYPE </label>
+                                <input type="text" class="ui-input  input-m">
+                            </form>
+                        </div>
+                        <div class="form-group clear">
+                            <form class="ui-form form-first input-selece-m float-l" id="s7">
+                                <label>类型</label>
+                                <input type="hidden"/>
+                            </form>
+                            <div class="ui-coordinate float-l">
+                                <form class="ui-form " id="s8">
+                                    <label>维度</label>
+                                    <input type="hidden"/>
+                                </form>
+                                <form class="ui-form">
+                                    <input type="text" class="ui-input">
+                                    <label>度</label>
+                                    <input type="text" class="ui-input">
+                                    <label>分</label>
+                                </form>
+                                <span>N32353950</span>
+                            </div>
+
+                            <form class="ui-form form-2 float-l">
+                                <label>NAME</label>
+                                <input type="text" class="ui-input  input-m">
+                            </form>
+                            <form class="ui-form form-last float-r">
+                                <label>WPT USAGE </label>
+                                <input type="text" class="ui-input  input-m">
+                            </form>
+                        </div>
+                        <div class="form-group form-group1 clear">
+                            <form class="ui-form form-first ui-pad0  float-l">
+                                <label>频率 </label>
+                                <input type="text" class="ui-input  input-s">
+                                <span>MHZ</span>
+                            </form>
+                            <div class="ui-coordinate float-l">
+                                <form class="ui-form " id="s9">
+                                    <label>维度</label>
+                                    <input type="hidden"/>
+                                </form>
+                                <form class="ui-form">
+                                    <input type="text" class="ui-input">
+                                    <label>度</label>
+                                    <input type="text" class="ui-input">
+                                    <label>分</label>
+                                </form>
+                                <span>N32353950</span>
+                            </div>
+
+                            <form class="ui-form form-last float-r input-selece-m" id="s10">
+                                <label>过渡数据 <span class="ui-fac">(1701)</span></label>
+                                <input type="hidden"/>
+                            </form>
+                        </div>
+                    </div>
+                    <!--客户化数据-->
+                    <div class="client-data-thunk">
+                        <h3 class="margin-b ui-f14">客户化数据</h3>
+                        <div class="form-group clear">
+                            <form class="ui-form float-l" id="s11">
+                                <label>对外开放点</label>
+                                <input type="hidden"/>
+                            </form>
+                            <form class="ui-form  float-l" id="s12">
+                                <label>米制英制转换点 </label>
+                                <input type="hidden"/>
+                            </form>
+                            <form class="ui-form  float-l" id="s13">
+                                <label>出入境点</label>
+                                <input type="hidden"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <p>航路数据对比</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="airrouteSearchUp">查询上一期</button>
+    <div id="airrouteSearchUpContent" class="none">
+        <div class="ui-pop airroute-search">
+            <!--侧板-->
+            <aside id="J-aside-panel" class="aside-panel aside-wrap">
+                <div class="query-wrap">
+                    <!--查询结果-->
+                    <div class="result-thunk">
+                        <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+                        <!--结果跳转-->
+                        <ul class="result-list query-result-wrap">
+                            <li class="result-list-item active clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+
+                            <li class="result-list-item clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+
+                            <li class="result-list-item clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+                            <li class="result-list-item clear ui-f12">
+                                <span class="num float-l">1</span>
+                                <span class="at">航路1</span>
+                                <span class="at">数据变化</span>
+                                <span class="at float-r">412</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="bar" class="pages-thunk"></div>
+                </div>
+            </aside>
+            <section id="J-content" class="content">
+                <div class="content-wrap">
+                    <div class="table-thunk margin-b" id="grid"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <p>机场数据对比</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="airprotSearchUp">查询上一期</button>
+    <div id="airprotSearchUpContent" class="none">
+        <div class="ui-pop pop-airroute-search">
+            <!--侧板-->
+            <aside id="J-aside-panel" class="aside-panel aside-wrap">
+                <div class="query-wrap">
+                    <!--查询结果-->
+                    <div class="result-thunk">
+                        <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+                        <!--结果跳转-->
+                        <ul class="result-list query-result-wrap">
+                            <li class="result-list-item active clear ui-f12">
+                                <span class="at">ASPD</span>
+                                <span class="at">上海浦东</span>
+                            </li>
+
+                            <li class="result-list-item clear ui-f12">
+                                <span class="at">ASPD</span>
+                                <span class="at">上海浦东</span>
+                            </li>
+
+                            <li class="result-list-item clear ui-f12">
+                                <span class="at">ASPD</span>
+                                <span class="at">上海浦东</span>
+                            </li>
+                            <li class="result-list-item clear ui-f12">
+                                <span class="at">ASPD</span>
+                                <span class="at">上海浦东</span>
+                            </li>
+                        </ul>
+                        <div id="bar" class="pages-thunk aside-pages"></div>
+                    </div>
+                </div>
+            </aside>
+            <section id="J-content" class="content">
+                <div class="content-wrap">
+                    <div class="head-thunk basis-data clear">
+                        <div class="float-l title-text">
+                            <p class="ui-f14">基础数据</p>
+                            <form class="ui-form">
+                                <label>数据源</label>
+                                <input class="ui-input" type="text" placeholder="454">
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <div class=" form-group clear">
+                            <form class="ui-form ui-form-first float-l">
+                                <label>AIRPORT ID</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+
+                            <form class="ui-form ui-form-w2 float-l">
+                                <label>PUBLIC/MILITARY</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+
+                            <form class="ui-form ui-form-w3 float-l">
+                                <label>IFR</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+
+                            <form class="ui-form ui-form-last float-r">
+                                <label>时区</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+
+
+                        </div>
+
+                        <div class="form-group clear">
+                            <form class="ui-form ui-form-first float-l">
+                                <label>IATA/ATA</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+                            <div class="ui-form-w2 ui-coordinate float-l pad-r0">
+                                <form class="ui-form " id="s1">
+                                    <label>维度</label>
+                                    <input type="hidden"/>
+                                </form>
+                                <form class="ui-form ">
+                                    <input type="text" class="ui-input">
+                                    <label>度</label>
+                                    <input type="text" class="ui-input">
+                                    <label>分</label>
+                                    <input type="text" class="ui-input">
+                                    <label>秒</label>
+                                </form>
+                            </div>
+
+                            <form class="ui-form ui-form-w3 float-l pad-r0">
+                                <label>机场标高</label>
+                                <input type="text" class="ui-input ui-in-m">
+                                <span>FT</span>
+                            </form>
+                            <form class="ui-form ui-form-last float-r">
+                                <label>夏令时</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+                        </div>
+
+                        <div class="form-group clear">
+                            <form class="ui-form ui-form-first  float-l">
+                                <label>ICAO CODE(2)</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+                            <div class="ui-form-w2 ui-coordinate float-l pad-r0">
+                                <form class="ui-form " id="s2">
+                                    <label>DME纬度</label>
+                                    <input type="hidden"/>
+                                </form>
+                                <form class="ui-form">
+                                    <input type="text" class="ui-input">
+                                    <label>度</label>
+                                    <input type="text" class="ui-input">
+                                    <label>分</label>
+                                    <input type="text" class="ui-input">
+                                    <label>秒</label>
+                                </form>
+                            </div>
+
+                            <form class="ui-form ui-form-w3 float-l">
+                                <label>磁差</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+                            <form class="ui-form ui-form-last float-r">
+                                <label>DATUM</label>
+                                <input type="text" class="ui-input ui-in-m">
+                            </form>
+                        </div>
+
+                        <div class="form-group clear">
+                            <form class="ui-form  ui-form-w1  float-l pad-r0">
+                                <label>TRANS LEVEL</label>
+                                <input type="text" class="ui-input ui-in-m">
+                                <span>FT</span>
+                            </form>
+                            <form class="ui-form ui-form-w2 float-l pad-r0">
+                                <label>TRANS ALTITUDE</label>
+                                <input type="text" class="ui-input ui-in-m">
+                                <span>FT</span>
+                            </form>
+                            <form class="ui-form  ui-form-last float-r pad-r0">
+                                <label>LONGEST RWY</label>
+                                <input type="text" class="ui-input ui-in-m">
+                                <span>FT</span>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--客户化数据-->
+                    <div class="client-data">
+                        <h3 class="margin-b ui-f14">客户化数据</h3>
+                        <div class="form-group1 form-group clear">
+                            <form class="ui-form float-l ui-form-first">
+                                <label>机场中文名</label>
+                                <input class="ui-input ui-in-l" type="text" placeholder="454">
+                            </form>
+
+                            <form class="ui-form float-l ui-form-m ui-form-w3">
+                                <label>机场简称</label>
+                                <input class="ui-input ui-in-m" type="text" placeholder="454">
+                            </form>
+
+                            <form class="ui-form  ui-form-last float-r ui-in-s" id="s3">
+                                <label>气象区域</label>
+                                <input type="hidden"/>
+                            </form>
+                        </div>
+                        <div class="form-group1 form-group clear">
+                            <form class="ui-form float-l ui-form-first">
+                                <label>机场英文名</label>
+                                <input class="ui-input ui-in-l" type="text" placeholder="454">
+                            </form>
+
+                            <form class="ui-form ui-form-w3 float-l">
+                                <label>IATA2</label>
+                                <input class="ui-input ui-in-m" type="text" placeholder="454">
+                            </form>
+
+                            <form class="ui-form  float-r ui-form-last ui-in-s" id="s28">
+                                <label>特殊机场</label>
+                                <input type="hidden"/>
+                            </form>
+                        </div>
+                        <div class="form-group2 form-group clear">
+                            <form class="ui-form  float-l ui-form-first ui-in-s" id="s31">
+                                <label>高原机场</label>
+                                <input type="hidden"/>
+                            </form>
+
+                            <form class="ui-form  float-l ui-form-w2 ui-in-s" id="s30">
+                                <label>是否对外开放</label>
+                                <input type="hidden"/>
+                            </form>
+
+                            <form class="ui-form  float-l ui-form-w3 ui-in-s" id="s29">
+                                <label>是否外籍可执行</label>
+                                <input type="hidden"/>
+                            </form>
+
+                            <form class="ui-form ui-form-last float-r">
+                                <label>所属情报区</label>
+                                <input class="ui-input ui-in-m" type="text" placeholder="454">
+                            </form>
+                        </div>
+                        <div class="form-group form-group2">
+                            <form class="ui-form ui-form-first float-l ui-in-s" id="s27">
+                                <label>限重航线</label>
+                                <input type="hidden"/>
+                            </form>
+
+                            <form class="ui-form  ui-form-w3 float-l  ui-in-s" id="s4">
+                                <label>所属国家/地区</label>
+                                <input type="hidden"/>
+                            </form>
+
+                            <form class="ui-form  float-l ui-form-w3 ui-in-s" id="s26">
+                                <label>是否外籍有航图</label>
+                                <input type="hidden"/>
+                            </form>
+
+                            <form class="ui-form ui-form-last ui-form-last float-r">
+                                <label>机场一字缩写</label>
+                                <input class="ui-input ui-in-m" type="text" placeholder="454">
+                            </form>
+                        </div>
+                        <div class="form-group1 form-group">
+                            <form class="ui-form  ui-form-first">
+                                <label>机场英文名</label>
+                                <input class="ui-input ui-in-l" type="text" placeholder="454">
+                            </form>
+                        </div>
+                        <div class="form-group1 form-group">
+                            <form class="ui-form  ui-form-first">
+                                <label>机场英文名</label>
+                                <input class="ui-input ui-in-l" type="text" placeholder="454">
+                            </form>
+                        </div>
+                        <div class="trait-thunk margin-b">
+                            <span class="ui-key-first">运行特点</span>
+                            <a class="ui-btn ui-btn-empty ui-btn-narrow">上传附件</a>
+                            <p class="ui-hint">文件名文件 <i class="ips-ui-icon ui-icon-close"></i></p>
+                        </div>
+                        <!--选择-->
+                        <div class="select-thunk">
+                            <div class="item-key-val clear">
+                                <span class="ui-key-first float-l">BPN种类</span>
+                                <form class="ui-form ait-type">
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                </form>
+                                <form class="ui-form ">
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                    <div class="ui-val">
+                                        <label for="RNAV1" class="check ui-check-label">
+                                            <input class="ui-check" id="RNAV1" type="checkbox" value="RNAV 1">
+                                        </label>
+                                        RNAV 1
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--跑道信息-->
+                        <div class="track-info margin-b clear">
+                            <span class="ui-key-first float-l">跑到信息</span>
+                            <div class="table-thunk " id="grid"></div>
+                        </div>
+                        <!--备注-->
+                        <div class="remark-form">
+                            <span class="ui-key-first float-l">备注</span>
+                            <div>
+                                <textarea class="ui-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--&lt;!&ndash;按钮组&ndash;&gt;
+                    <div class="clear btn-group">
+                        <div class="left-group float-l">
+                            <a id="standbyAirport" class="ui-btn ui-btn-wide float-l ui-btn-empty">航线备降场</a>
+                            <a class="ui-btn ui-btn-wide float-l ui-btn-empty">查看航路点详情</a>
+                        </div>
+                        <div class="center-group">
+                            <a class="ui-btn ui-btn-wide float-l ui-btn-full">编辑</a>
+                            <a class="ui-btn ui-btn-wide float-l ui-btn-full">提交</a>
+                        </div>
+                        <div class="right-group float-r">
+                            <a class="ui-btn ui-btn-wide float-l ui-btn-empty">机场</a>
+                        </div>
+                    </div>-->
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <p>航线设置</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="airlineSet">航线设置</button>
+    <div id="airlineSetContent" class="none">
+        <div class="ui-pop pop-airline-set">
+            <div class="form-group margin-b clear">
+                <form class="ui-form  float-l ui-form-first ui-in-s" id="s25">
+                    <label>航路代码1</label>
+                    <input type="hidden"/>
+                </form>
+                <form class="ui-form float-r ui-form-last">
+                    <label>航路说明</label>
+                    <input class="ui-input ui-in-l" type="text" placeholder="454">
+                </form>
+            </div>
+            <div class="form-group margin-b clear">
+                <form class="ui-form  float-l ui-form-first ui-in-s" id="s24">
+                    <label>航路代码1</label>
+                    <input type="hidden"/>
+                </form>
+                <form class="ui-form float-r ui-form-last">
+                    <label>航路说明</label>
+                    <input class="ui-input ui-in-l" type="text" placeholder="454">
+                </form>
+            </div>
+            <div class="form-group margin-b clear">
+                <form class="ui-form float-l ui-form-first ui-in-s" id="s23">
+                    <label>航路代码1</label>
+                    <input type="hidden"/>
+                </form>
+                <form class="ui-form float-r ui-form-last">
+                    <label>航路说明</label>
+                    <input class="ui-input ui-in-l" type="text" placeholder="454">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <p>差异数据</p>
+    <button class="ui-btn ui-btn-full ui-btn-wide margin-b" id="differenceDataBtn">航线设置</button>
+    <div class="none" id="differenceData">
+        <div class="pop-difference-data">
+            <h3><span>操作</span><span>操作人</span></h3>
+            <ul>
+                <li><span>未操作</span><span>许锻</span></li>
+            </ul>
+        </div>
+    </div>
+    <!--表格-->
+    <div class="table-thunk margin-b" id="grid">
+        <div class="bui-grid bui-simple-list bui-grid-width bui-grid-border olde bui-grid-strip bui-grid-hover bui-simple-list-hover"
+             aria-disabled="false" aria-pressed="false" style="width: 100%;">
+            <div class="bui-grid-tbar" style="display:none"></div>
+            <div class="bui-grid-header-container">
+                <div class="bui-grid-header bui-grid-header-hover" aria-disabled="false" style="width: 100%;">
+                    <table cellspacing="0" class="bui-grid-table" cellpadding="0">
+                        <thead>
+                        <tr>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 9.5%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">类别</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd bui-grid-hd-hover" aria-disabled="false" style="width: 19.5%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">项目名称</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 7.2%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">项目编号</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 7.2%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">单位重量</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 7.2%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">数量</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 7.2%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">总重量</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 7.2%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">力臂</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 7.2%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">力矩</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 15%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">备注</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd" aria-disabled="false" style="width: 12.8%;">
+                                <div class="bui-grid-hd-inner"><span class="bui-grid-hd-title">操作</span><span
+                                        class="bui-grid-sort-icon">&nbsp;</span></div>
+                            </th>
+                            <th class="bui-grid-hd-empty bui-grid-hd" aria-disabled="false">
+                                <div class="bui-grid-hd-inner"></div>
+                            </th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="bui-grid-body" style="width: 100%;">
+                <table cellspacing="0" cellpadding="0" class="bui-grid-table" style="width: 100%;">
+                    <tbody>
+                    <tr class="bui-grid-header-row">
+                        <td class=" grid-td-col1" width="9.5%" style="height:0"></td>
+                        <td class=" grid-td-col2" width="19.5%" style="height:0"></td>
+                        <td class=" grid-td-col3" width="7.2%" style="height:0"></td>
+                        <td class=" grid-td-col4" width="7.2%" style="height:0"></td>
+                        <td class=" grid-td-col5" width="7.2%" style="height:0"></td>
+                        <td class=" grid-td-col6" width="7.2%" style="height:0"></td>
+                        <td class=" grid-td-col7" width="7.2%" style="height:0"></td>
+                        <td class=" grid-td-col8" width="7.2%" style="height:0"></td>
+                        <td class=" grid-td-col9" width="15%" style="height:0"></td>
+                        <td class=" grid-td-123" width="12.8%" style="height:0"></td>
+                        <td class="bui-grid-cell bui-grid-cell-empty">&nbsp;</td>
+                    </tr>
+                    <tr class="bui-grid-row green bui-grid-row-odd">
+                        <td class="  bui-grid-cell   grid-td-col1" data-column-id="col1" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col2" data-column-id="col2" data-column-field="b">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">edd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col3" data-column-id="col3" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col4" data-column-id="col4" data-column-field="d">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""></span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col5" data-column-id="col5" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col6" data-column-id="col6" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col7" data-column-id="col7" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col8" data-column-id="col8" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col9" data-column-id="col9" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">123</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-123" data-column-id="123" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""><span
+                                    class="grid-command btn1"> <i class="ips-ui-icon ui-icon-insert-up"></i></span><span
+                                    class="grid-command "> <i class="ips-ui-icon ui-icon-insert-dw"></i></span> <span
+                                    class="grid-command btn2"><i class="ips-ui-icon ui-icon-del"></i></span></span></div>
+                        </td>
+                        <td class="bui-grid-cell bui-grid-cell-empty">&nbsp;</td>
+                    </tr>
+                    <tr class="bui-grid-row red bui-grid-row-even">
+                        <td class="  bui-grid-cell grid-td-col1" data-column-id="col1" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col2" data-column-id="col2" data-column-field="b">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">edd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col3" data-column-id="col3" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col4" data-column-id="col4" data-column-field="d">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""></span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col5" data-column-id="col5" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col6" data-column-id="col6" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col7" data-column-id="col7" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col8" data-column-id="col8" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col9" data-column-id="col9" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-123" data-column-id="123" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""><span
+                                    class="grid-command btn1"> <i class="ips-ui-icon ui-icon-insert-up"></i></span><span
+                                    class="grid-command "> <i class="ips-ui-icon ui-icon-insert-dw"></i></span> <span
+                                    class="grid-command btn2"><i class="ips-ui-icon ui-icon-del"></i></span></span></div>
+                        </td>
+                        <td class="bui-grid-cell bui-grid-cell-empty">&nbsp;</td>
+                    </tr>
+                    <tr class="bui-grid-row bui-grid-row-odd">
+                        <td class="  bui-grid-cell  grid-td-col1" data-column-id="col1" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text textgreen" title="">绿色textgreen</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell  grid-td-col2" data-column-id="col2" data-column-field="b">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""></span></div>
+                        </td>
+                        <td class="  bui-grid-cell  grid-td-col3" data-column-id="col3" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text textred" title="">红色 textred</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell  grid-td-col4" data-column-id="col4" data-column-field="d">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text forbiddenttext" title="">灰色forbiddenttext</span></div>
+                        </td>
+                        <td class="  bui-grid-cell forbiddentbg grid-td-col5" data-column-id="col5" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">1333</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell warningbg grid-td-col6" data-column-id="col6" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">1333</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col7 greenbg" data-column-id="col7" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">1333</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col8" data-column-id="col8" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">1333</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col9" data-column-id="col9" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">1333</span>
+                            </div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-123" data-column-id="123" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""><span
+                                    class="grid-command btn1"> <i class="ips-ui-icon ui-icon-insert-up"></i></span><span
+                                    class="grid-command "> <i class="ips-ui-icon ui-icon-insert-dw"></i></span> <span
+                                    class="grid-command btn2"><i class="ips-ui-icon ui-icon-del"></i></span></span></div>
+                        </td>
+                        <td class="bui-grid-cell bui-grid-cell-empty">&nbsp;</td>
+                    </tr>
+                    <tr class="bui-grid-row yellow bui-grid-row-even">
+                        <td class="  bui-grid-cell grid-td-col1" data-column-id="col1" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col2" data-column-id="col2" data-column-field="b">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">edd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col3" data-column-id="col3" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col4" data-column-id="col4" data-column-field="d">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""></span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col5" data-column-id="col5" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col6" data-column-id="col6" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col7" data-column-id="col7" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col8" data-column-id="col8" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-col9" data-column-id="col9" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title="">cdd</span></div>
+                        </td>
+                        <td class="  bui-grid-cell grid-td-123" data-column-id="123" data-column-field="a">
+                            <div class="bui-grid-cell-inner"><span class="bui-grid-cell-text " title=""><span
+                                    class="grid-command btn1"> <i class="ips-ui-icon ui-icon-insert-up"></i></span><span
+                                    class="grid-command "> <i class="ips-ui-icon ui-icon-insert-dw"></i></span> <span
+                                    class="grid-command btn2"><i class="ips-ui-icon ui-icon-del"></i></span></span></div>
+                        </td>
+                        <td class="bui-grid-cell bui-grid-cell-empty">&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="display:none" class="bui-grid-bbar"></div>
+        </div>
+    </div>
+
+
+            <div class="czy-form-item clear">
+                <label class="czy-key float-l">keyz <span class="must-sign">*</span></label>
+                <div class="par-wrap">
+                    <input type="text" class="ui-input c-w-12">
+                </div>
+            </div>
+
+            <div class="czy-form-item clear">
+                <label class="czy-key float-l">keyz</label>
+                <div class="par-wrap">
+                    <textarea class="ui-textarea c-w-12"></textarea>
+                </div>
+            </div>
+</div>
+
+    <div class="history-wrap content-wrap">
+        <form class="czy-form-thunk  clear">
+            <div class="czy-form-item col-md-4">
+                <label class="czy-key czy-f14">中文名称</label>
+                <input type="text" class="ui-input czy-val">
+            </div>
+            <div class="czy-form-item col-md-4">
+                <label class="czy-key czy-f14">英文名称</label>
+                <input type="text" class="ui-input czy-val">
+            </div>
+            <div class="czy-form-item col-md-4">
+                <label class="czy-key czy-f14">基础信息类型</label>
+                <input type="text" class="ui-input">
+            </div>
+            <div class="czy-form-item col-md-6">
+                <label class="czy-key czy-f14">英文名称</label>
+                <input type="text" class="ui-input">
+            </div>
+
+            <div class="czy-form-item col-md-6" id="s16">
+                <label class="czy-key czy-f14">基础信息类型</label>
+                <input type="hidden" class="ui-input">
+            </div>
+
+            <div class="czy-form-item calendar-space col-md-6">
+                <label class="czy-key czy-f14">实施时间</label>
+                <div class="time-input czy-val">
+                    <i class="ips-ui-icon ui-icon-calendar"></i>
+                    <input type="text" class="ui-input calendar">
+                </div>
+                <span class="ui-f12 arrive-text">-</span>
+                <div class="time-input czy-val">
+                    <i class="ips-ui-icon ui-icon-calendar"></i>
+                    <input type="text" class="ui-input calendar">
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="./pop.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+
+.historyairroute-wrap{
+  .aside-wrap{
+    .query-result-wrap{
+      li.active{
+        .air-name{
+          color:$ac1;
+        }
+      }
+      li{
+        .air-name{
+          color:$fc3;
+        }
+      }
+    }
+
+    .table-thunk{
+      .bui-grid-body{
+        max-height:515px;
+      }
+    }
+
+    .page-thunk{
+      position:absolute;
+      bottom:30px;
+      left:8px;
+      right:8px;
+    }
+  }
+  .content-wrap{
+    max-width:1168px;
+    min-width:((1168/1440)*1280)px
+    width:(1168/1440)*100%;
+    margin:0 auto;
+    padding-left:20px;
+    padding-right:20px;
+    .table-thunk {
+      margin-bottom:45px;
+      .bui-grid-body{
+        .bui-grid-table{
+          tbody{
+            tr:nth-child(2){
+              .bui-grid-cell{
+                border-top-color: $ac;
+              }
+            }
+          }
+        }
+      }
+      .bui-grid-table{
+        .bui-grid-hd-inner{
+          background:$bg6;
+        }
+        .bui-grid-hd{
+          border-color:$ac;
+        }
+      }
+      .bui-grid-body, .bui-grid-header {
+        border-right: 1px solid $ac;
+        border-left: 1px solid $ac;
+      }
+      .bui-grid-header{
+        border-top-color: $ac;
+      }
+      .bui-grid-body, .bui-grid-height .bui-grid-body .bui-grid-table{
+        border-bottom-color:$ac;
+      }
+    }
+    .btn-group{
+      text-align center;
+      a{
+        setMar0();
+        margin:0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import "var.styl"
+@import "mixin.styl"
+
+.foc-ui-container{
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-top: 30px;
+
+  .wrap-h500{
+    min-height:500px;
+  }
+
+//input聚焦
+  input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
+    border-color:$bm;
+    box-shadow:none;
+  }
+
+  .panel > .panel-header,.panel.simpel-width .panel .panel-header{
+    color:$mc;
+    background:$bg1;
+    border-color:$bm;
+  }
+
+  .bui-grid-button-bar .bui-bar-item-button button{
+    padding:0;
+    opacity :1;
+  }
+
+  .user-manage .search-btn-group{
+    margin-bottom:20px;
+  }
+
+  [class^="icon-"], [class*=" icon-"]{
+    vertical-align: middle;
+    margin-right:5px;
+  }
+
+  .icon-iconfont-save{
+    margin-top:0;
+  }
+
+  /*.bui-tree-list .x-tree-elbow-dir, .bui-tree-grid .x-tree-elbow-dir{
+    display:none;
+  }
+  .bui-tree-item-expanded .x-tree-elbow-dir, .bui-grid-row-expanded .x-tree-elbow-dir{
+    display:none;
+  }*/
+
+  .ui-btn-narrow{
+    width:75px;
+  }
+  .simpel-width{
+    padding:0 18px;
+  }
+  textarea.input-normal.ui-textarea{
+    width:100%;
+  }
+
+  .panel-container .bui-grid.bui-grid-border.bui-grid-strip .bui-grid-body{
+    height: auto;
+    max-height: 300px;
+  }
+}

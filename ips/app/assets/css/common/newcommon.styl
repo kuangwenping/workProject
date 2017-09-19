@@ -1,0 +1,261 @@
+button{
+  background:none;
+}
+
+//文件上传按钮手型
+input[type="file"]{
+  cursor pointer;
+}
+
+//弹框内表格   大
+.pop-table-l{
+  .bui-grid-body{
+    max-height:436px;
+  }
+}
+
+.pop-table-m{
+  .bui-grid-body{
+    max-height:407px;
+  }
+}
+
+.pop-table-h260{
+  .bui-grid-body{
+    max-height:260px;
+  }
+}
+
+.table-h415{
+  .bui-grid-body{
+    max-height:415px;
+  }
+}
+
+//表格编辑框
+.bui-form-field{
+  input{
+    height: 31px;
+  }
+}
+
+//添加按钮
+.table-add-btn{
+  .ui-icon-add{
+    font-size:25px;
+    color:$mc;
+  }
+}
+
+  //
+.must-sign{
+  color:$ac1;
+  vertical-align: middle;
+  margin-left:5px;
+}
+
+.par-wrap{
+  margin-left:90px;
+}
+  //表单模块
+.czy-form-item{
+  font-size:0;
+  margin-bottom:10px;
+  .czy-key{
+    margin-right:10px;
+    line-height:28px;
+    font-size:12px;
+    width:80px;
+    display:inline-block;
+    text-align :right;
+    vertical-align middle;
+  }
+  .czy-val{
+    font-size:12px;
+    vertical-align middle;
+  }
+}
+
+textarea{
+  border:1px solid mbd;
+  padding:10px 15px;
+  background: mcb;
+  resize:none;
+  font-size:12px;
+}
+
+  //赞满
+.c-w-12{
+  width:100% !important;
+}
+
+//时间处理
+.calendar-space{
+  .calendar{
+    width:110px;
+    padding-left:30px;
+  }
+  .arrive-text{
+    display:inline-block;
+    margin-left:5px;
+    margin-right:5px;
+    vertical-align :middle;
+  }
+}
+.time-input{
+  display inline-block;
+  position:relative;
+  .ui-icon-calendar{
+    position absolute;
+    top:8px;
+    left:8px;
+  }
+}
+
+  //左对其
+.content-center{
+  text-align center;
+}
+  //→对其
+.content-right{
+  text-align right;
+}
+  //行内块
+.line-block{
+  display:inline-block;
+}
+
+.block-middle{
+  vertical-align: middle;
+}
+  //清楚浮动
+.float-n{
+  float:none;
+}
+//树
+.bui-tree-list{
+  position:relative;
+  z-index 10;
+}
+//垫片
+.gasket1{
+  display :inline-block;
+  width:30px;
+}
+
+.h-40{
+  height:40px;
+}
+.h-22{
+  height:22px;
+  line-height 22px;
+}
+
+.position-r{
+  position:relative;
+}
+.position-a{
+  position:absolute;
+}
+
+
+.error-hint{
+  position:absolute;
+  display block;
+  top:7px;
+  right:0px;
+  z-index :1;
+}
+
+.bottom-alert{
+  .error-hint{
+    top:30px;
+    right:20px;
+  }
+}
+.right0-alert{
+  .error-hint{
+    right:0;
+  }
+}
+
+.right_20-alert{
+  .error-hint{
+    right:-20px;
+  }
+}
+
+.bui-form-field.bui-form-field-error{
+  border-color:$ac1;
+  border-style:dashed;
+}
+.bui-form-field-error+.bui-select {
+  .x-icon-normal{
+    border-color: #f85a54;
+    border-style: dashed;
+  }
+  .bui-form-field,.bui-select-input{
+    border-color: #f85a54;
+    border-style: dashed;
+    border-right-width: 0px;
+  }
+}
+.x-icon-error{
+  cursor pointer;
+}
+.tips-warning{
+  background:$ac4;
+  z-index 2;
+}
+
+.tips[class^="x-align-top"] .x-align-arrow-inner, .tips[class*=" x-align-top"] .x-align-arrow-inner{
+  border-top-color:$ac4;
+}
+
+.hint-error{
+  color:$ac1;
+}
+
+.textred{
+  color:$ac1;
+}
+.textwhite {
+  color:$fc3;
+}
+
+
+
+
+/*王钺问题解决*/
+
+.table-thunk .text-success,.text-success{
+  &:hover{
+   text-decoration:underline; 
+  }
+  cursor: pointer;
+  text-decoration: none;color: $ac !important;
+}
+
+.table-thunk .text-disable,.text-disable{
+  &:hover{
+   text-decoration:underline; 
+  }
+  cursor: pointer;
+  text-decoration: none $fc1 !important;
+  color: $fc1;
+}
+
+.table-thunk .text-change,.text-change{ 
+  &:hover{
+    text-decoration:underline; 
+  }
+  cursor: pointer;
+  text-decoration: none;color: $ac1 !important;
+}
+
+
+.lp-ext-mask, .lp-el-mask, .bui-ext-mask{position:fixed;}
+
+.mar-l0{margin-left:0;}
+
+.h-20{height:20px;}

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 航线任务列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/common/common.styl">
+</head>
+<body>
+<div class="airroutetask-wrap">
+    <!--侧板-->
+    <aside id="J-aside-panel" class="aside-panel aside-wrap">
+
+        <div id="J-resultWrp" class="result-thunk">
+            <ul class="result-list query-result-wrap">
+                <li class="result-list-item finish active clear ui-f12">
+                    <span class="air-name">线上库</span>
+                    -
+                    <span class="air-name">完成</span>
+                </li>
+                <li class="result-list-item unfinish clear ui-f12">
+                    <span class="air-name">线上库</span>
+                    -
+                    <span class="air-name">未完成</span>
+                </li>
+                <li class="result-list-item finish clear ui-f12">
+                    <span class="air-name">线上库</span>
+                    -
+                    <span class="air-name">完成</span>
+                </li>
+                <li class="result-list-item finish clear ui-f12">
+                    <span class="air-name">线上库</span>
+                    -
+                    <span class="air-name">完成</span>
+                </li>
+            </ul>
+
+        </div>
+    </aside>
+
+    <section id="J-content" class="content">
+        <div class="content-wrap weigh-wrap">
+            <!--搜索-->
+            <div class="search-wap clear">
+                <a class="ui-btn ui-btn-empty float-r ui-btn-narrow">批量删除</a>
+            </div>
+            <!--结果展示-->
+            <div class="inform-table-wap">
+                <!--表格-->
+                <div class="table-thunk table-thunk-check" id="grid"></div>
+                <!--分页-->
+                <div class="float-r pages-thunk" id="bar"></div>
+            </div>
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="js/airroutetask-cg.js"></script>
+</body>
+</html>

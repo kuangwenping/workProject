@@ -1,0 +1,205 @@
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+
+.airportdataContrast-wrap{
+  .aside-wrap{
+    .result-thunk{
+      top:35px;
+      .radio-thunk{
+        text-align center;
+        padding:0 8px;
+        >div{
+          display:inline-block;
+          color:$fc3;
+        }
+      }
+      .result-list{
+        li.active{
+          padding-right:28px;
+          .num{
+            background:$ac1;
+          }
+          .at{
+            color:$ac1;
+          }
+        }
+        li{
+          padding-left:20px;
+          padding-right:20px;
+          text-align center;
+          span{
+            setMar0();
+            display:inline-block;
+            margin:0 14px;
+          }
+          .num{
+            background:$ac;
+            height:16px;
+            width:25px;
+            text-align center;
+            line-height:16px;
+            color:$fc3;
+            margin-top:12px;
+            border-radius :8px;
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    .ui-key-first{
+      width:90px;
+      padding-right:8px;
+      display:inline-block;
+      vertical-align middle;
+      text-align right;
+    }
+    .head-thunk{
+      margin-bottom:10px;
+      .title-text{
+        >p{
+          font-weight:bold;
+          display:inline-block;
+          vertical-align :middle;
+        }
+        .ui-form{
+          display:inline-block;
+          vertical-align :middle;
+          margin-left:5px;
+          input{
+            width:50px;
+            background:$bg1;
+          }
+        }
+      }
+    }
+
+    .form-group{
+    //外层form宽度
+      .ui-form-first{
+        width:190px;
+        padding-right:17px;
+      }
+      .ui-form-w2{
+        width:278px;
+        padding-right:17px;
+      }
+      .ui-form-w3{
+        width:180px;
+        padding-right:17px;
+      }
+      .ui-form-w4{
+        width:172px;
+        padding-right:17px;
+      }
+      .ui-form-last{
+        padding-right:17px;
+      }
+
+    //设置padding-right0
+      .pad-r0{
+        padding-right:0;
+      }
+
+    //input宽度
+      .ui-in-xs{
+        width:30px;
+      }
+
+      .ui-in-s{
+        .bui-select-input{
+          width:55px;
+        }
+      }
+
+      .ui-in-m{
+        width:80px;
+      }
+
+      .ui-in-l{
+        width:360px;
+      }
+
+      .ui-form{
+        margin-bottom:10px;
+        text-align :right;
+      }
+      .ui-coordinate{
+        text-align :right;
+        margin-bottom:10px;
+        .ui-form{
+          display:inline-block;
+          vertical-align middle;
+          margin-bottom:0;
+          >input{
+            width:30px;
+          }
+          .bui-select-input{
+            width:30px;
+          }
+        }
+      }
+    }
+
+    .client-data{
+      .form-group1.form-group{
+        .ui-form-first{
+          width:468px;
+        }
+      }
+      .form-group2.form-group{
+        .ui-form-w2{
+          width:240px;
+        }
+        .ui-form-w3{
+          width:230px;
+        }
+      }
+      .ui-form-w4{
+        width:190px;
+      }
+
+    }
+
+    .select-thunk{
+      border-bottom:none;
+      .ui-form{
+        margin-left:90px;
+      }
+    }
+    .track-info{
+      .table-thunk{
+        .bui-grid-body{
+          max-height:88px;
+        }
+      }
+      .table-thunk{
+        margin-left:90px;
+      }
+    }
+    .remark-form{
+      margin-bottom:40px;
+      >div{
+        margin-left:90px;
+      }
+      .ui-textarea{
+        height:87px;
+        width:100%;
+      }
+    }
+  //按钮
+    .btn-group{
+      text-align center;
+      >div{
+        display:inline-block;
+        .ui-btn{
+          setMar0();
+          margin:0 14px;
+        }
+      }
+    }
+  }
+}

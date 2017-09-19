@@ -1,0 +1,972 @@
+@import "../assets/css/common/var.styl";
+@import "../assets/css/common/mixin.styl";
+
+.pop-unclose{
+  a.bui-ext-close{
+    display :none;
+  }
+}
+
+.cover-block{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.6);
+  .pop-wap{
+    width:740px;
+    height:540px;
+    background:$bgb;
+    .pop-body{
+      padding:20px;
+    }
+  }
+}
+
+
+.pop-editor-wrap{
+  width:616px;
+  margin:0 auto;
+  .ui-key-start{
+    display:inline-block;
+    text-align right;
+    width:40px;
+    margin-right:10px;
+  }
+  .input-l{
+    width:540px;
+  }
+  .input-m{
+    width:210px;
+  }
+}
+
+.pop-wrap{
+  max-width:1200px;
+  margin:40px auto;
+  background:$bmb;
+}
+
+
+
+.none{
+  display:none;
+}
+
+//弹框
+.ui-content-center{
+  text-align center;
+}
+.ui-pop{
+  .ui-key-start{
+    display:inline-block;
+    width:60px;
+    text-align right;
+  }
+
+//查询
+  .query-import{
+    .ui-input{
+      setMar0();
+      margin-right:5px;
+      vertical-align :middle;
+    }
+  }
+
+//表格
+  .table-thunk .bui-grid-body{
+    max-height:350px;
+  }
+
+
+}
+
+
+
+//错误提示
+  .popErorHint{
+    .bui-stdmod-header{
+      background:$ac1;
+      color:$fc3;
+    }
+    a.bui-ext-close{
+      &:hover{
+        &:after {
+          color:$ac2;
+        }
+      }
+      &:after{
+        color:$fc3;
+      }
+    }
+
+  }
+
+  .pop-hint{
+    .bui-stdmod-body{
+      p{
+        margin-top:50px;
+        text-align center;
+      }
+    }
+  }
+
+    //成功提示
+  .popSuccessHint{
+    .bui-stdmod-header{
+      background:$ac3;
+      color:$fc3;
+    }
+    a.bui-ext-close{
+      &:hover{
+        &:after {
+          color:$ac2;
+        }
+      }
+      &:after{
+        color:$fc3;
+      }
+    }
+  }
+
+    //警告提示
+    .popwarningHint{
+      .bui-stdmod-header{
+        background:$ac2;
+        color:$ac1;
+      }a.bui-ext-close{
+         &:hover{
+           &:after {
+             color:$ac;
+           }
+         }
+         &:after{
+           color:$fc3;
+         }
+       }
+
+    }
+.pop-amend-list{
+  .amend-item{
+    &:hover{
+      color:$ac1;
+    }
+      text-align :left;
+    color:$mc;
+    width:100%;
+    font-size:12px;
+    line-height:1.3;
+    margin-bottom:5px;
+    overflow :hidden;
+    text-overflow :ellipsis;
+    white-space :nowrap;
+  }
+}
+
+  //备降机场维护
+.pop-prepare-airport{
+  .title-text{
+    text-align left;
+  }
+}
+
+  //CAT选择
+.pop-CAT-select{
+  .bui-select{
+    width:100%;
+  }
+  .bui-select-input{
+    width:274px;
+  }
+}
+
+  //人员选择
+.pop-personSelect-wrap{
+  .table-thunk{
+    width:70%;
+    .bui-grid-body{
+      max-height:400px;
+    }
+  }
+  .selece-yet{
+    width:30%;
+    padding-left:20px;
+    .ui-icon-clones{
+      border:none;
+    }
+    h3{
+      font-size:14px;
+      padding:5px;
+      background:$bg1;
+      border:1px solid $bm;
+      border-bottom:none;
+    }
+    .bui-tree-list{
+      border:1px solid $bm;
+      height:290px;
+      .bui-tree-item-hover,.bui-tree-item-selected{
+        background:$bg6;
+      }
+      .bui-tree-item{
+        &:last-child{
+          border-bottom:none;
+        }
+        border-bottom:1px solid $bm;
+        height:33px;
+        padding:5px 0;
+        .remove-i{
+          margin-right: 10px;
+          margin-top: 4px;
+          width: 15px;
+          height: 15px;
+          line-height: 20px;
+          text-align: center;
+          float: right;
+          &:after{
+            content: '+';
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 30px;
+            transform: translate(0px,-6px) rotate(45deg);
+            vertical-align: text-top;
+            color: #333;
+          }
+        }
+      }
+    }
+    .selece-list{
+      border:1px solid $bm;
+      padding:5px;
+      height:400px;
+      li{
+        &:last-child{
+          border-bottom:none;
+        }
+        border-bottom:1px solid $bm;
+        padding:5px 0;
+      }
+    }
+  }
+
+    .pages-thunk{
+      position:absolute;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+}
+
+//文件上传
+.pop-file-load{
+  text-align center;
+  .pop-text{
+    margin-bottom:80px;
+    span{
+      setMar0();
+      margin:0 25px;
+    }
+  }
+    .ui-file-btn{
+      &:after{
+        addWC('文件上传');
+      }
+      display:inline-block;
+      border:none;
+      background:none;
+      background:$ac;
+      width:80px;
+      height:28px;
+      line-height:24px;
+      color:$fc3;
+      text-align center;
+    }
+    .ui-file-btn+input{
+      display:none;
+    }
+
+  div#uploadifive-file-upload {
+    display: inline-block;
+    border: 0;
+    background: 0 0;
+    background: #1ea3b7;
+    width: 80px;
+    height: 28px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+
+//任务编辑
+.pop-form-task{
+  .radio-thunk{
+    .ui-key-start{
+      margin-right:8px;
+    }
+    .radio-item{
+      serMar0();
+      margin:0 10px;
+    }
+  }
+    .textarea-thunk{
+      textarea{
+        width:100%;
+        height:80px;
+      }
+    }
+}
+//计算任务
+.pop-count-task{
+  .schedule-list{
+    max-height:350px;
+  }
+  .schedule-item{
+    border-bottom:1px dashed $bm;
+    padding:14px 10px;
+    text-align center;
+    .schedule-thunk{
+      display:inline-block;
+      .schedule-strip{
+        display:inline-block;
+        vertical-align middle;
+        position:relative;
+        width:170px;
+        background:$bg1;
+        height:8px;
+        border-radius :4px;
+        >p{
+          position:absolute;
+          left:0;
+          top:0;
+          background:$ac;
+          height:8px;
+          border-radius :4px;
+        }
+      }
+      .ui-percent{
+        color:$ac;
+        font-size:12;
+        vertical-align middle;
+        margin:0 10px;
+      }
+      .hint-text{
+        color:$ac1;
+        font-size:12;
+        vertical-align middle;
+        visibility: hidden;
+      }
+    }
+
+    .ui-icon-anew{
+      visibility: hidden;
+    }
+    .handle-btn-group{
+      i{
+        setMar0();
+        margin:0 5px;
+      }
+    }
+  }
+  .schedule-error{
+    .schedule-thunk{
+      .schedule-strip{
+        >p{
+          background:$ac1;
+        }
+      }
+      .ui-percent{
+        color:$ac1;
+      }
+      .hint-text{
+        visibility: inherit;
+      }
+    }
+    .ui-icon-anew{
+      visibility: inherit;
+    }
+  }
+}
+
+//机场性能数据维护——新增
+.pop-new-add{
+  //结果
+  .result-thunk{
+    padding-top:20px;
+    .result-select{
+      padding:10px 0;
+      vertical-align: middle;
+      >p{
+        margin-top:4px;
+      }
+      .ui-form{
+        &:nth-child(2){
+          margin-left:15px;
+        }
+        &:nth-child(3){
+          margin-left:70px;
+          margin-top:4px;
+        }
+        &:nth-child(4){
+          margin-left:50px;
+        }
+      }
+    }
+  //月份选择
+    .month-select{
+      .bui-select{
+        input{
+          width:35px;
+        }
+      }
+    }
+
+  }
+
+  .info-thunk{
+    text-align right;
+    >p{
+      display:inline-block;
+      setMar0();
+      margin:0 10px;
+    }
+  }
+  .btn-group{
+    text-align center;
+    .ui-btn{
+      margin:0 14px;
+      setMar0();
+    }
+  }
+}
+
+  //更名
+  .pop-change-name{
+    .bui-stdmod-body{
+      .old-name{
+        margin-top:30px;
+        margin-left:65px;
+      }
+      .ui-form{
+        margin-left:65px;
+      }
+    }
+  }
+
+    //备降机场选址
+  .pop-alternate-content{
+    .airprot-case{
+      height:230px;
+      padding:10px;
+      border:1px solid $bm;
+      li{
+        &:hover{
+          background:$bg9;
+          color:$fc3;
+        }
+          position relative;
+        padding:5px 10px;
+        padding-right:30px;
+        background:$bg6;
+        color:$fc8;
+        margin:0 2px;
+        setMar0();
+        .icon-close{
+          &:hover{
+            color:$ac1;
+          }
+          position absolute;
+          top:7px;
+          right:6px;
+          cursor:pointer;
+          display: inline-block;
+          vertical-align middle;
+          color: $fc8;
+          font-size: 25px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  //重名选择
+  .pop-airdit-select{
+    .bui-stdmod-body{
+      text-align center;
+    }
+    .form-item{
+      margin-bottom:10px;
+      display:block;
+      input[type=checkbox]:checked+.ui-check-label:after{
+        margin-left:2px;
+      }
+    }
+  }
+
+    //验证码
+  .pop-auth-code{
+    h3{
+      margin-bottom:30px;
+    }
+    img{
+      width:180px;
+      height:40px;
+    }
+  }
+
+  //数据比较
+  .pop-data-compare{
+    .bui-stdmod-body{
+      padding:0;
+      background:$bg3;
+    }
+    .bui-stdmod-footer{
+      background :$bgb;
+      margin-top:0;
+      border-top:1px solid $bm;
+    }
+  }
+  //航路点数据对比——上一期查询
+  .airdot-search{
+    .content-wrap{
+      padding-left:20px;
+      padding-right:20px;
+    }
+    .ui-key-start{
+      width:82px;
+    }
+    .aside-panel{
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+    }
+
+    .form-group{
+      text-align :right;
+      .form-first{
+        width:190px;
+        padding-right:15px;
+      }
+
+      .form-2{
+        width:135px;
+      }
+
+      .input-selece-m{
+        input{
+          width:55px;
+        }
+      }
+
+      .input-m{
+        width:80px;
+      }
+      .input-s{
+        width:62px;
+      }
+      .ui-pad0{
+        padding-right:0;
+      }
+    }
+    .form-group1{.form-last{
+        width:190px;
+      }
+    }
+
+    .form-group-thunk{
+      margin-bottom:15px;
+      .form-group3{
+        >.ui-form{
+          &:first-child{
+            input{
+              width:115px;
+            }
+          }
+        }
+      }
+      .form-group4{
+        >.ui-form{
+          &:first-child{
+            input{
+              width:105px;
+            }
+          }
+          &:last-child{
+            padding-right:18px;
+            input{
+              width:30px;
+            }
+          }
+        }
+      }
+      .ui-form{
+        margin-bottom:10px;
+      }
+      .ui-form-unit{
+        min-width:((250/1440)*1280)px;
+        max-width:250px;
+        width:(250/1100)*100%;
+        padding-right:18px;
+        text-align :right;
+        setPad0();
+        input{
+          width:140px;
+        }
+      }
+      .ui-coordinate{
+        width:(340/1100)*100%;
+        min-width:((340/1440)*1280)px;
+        max-width:340px;
+        padding-right:15px;
+        text-align :right;
+        margin-bottom:10px;
+        .ui-form{
+          display:inline-block;
+          vertical-align middle;
+          margin-bottom:0;
+          input{
+            width:30px;
+          }
+        }
+        >span{
+          display:inline-block;
+          vertical-align middle;
+        }
+      }
+    }
+    .client-data-thunk{
+      margin-bottom:45px;
+      .ui-form{
+        width:(230/1100)*100%;
+        max-width:230px;
+        input{
+          width:30px;
+        }
+      }
+    }
+  }
+
+  //airroute-search 航路数据对比上一期
+  .airroute-search{
+    .aside-panel{
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+    }
+      .content-wrap{
+        padding-left:20px;
+        padding-right:20px;
+      }
+    .table-thunk {
+      .bui-grid-body{
+        .bui-grid-table{
+          tbody{
+            tr:nth-child(2){
+              .bui-grid-cell{
+                border-top-color: $ac;
+              }
+            }
+          }
+        }
+      }
+      .bui-grid-table{
+        .bui-grid-hd-inner{
+          background:$bg6;
+        }
+        .bui-grid-hd{
+          border-color:$ac;
+        }
+      }
+      .bui-grid-body, .bui-grid-header {
+        border-right: 1px solid $ac;
+        border-left: 1px solid $ac;
+      }
+      .bui-grid-header{
+        border-top-color: $ac;
+      }
+      .bui-grid-body, .bui-grid-height .bui-grid-body .bui-grid-table{
+        border-bottom-color:$ac;
+      }
+    }
+  }
+  //机场数据对比
+  .pop-airroute-search{
+    .aside-panel{
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+    }
+    .aside-wrap{
+      .result-thunk{
+        top:35px;
+        .radio-thunk{
+          text-align center;
+          padding:0 8px;
+          >div{
+            display:inline-block;
+            color:$fc3;
+          }
+        }
+        .result-list{
+          li.active{
+            padding-right:28px;
+            .num{
+              background:$ac1;
+            }
+            .at{
+              color:$ac1;
+            }
+          }
+          li{
+            padding-left:20px;
+            padding-right:20px;
+            text-align center;
+            span{
+              setMar0();
+              display:inline-block;
+              margin:0 14px;
+            }
+            .num{
+              background:$ac;
+              height:16px;
+              width:25px;
+              text-align center;
+              line-height:16px;
+              color:$fc3;
+              margin-top:12px;
+              border-radius :8px;
+            }
+          }
+        }
+      }
+    }
+    .content-wrap {
+      max-width: 1100px;
+      min-height:280px;
+      margin: 0 auto;
+      padding-left:20px;
+      padding-right:20px;
+      .ui-key-first{
+        width:90px;
+        padding-right:8px;
+        display:inline-block;
+        vertical-align middle;
+        text-align right;
+      }
+      .head-thunk{
+        margin-bottom:10px;
+        .title-text{
+          >p{
+            font-weight:bold;
+            display:inline-block;
+            vertical-align :middle;
+          }
+          .ui-form{
+            display:inline-block;
+            vertical-align :middle;
+            margin-left:5px;
+            input{
+              width:50px;
+              background:$bg1;
+            }
+          }
+        }
+      }
+
+      .form-group{
+      //外层form宽度
+        .ui-form-first{
+          width:188px;
+          padding-right:17px;
+        }
+        .ui-form-w2{
+          width:255px;
+          padding-right:17px;
+        }
+        .ui-form-w3{
+          width:160px;
+          padding-right:17px;
+        }
+        .ui-form-w4{
+          width:190px;
+          padding-right:17px;
+        }
+        .ui-form-last{
+          //width:242px;
+          padding-right:17px;
+        }
+
+      //设置padding-right0
+        .pad-r0{
+          padding-right:0;
+        }
+
+      //input宽度
+        .ui-in-xs{
+          width:30px;
+        }
+
+        .ui-in-s{
+          .bui-select-input{
+            width:55px;
+          }
+        }
+
+        .ui-in-m{
+          width:80px;
+        }
+
+        .ui-in-l{
+          width:360px;
+        }
+
+        .ui-form{
+          margin-bottom:10px;
+          text-align :right;
+        }
+        .ui-coordinate{
+          text-align :right;
+          margin-bottom:10px;
+          .ui-form{
+            display:inline-block;
+            vertical-align middle;
+            margin-bottom:0;
+            >input{
+              width:30px;
+            }
+            .bui-select-input{
+              width:30px;
+            }
+          }
+        }
+      }
+
+      .form-group1.form-group {
+        .ui-form-first{
+          width:462px;
+        }
+        .ui-form-w3{
+          width:155px;
+        }
+      }
+      .client-data{
+        .form-group2.form-group{
+          .ui-form-w2{
+            width:195px;
+          }
+          .ui-form-w3{
+            width:195px;
+          }
+        }
+      }
+      .select-thunk{
+        border-bottom:none;
+        .ui-form{
+          margin-left:90px;
+        }
+      }
+      .track-info{
+        .table-thunk{
+          margin-left:90px;
+        }
+      }
+      .remark-form{
+        margin-bottom:40px;
+        >div{
+          margin-left:90px;
+        }
+        .ui-textarea{
+          height:87px;
+          width:100%;
+        }
+      }
+    //按钮
+      .btn-group{
+        text-align center;
+        >div{
+          display:inline-block;
+          .ui-btn{
+            setMar0();
+            margin:0 14px;
+          }
+        }
+      }
+    }
+  }
+
+  //航线设置
+  .pop-airline-set{
+    .form-group{
+      .ui-form{
+        text-align right;
+      }
+      .ui-form-first{
+        width:230px;
+        padding-right:15px;
+      }
+      .ui-form-last{
+        width:440px;
+      }
+      .ui-in-s{
+        .bui-select-input{
+          width:116px;
+        }
+      }
+      .ui-in-l{
+        width:370px;
+      }
+    }
+  }
+  //差异数据
+  .pop-difference-data{
+    h3{
+      text-align center
+      margin-bottom:10px;
+      span{
+        display:inline-block;
+        width:50%;
+      }
+      font-size:14px;
+    }
+    ul{
+      li{
+        text-align center
+        span{
+          display:inline-block;
+          font-size:12px;
+          width:50%;
+          line-height:32px;
+        }
+      }
+    }
+  }
+
+    .pop-airroute-table{
+      table{
+        width:100%;
+      }
+      thead{
+        background:$bg1;
+        td{
+          width:75px;
+          text-align center;
+        }
+      }
+      tbody{
+        td{
+          width:75px;
+          text-align center;
+        }
+      }
+      td{
+        line-height:28px;
+        border-bottom:1px solid $bm;
+      }
+      .table-body{
+        max-height:450px;
+      }
+    }

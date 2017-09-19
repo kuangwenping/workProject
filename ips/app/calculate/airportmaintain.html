@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机场数据维护</title>
+</head>
+<body>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 公司数据</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/common/common.styl">
+</head>
+<body>
+    <div class="airportmaintain-wrap">
+        <!--侧板-->
+        <aside id="J-aside-panel" class="aside-panel aside-wrap">
+            <div class="query-wrap ">
+                <!--搜索-->
+                <div class="search-yard">
+                    <form class="ui-form">
+                        <label class="ui-f14">机场四字码</label>
+                        <input  class="ui-f14 ui-input" type="text" placeholder="MAAZ"/>
+                    </form>
+                    <a class="ui-btn ui-btn-wide ui-btn-full">
+                        <i class="ips-ui-icon ui-icon-add">+</i>
+                        新增
+                    </a>
+                    <a class="ui-btn ui-btn-wide ui-btn-search">
+                        <i class="ips-ui-icon ui-icon-search"></i>
+                        查询
+                    </a>
+                </div>
+                <!--查询结果-->
+                <div id="J-resultWrp" class="result-thunk">
+                    <p class="ui-f14 result-num">版本（ <span id="J-resultNum">3</span>个 ）</p>
+                    <ul id="J-tabWap" class="result-list query-result-wrap">
+                        <li class="result-list-item active clear ui-f12">
+                            <div class="item-key-val version-num">
+                                <span class="ui-key">版&nbsp;&nbsp;本&nbsp;&nbsp;号：</span>
+                                <span>20190609v1</span>
+                            </div>
+                            <div class="item-key-val aircraft-type clear">
+                                <span class="ui-key float-l">机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 型：</span>
+                                <span class="ui-val">A320+WINGTIP</span>
+                                <span class="ui-val">A320+WINGTIP</span>
+                                <span class="ui-val">A320+WINGTIP</span>
+                                <span class="ui-val">A320+WINGTIP</span>
+                                <span class="ui-val">A320+WINGTIP</span>
+                            </div>
+                            <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                            <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                            <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                            <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                            <p class="del-btn"><i class="ips-ui-icon ui-icon-del"></i>删除</p>
+                        </li>
+                        <li class="result-list-item clear ui-f12">
+                          <div class="item-key-val version-num">
+                              <span class="ui-key">版&nbsp;&nbsp;本&nbsp;&nbsp;号：</span>
+                              <span>20190609v1</span>
+                          </div>
+                          <div class="item-key-val aircraft-type">
+                              <span class="ui-key">机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 型：</span>
+                              <span class="ui-val">A320+WINGTIP</span>
+                              <span class="ui-val">A320+WINGTIP</span>
+                          </div>
+                          <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                          <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                          <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                          <div class="item-key-val"><span class="ui-key">跑道条件：</span><span>DIY</span></div>
+                          <p class="del-btn"><i class="ips-ui-icon ui-icon-del"></i>删除</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--分页-->
+                <div id="bar" class="aside-pages pages-thunk"></div>
+            </div>
+        </aside>
+
+        <section id="J-content" class="content">
+            <!--实际展示内容-->
+            <div class="content-wrap">
+                <div class="clear title-thunk margin-b">
+                  <h3 class="airport-name float-l">机场: <span>ZAAB</span></h3>
+                  <a class="ui-btn ui-btn-empty  float-r">
+                      <i class="ips-ui-icon ui-icon-set1"></i>
+                  </a>
+                  <a class="ui-btn ui-btn-empty  float-r">
+                      <i class="ips-ui-icon ui-icon-count1"></i>
+                  </a>
+                </div>
+
+                <div class="select-thunk">
+                    <p class="margin-b">计算条件选择：</p>
+                    <div class="item-key-val">
+                        <!--机型选择-->
+                        <form class="ui-form ait-type">
+                            <span class="ui-key">机型选择</span>
+                            <div class="ui-val checked-item form-item">
+                                <input class="ui-check" name="airtype" id="airType1" type="checkbox" value="ALL">
+                                <label for="airType1" class="ui-check-label"></label>
+                                <span class="ui-text-form">A320+SHARKLETS</span>
+                            </div>
+                            <div class="ui-val form-item">
+                                <input class="ui-check" name="airtype" id="airType2" type="checkbox" value="ALL">
+                                <label for="airType2" class="ui-check-label"></label>
+                                <span class="ui-text-form">A320+SHARKLETS</span>
+                            </div>
+                        </form>
+
+                        <!--月份-->
+                        <form class="ui-form ait-type">
+                            <span class="ui-key">月份</span>
+                            <div class="form-item">
+                                <input class="ui-check" id="monthAll" type="checkbox" value="ALL">
+                                <label for="monthAll" class="ui-check-label"></label>
+                                <span class="ui-text-form">ALL</span>
+                            </div>
+
+                            <div class="form-item">
+                                <input class="ui-check" id="month1" type="checkbox" value="A320+WINGTIP">
+                                <label for="month1" class="ui-check-label"></label>
+                                <span class="ui-text-form">1</span>
+                            </div>
+
+                            <div class="form-item">
+                                <input  class="ui-check" id="month2" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month2" class="ui-check-label"></label>
+                                <span class="ui-text-form">2</span>
+                            </div>
+
+                            <div class="form-item">
+                                <input  class="ui-check" id="month3" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month3" class="ui-check-label"></label>
+                                <span class="ui-text-form">3</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month4" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month4" class="ui-check-label"></label>
+                                <span class="ui-text-form">4</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month5" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month5" class="ui-check-label"></label>
+                                <span class="ui-text-form">5</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month6" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month6" class="ui-check-label"></label>
+                                <span class="ui-text-form">6</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month7" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month7" class="ui-check-label"></label>
+                                <span class="ui-text-form">7</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month8" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month8" class="ui-check-label"></label>
+                                <span class="ui-text-form">8</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month9" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month9" class="ui-check-label"></label>
+                                <span class="ui-text-form">8</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month10" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month10" class="ui-check-label"></label>
+                                <span class="ui-text-form">10</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month11" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month11" class="ui-check-label"></label>
+                                <span class="ui-text-form">11</span>
+                            </div>
+                            <div class="form-item">
+                                <input  class="ui-check" id="month12" type="checkbox" value="A320+SHARKLETS">
+                                <label for="month12" class="ui-check-label"></label>
+                                <span class="ui-text-form">12</span>
+                            </div>
+
+                        </form>
+
+
+                        <form class="ui-form">
+                            <span class="ui-key">跑道条件</span>
+                            <div class="form-item">
+                            <label for="condition" class="check ui-check-label">
+                                <input  class="ui-check" id="condition" type="checkbox" value="DRY">
+                            </label>
+                            <span class="ui-text-form">DRY</span>
+                            </div>
+                        </form>
+
+                        <form class="ui-form ">
+                            <span class="ui-key">防冰状态</span>
+                            <div class="form-item">
+                                <label for="state1" class="check ui-check-label">
+                                    <input class="ui-check" id="state1" type="checkbox" value="OFF">
+                                </label>
+                                <span class="ui-text-form">OFF</span>
+                            </div>
+                        </form>
+
+                        <form class="ui-form">
+                            <span class="ui-key">起飞构型</span>
+                            <div class="form-item">
+                                <label for="take1" class="check ui-check-label">
+                                    <input class="ui-check" id="take1" type="checkbox" value="COMF2">
+                                </label>
+                                <span class="ui-text-form">COMF2</span>
+                            </div>
+                        </form>
+
+                        <form class="ui-form">
+                            <span class="ui-key">空调状态</span>
+                            <div class="form-item">
+                                <label for="track" class="check ui-check-label">
+                                    <input class="ui-check" id="track" type="checkbox" value="18">
+                                </label>
+                                <span class="ui-text-form">18</span>
+                            </div>
+                        </form>
+                        <form class="ui-form" id="J_Form">
+                            <label class="ui-key">MEL</label>
+                            <input class="ui-input" type="text"  data-rules="{required : true}">
+                        </form>
+
+                        <form class="ui-form" id="J_Form1">
+                            <label class="ui-key">CDL</label>
+                            <input class="ui-input" type="text" data-rules="{required : true}">
+                        </form>
+                    </div>
+                </div>
+                <!--计算结果-->
+                <div class="result-thunk">
+                    <div class="result-select clear">
+                        <p class="ui-key ui-f14 float-l">计算结果</p>
+                        <form id="s1" class="ui-form float-l">
+                            <label>机型</label>
+                            <input type="hidden">
+                        </form>
+                        <div class="float-l form-item">
+                            <input type="radio" name="month" id="monthmin">
+                            <label for="monthmin" class="radio-wrp ui-radio"></label>
+                            <span class="ui-text-form">每月最小值</span>
+                        </div>
+
+                        <form id="s2" class="ui-form float-l month-select">
+                            <div class="float-l form-item">
+                                <input type="radio" name="month" id="monthselect">
+                                <label for="monthselect" class="radio-wrp ui-radio"></label>
+                                <span class="ui-text-form">每月最小值</span>
+                            </div>
+                            <input type="hidden">
+                        </form>
+                    </div>
+
+                    <div class="table-thunk margin-b" id="detailsData"></div>
+                    <div class="info-thunk"><p>维护人：<span>短短</span></p> <p>日期：<span>2017-12-3</span></p></div>
+                </div>
+
+                <div class="btn-group clear">
+                  <a class="ui-btn ui-btn-full ui-btn-wide">发布版本</a>
+                  <a class="ui-btn ui-btn-wring ui-btn-wide float-r">删除版本</a>
+                </div>
+            </div>
+        </section>
+    </div>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../assets/js/common/method.js"></script>
+<script type="text/javascript" src="./js/airportmaintain-cg.js"></script>
+
+</body>
+</html>
+</body>
+</html>

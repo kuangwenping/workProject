@@ -1,0 +1,413 @@
+@import "var";
+@import "mixin";
+
+.ips-ui-icon{
+  display:inline-block;
+  vertical-align: middle;
+}
+
+//原
+.ui-icon-raw{
+  line-height:15px;
+  &:after{
+     addWC('原');
+    color:$fc3;
+    font-size:12px;
+    background:$bg4;
+    text-align: center;
+    line-height:15px;
+    width:15px;
+    padding:1px;
+    border-radius: 2px;
+  }
+}
+
+//替
+.ui-icon-replace{
+  line-height:15px;
+  &:after{
+    color:$fc3;
+     addWC('替');
+    font-size:12px;
+    background:$ac1;
+    text-align: center;
+    line-height:15px;
+    width:15px;
+    padding:1px;
+    border-radius: 2px;
+  }
+}
+  //过
+.ui-icon-pas{
+  line-height:15px;
+  &:after{
+    color:$fc3;
+    addWC('过');
+    font-size:12px;
+    background:$ac2;
+    text-align: center;
+    line-height:15px;
+    width:15px;
+    padding:1px;
+    border-radius: 2px;
+  }
+}
+
+//写出
+.ui-icon-writeout{
+  sbg('../../img/icon/icon_down.png');
+  width:22px;
+  height:18px;
+}
+//写入
+.ui-icon-writein{
+   sbg('../../img/icon/icon_jinru.png');
+  width:22px;
+  height:19px;
+}
+
+//下载
+.ui-icon-download{
+   sbg('../../img/icon/icon_xiazai.png');
+  width:14px;
+  height:14px;
+}
+
+//写
+.ui-icon-write{
+   sbg('../../img/icon/icon_xie.png');
+  width:16px;
+  height:15px;
+}
+
+
+
+//飞机
+.ui-icon-airplane1{
+   sbg('../../img/icon/icon_air_1.png');
+}
+
+.ui-icon-airplane2{
+   sbg('../../img/icon/icon_air_2.png');
+}
+
+.ui-icon-air-green{
+  sbg('../../img/icon/icon_air_green.png');
+  width:22px;
+  height:22px;
+}
+.ui-icon-air-grey{
+  sbg('../../img/icon/icon_air_grey.png');
+  width:22px;
+  height:22px;
+}
+
+.ui-icon-data-green{
+  sbg('../../img/icon/icon_data_green.png');
+  width:34px;
+  height:15px;
+}
+
+.ui-icon-data-red{
+  sbg('../../img/icon/icon_data_red.png');
+  width:34px;
+  height:15px;
+}
+
+.ui-icon-set-green{
+  sbg('../../img/icon/icon_set_green.png');
+  width:25px;
+  height:25px;
+}
+
+
+//向下三角
+.ui-icon-down{
+  content:'';
+  border-top:7px solid $fc3;
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+}
+
+//向上三角
+.ui-icon-up{
+  content:'';
+  border-bottom:7px solid $fc3;
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+}
+
+//线上标题横条背景
+.lineup.ui-strip1{
+  &:after{
+     addWC('');
+    border-top:15px solid #aed06f;
+    border-left:0 solid #aed06f;
+    border-right: 15px solid transparent;
+    position:absolute;
+    right:-15px;
+    top:0;
+  }
+  &:before{
+     addWC('');
+    border-bottom:15px solid #aed06f;
+    border-left:0 solid #aed06f;
+    border-right: 15px solid transparent;
+    position:absolute;
+    right:-15px;
+    bottom:0;
+  }
+  position:relative;
+  width:105px;
+  height:30px;
+  background:#aed06f;
+  .ui-strip2{
+    width:65px;
+    height:30px;
+    background:#7dbc46;
+    text-align: center;
+    line-height:30px;
+    position:relative;
+    &:after{
+       addWC('');
+      border-top:15px solid #7dbc46;
+      border-left:0 solid #7dbc46;
+      border-right: 15px solid transparent;
+      position:absolute;
+      right:-15px;
+      top:0;
+    }
+    &:before{
+       addWC('');
+      border-bottom:15px solid #7dbc46;
+      border-left:0 solid #7dbc46;
+      border-right: 15px solid transparent;
+      position:absolute;
+      right:-15px;
+      bottom:0;
+    }
+  }
+  .ui-strip-text{
+    color:$fc3;
+    font-size: 16px;
+  }
+}
+
+  //预生效
+.effect.ui-strip1{
+  &:after{
+    addWC('');
+    border-top:15px solid #d64344;
+    border-left:0 solid #d64344;
+    border-right: 15px solid transparent;
+    position:absolute;
+    right:-15px;
+    top:0;
+  }
+  &:before{
+    addWC('');
+    border-bottom:15px solid #d64344;
+    border-left:0 solid #d64344;
+    border-right: 15px solid transparent;
+    position:absolute;
+    right:-15px;
+    bottom:0;
+  }
+  position:relative;
+  width:105px;
+  height:30px;
+  background:#d64344;
+  .ui-strip2{
+    width:65px;
+    height:30px;
+    background:$ac1;
+    text-align: center;
+    line-height:30px;
+    position:relative;
+    &:after{
+      addWC('');
+      border-top:15px solid $ac1;
+      border-left:0 solid $ac1;
+      border-right: 15px solid transparent;
+      position:absolute;
+      right:-15px;
+      top:0;
+    }
+    &:before{
+      addWC('');
+      border-bottom:15px solid $ac1;
+      border-left:0 solid $ac1;
+      border-right: 15px solid transparent;
+      position:absolute;
+      right:-15px;
+      bottom:0;
+    }
+  }
+  .ui-strip-text{
+    color:$fc3;
+    font-size: 16px;
+  }
+}
+
+//搜索
+.ui-icon-search{
+   sbg('../../img/icon/icon_search.png');
+  width:15px;
+  height:15px;
+}
+
+
+.ui-icon-clones{
+  border:1px solid $mc;
+  border-radius 50%;
+  width:20px;
+  height:20px;
+  text-align center;
+  &:hover{
+    border-color:$ac1;
+    &:before{
+      color:$ac1;
+    }
+  }
+  &:before{
+    addWC('+');
+    font-size:30px;
+    transform: translate(0px,-6px) rotate(45deg);
+    vertical-align: text-top;
+    color:$mc;
+  }
+}
+
+.ui-icon-close1{
+  sbg('../../img/icon/icon_close_1.png');
+  width:10px;
+  height:10px;
+}
+
+.ui-icon-close2{
+  sbg('../../img/icon/icon_close_2.png');
+  width:10px;
+  height:10px;
+}
+
+.ui-icon-close3{
+  sbg('../../img/icon/icon_close_3.png');
+  width:10px;
+  height:10px;
+}
+
+//删除(红标)
+.ui-icon-del{
+   sbg('../../img/icon/icon_del.png');
+  height:15px;
+  width:15px;
+}
+//删除（绿标）
+.ui-icon-del1{
+   sbg('../../img/icon/icon_del2.png');
+  height:14px;
+  width:15px;
+}
+
+//置顶
+.ui-icon-stick{
+   sbg('../../img/icon/icon_Stick.png');
+  height:15px;
+  width:10px;
+}
+
+//编辑
+.ui-icon-editor{
+   sbg('../../img/icon/icon_editor.png');
+  height:16px;
+  width:15px;
+}
+
+//插入
+.ui-icon-charu{
+  sbg('../../img/icon/icon_charu.png');
+  height:15px;
+  width:20px;
+}
+
+  //向上插入
+.ui-icon-insert-up{
+  sbg('../../img/icon/icon_insert_up.png');
+  height:11px;
+  width:16px;
+}
+//向下插入
+.ui-icon-insert-dw{
+  sbg('../../img/icon/icon_insert_dw.png');
+  height:11px;
+  width:16px;
+}
+
+//日历
+.ui-icon-calendar{
+   sbg('../../img/icon/icon_calendar.png');
+  height:14px;
+  width:16px;
+}
+
+
+.ui-icon-count1{
+  sbg('../../img/icon/icon_count1.png');
+  height:20px;
+  width:20px;
+}
+
+//设置
+.ui-icon-set1{
+  sbg('../../img/icon/icon_set1.png');
+  height:20px;
+  width:20px;
+}
+
+
+.ui-icon-filer{
+  sbg('../../img/icon/icon_filer.png');
+  height:21px;
+  width:26px;
+}
+
+
+//取消
+.ui-icon-cancel{
+  sbg('../../img/icon/icon_close_Bred.png');
+  width:22px;
+  height:22px;
+}
+
+//重新
+.ui-icon-anew{
+  sbg('../../img/icon/icon_anew.png');
+  width:22px;
+  height:22px;
+}
+
+  //查看
+.ui-icon-examine{
+  sbg('../../img/icon/icon_examine.png');
+  width:22px;
+  height:22px;
+}
+
+.ui-icon-recover{
+  sbg('../../img/icon/icon_recover.png');
+  width:20px;
+  height:15px;
+}
+
+  //增加
+.ui-icon-add{
+  font-size:30px;
+  color:$fc3;
+  width:20px;
+  height:20px;
+  line-height:15px;
+  text-align center;
+  vertical-align middle;
+  margin-right:5px;
+  overflow hidden;
+}

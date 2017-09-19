@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 航线测算评估</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/common/common.styl">
+</head>
+<body>
+<div class="airlinecalculate-wrap">
+    <!--侧板-->
+    <aside id="J-aside-panel" class="aside-panel aside-wrap">
+        <div class="query-wrap ">
+            <!--切换按钮-->
+            <div id="J-tagglebtn" class="taggle-btn">
+                <a class="j-close ui-btn none ui-btn-cancel float-r ui-btn-wide ui-f14"> <i class="ips-ui-icon ui-icon-close1"></i>取消</a>
+                <a class="j-open ui-btn ui-btn-wide ui-btn-search">
+                    <i class="ips-ui-icon ui-icon-search"></i>
+                    查询
+                </a>
+            </div>
+            <!--查询输入-->
+            <div id="J-searchForm" class="query-form-chunk margin-t3">
+                <form class="ui-form">
+                    <label class="ui-f12" for="airLineName">机场2</label>
+                    <input id="airLineName" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <form class="ui-form">
+                    <label class="ui-f12" for="takeOff">机场1</label>
+                    <input id="takeOff" class="ui-f14 ui-input" type="text" placeholder=""/>
+                </form>
+                <a  class="j-search ui-btn ui-btn-wide ui-btn-search">
+                    <i class="ips-ui-icon ui-icon-search"></i>
+                    查询
+                </a>
+            </div>
+            <!--查询结果-->
+            <div id="J-resultWrp" class="result-thunk ">
+                <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+                <ul id="J-tabWap" class="result-list query-result-wrap">
+                    <li class="result-list-item active clear ui-f12">
+                        <span class="air-name ellipsis">ZBAA</span><span class="air-name ellipsis">ZSSSFGG</span>
+                    </li>
+                    <li class="result-list-item clear ui-f12">
+                        <span class="air-name ">ZBAA-ZSSSFGG</span>
+                    </li>
+                    <li class="result-list-item clear ui-f12">
+                        <span class="air-name ">ZBAA-ZSSSFGG</span>
+                    </li>
+                    <li class="result-list-item clear ui-f12">
+                        <span class="air-name">ZBAA-ZSSSFGG</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <section id="J-content" class="content">
+        <!--实际展示内容-->
+        <div class="content-wrap">
+            <p class="margin-b"><span class="ui-key ui-f14">航线走向：</span><span class="ui-val">ZBAA  XXXX XXXX XXXX  ZSSS  ZBAA  XXXX XXXX XXXX  ZSSS ZBA</span></p>
+            <div class="keyval-chunk margin-b">
+                <p><span class="ui-key ui-f14">航线距离：</span><span class="ui-val">500 Nm</span></p>
+                <p><span class="ui-key ui-f14">空军一号：</span><span class="ui-val">是</span></p>
+                <p><span class="ui-key ui-f14">延伸跨水：</span><span class="ui-val">否</span></p>
+            </div>
+            <!--选择-->
+            <div class="select-thunk">
+                <h4>计算条件选择：  </h4>
+                <div class="item-key-val">
+                    <form class="ui-form ait-type">
+                        <span class="ui-key">机型选择</span>
+                        <div class="form-item">
+                            <input class="ui-check" id="typeall" type="checkbox" value="ALL">
+                            <label for="typeall" class="ui-check-label">ALL</label>
+                        </div>
+
+                        <div class="form-item">
+                            <input class="ui-check" id="type1" type="checkbox" value="A320+WINGTIP">
+                            <label for="type1" class="ui-check-label"></label>
+                            <span class="ui-text-form">A320+WINGTIP</span>
+                        </div>
+
+                        <div class="form-item">
+                            <input  class="ui-check" id="type2" type="checkbox" value="A320+SHARKLETS">
+                            <label for="type2" class="ui-check-label"></label>
+                            <span class="ui-text-form">A320+WINGTIP</span>
+                        </div>
+                    </form>
+                    <!--月份-->
+                    <form class="ui-form ait-type">
+                        <span class="ui-key">月份</span>
+                        <div class="form-item">
+                            <input class="ui-check" id="monthAll" type="checkbox" value="ALL">
+                            <label for="monthAll" class="ui-check-label"></label>
+                            <span class="ui-text-form">ALL</span>
+                        </div>
+
+                        <div class="form-item">
+                            <input class="ui-check" id="month1" type="checkbox" value="A320+WINGTIP">
+                            <label for="month1" class="ui-check-label"></label>
+                            <span class="ui-text-form">1</span>
+                        </div>
+
+                        <div class="form-item">
+                            <input  class="ui-check" id="month2" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month2" class="ui-check-label"></label>
+                            <span class="ui-text-form">2</span>
+                        </div>
+
+                        <div class="form-item">
+                            <input  class="ui-check" id="month3" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month3" class="ui-check-label"></label>
+                            <span class="ui-text-form">3</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month4" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month4" class="ui-check-label"></label>
+                            <span class="ui-text-form">4</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month5" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month5" class="ui-check-label"></label>
+                            <span class="ui-text-form">5</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month6" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month6" class="ui-check-label"></label>
+                            <span class="ui-text-form">6</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month7" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month7" class="ui-check-label"></label>
+                            <span class="ui-text-form">7</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month8" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month8" class="ui-check-label"></label>
+                            <span class="ui-text-form">8</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month9" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month9" class="ui-check-label"></label>
+                            <span class="ui-text-form">8</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month10" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month10" class="ui-check-label"></label>
+                            <span class="ui-text-form">10</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month11" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month11" class="ui-check-label"></label>
+                            <span class="ui-text-form">11</span>
+                        </div>
+                        <div class="form-item">
+                            <input  class="ui-check" id="month12" type="checkbox" value="A320+SHARKLETS">
+                            <label for="month12" class="ui-check-label"></label>
+                            <span class="ui-text-form">12</span>
+                        </div>
+
+                    </form>
+
+                    <form class="ui-form">
+                        <span class="ui-key">平均业载</span>
+                        <div class="form-item">
+                            <input type="radio" name="status" id="defaultVal">
+                            <label for="defaultVal" class="radio-wrp ui-radio"></label>
+                            <span class="ui-text-form">默认</span>
+                        </div>
+
+                        <div class="form-item">
+                            <input type="radio" name="status" id="historyVal">
+                            <label for="historyVal" class="radio-wrp ui-radio"></label>
+                            <span class="ui-text-form">历史统计</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-thunk-group clear">
+                    <form id="s1" class="ui-form float-l">
+                        <label class="ui-key">备件机场</label>
+                        <input type="hidden">
+                    </form>
+
+                    <form class="ui-form float-l">
+                        <label>CL</label>
+                        <input class="ui-input" type="text" >
+                    </form>
+
+                    <form class="ui-form float-l">
+                        <label >额外油</label>
+                        <input class="ui-input" type="text" >
+                        KG
+                    </form>
+
+                    <form class="ui-form float-l">
+                        <label >历史风可信度</label>
+                        <input class="ui-input" type="text" >
+                        %
+                    </form>
+                    <a class="ui-btn ui-btn-full ui-btn-wide float-r">计算</a>
+                </div>
+            </div>
+
+            <!--查询结果-->
+            <p class="margin-b">计算结果</p>
+
+            <div id="detailsData" class="table-thunk margin-b"></div>
+
+            <p class="margin-b">备注信息</p>
+
+            <textarea class="ui-textarea" placehold="随便输入点什么"></textarea>
+
+            <div class="btn-group">
+                <a class="ui-btn ui-btn-full ui-btn-wide ">编辑</a>
+                <a class="ui-btn ui-btn-full ui-btn-wide ">保存</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../assets/js/common/method.js"></script>
+<script type="text/javascript" src="js/airlinecalculate-cg.js"></script>
+</body>
+</html>

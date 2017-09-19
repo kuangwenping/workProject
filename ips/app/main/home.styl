@@ -1,0 +1,57 @@
+@import "../assets/css/common/var.styl";
+@import "../assets/css/common/mixin.styl";
+
+.home-wrap{
+  max-width:1210px;
+  margin:60px auto 0;
+  .right-thunk,.left-thunk{
+    setMar0();
+    margin:0 5px;
+    width:600px;
+    height:350px;
+    border:1px solid $bm;
+    box-shadow:1px 1px 1px 1px $bm ;
+    background:$bgb;
+    padding:0 18px;
+  }
+
+  .title-thunk{
+    padding:15px 0;
+    border-bottom:1px solid $bm;
+    margin-bottom :5px;
+  }
+  .ui-key-start{
+    color:$ac;
+    width:100px;
+    float:left;
+    text-align right;
+  }
+  .content-thunk{
+    li{
+      padding:6px 0;
+      line-height:1;
+      .info-text{
+        width:430px;
+      }
+      .time-text{
+
+      }
+    }
+  }
+  .left-thunk{
+    .content-thunk{
+        max-height:288px;
+    }
+  }
+    .right-thunk{
+      position:relative;
+      .content-thunk{
+        max-height:235px;
+      }
+      .pages-thunk{
+        position:absolute;
+        bottom:20px;
+        right:18px;
+      }
+    }
+}

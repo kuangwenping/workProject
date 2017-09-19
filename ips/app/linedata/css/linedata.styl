@@ -1,0 +1,338 @@
+//@import "../../assets/css/common/common";
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+
+.linedata-wrap{
+  .take-time >i{
+    right:135px;
+  }
+  //侧面
+  .aside-panel{
+    position:fixed;
+    max-width:280px;
+    bottom:0;
+    top:0;
+  }
+
+  //侧边内容块
+  .aside-wrap{
+    //查询输入框
+    .result-thunk{
+      .query-result-wrap{
+        li.active{
+          padding-right 8px;
+          .air-name{
+            color:$ac1;
+          }
+          .ui-icon-airplane{
+            sbg('../../assets/img/icon/icon_air_2.png');
+          }
+        }
+        li{
+          padding-right 0;
+          .air-name{
+            color:$ac;
+            text-align: center;
+          }
+          span{
+            .ui-icon-airplane{
+              width:14px;
+              height:13px;
+              margin:0 7px;
+              sbg('../../assets/img/icon/icon_air_1.png');
+            }
+          }
+        }
+      }
+    }
+    //查询结果列表
+  }
+
+  //主要内容
+  .content-wrap{
+    maxWidth(1240+65);
+    padding:30px 45px 45px 20px;
+    .ui-key{
+      width:50px;
+      display:inline-block;
+      text-align: right;
+    }
+    .ui-key-start{
+      display:inline-block;
+      text-align: right;
+      width:80px;
+      margin-right:5px;
+    }
+
+    .form-wrap-group{
+      .ui-form{
+        padding-right:20px;
+        padding-left: 5px;
+        margin-bottom:5px;
+        input{
+          font-size:12px;
+          color:$mc;
+        }
+      }
+      .airline-name,.take-airport{
+        padding-right:16px;
+      }
+    }
+    .form-wrap-group.serial1{
+      .airline-name{
+        position:relative;
+        input{
+          width:130px;
+          padding-right:25px;
+        }
+        i{
+          position:absolute;
+          right:21px;
+          top:6px;
+        }
+      }
+      .take-airport,.landing-airport{
+        input{
+          width:80px;
+        }
+      }
+      .podb,.poab,.group-name{
+        padding-right:16px;
+        input{
+          width:50px;
+        }
+        i{
+          margin-left:15px;
+        }
+      }
+    }
+    .form-wrap-group.serial2{
+      .most-width{
+        position:relative;
+        input{
+          width:390px;
+          padding-left:28px;
+        }
+        i{
+          position:absolute;
+          right:385px;
+          top:4px;
+        }
+      }
+      .take-time{
+        margin-right:0;
+        input{
+          width:140px;
+        }
+      }
+    }
+    .form-wrap-group.serial3{
+      .select-thunk{
+        border-bottom:none;
+      }
+      .ui-form {
+        &:first-child,&:nth-child(2){
+          padding-right: 26px;
+        }
+        >span{
+          font-size:12px;
+        }
+        padding-right:30px;
+        &:first-child{
+          input{
+            width:70px;
+          }
+        }
+        &:nth-child(2){
+          input{
+            width:50px;
+          }
+        }
+        &:nth-child(3){
+          input{
+            width:50px;
+          }
+        }
+        &:last-child{
+          input{
+            width:50px;
+          }
+        }
+
+        .ui-select{
+          width:100px;
+          border:1px solid $bm;
+          -webkit-appearance:none;
+          background:$bgb;
+          height:28px;
+          padding-left:10px;
+           sbg('../../assets/img/icon/icon_book.png');
+          option{
+            background:$bgb;
+          }
+        }
+      }
+      .select-thunk{
+        >div{
+          display:inline-block;
+          background:$bgb;
+        }
+      }
+    }
+
+    .form-wrap-group.serial4{
+      >span{
+        margin-top:5px;
+      }
+
+      .row-text-thunk{
+        overflow: hidden;
+        margin-bottom:10px;
+        background:url('../../assets/img/row_text_Bg.png');
+        border:1px solid $bm;
+        padding:0 30px;
+        position:relative;
+        i{
+          position:absolute;
+        }
+        p{
+          line-height:2;
+          font-family: Lucida Sans Typewriter;
+        }
+        .ui-icon-raw{
+          left:10px;
+          top:2px;
+        }
+        .ui-icon-writeout{
+          right:5px;
+          bottom:5px;
+        }
+      }
+
+      .rep-text-thunk{
+        position:relative;
+        margin-bottom:5px;
+        .ui-icon-replace{
+          position:absolute;
+          left:10px;
+          top:5px;
+        }
+        .ui-icon-pas{
+          position:absolute;
+          left:10px;
+          top:5px;
+        }
+      }
+
+
+      .rep-input{
+        width:100%;
+        height:60px;
+        border:1px solid $bm;
+        background:$bgb;
+        resize:none;
+        padding:10px 30px;
+      }
+      .tab-wrap{
+        .tab-thunk{
+          .tab-child{
+            float:left;
+            margin-bottom:4px;
+          }
+          border-bottom:2px solid $bg4;
+          .bui-tab{
+            overflow: hidden;
+            margin-bottom:-4px;
+            .bui-tab-item-selected{
+              background:$bg4;
+              .bui-tab-item-text{
+                color:$fc3;
+                padding:0;
+                background:none;
+              }
+            }
+          }
+          .bui-tab-item{
+            margin-right:3px;
+            float:left;
+            background:$bg6;
+            width:100px;
+            height:28px;
+            line-height:28px;
+            text-align: center;
+            border:none;
+            .bui-tab-item-text{
+              color:$ac;
+              padding:0;
+              background:none;
+            }
+          }
+          .take-time{
+            margin:0;
+            margin-top:-3px;
+            margin-right:20px;
+          }
+          .ui-btn-wring{
+            margin-top:-3px;
+          }
+        }
+        .tab-conten{
+          padding-top:15px
+        }
+      }
+    }
+    .form-wrap-group.serial5{
+      span{
+        color:$mc;
+        margin-right:10px;
+        margin-top:5px;
+      }
+    }
+    .form-wrap-group.serial6{
+      .btn-group{
+        text-align: center;
+        .ui-btn{
+          &:first-child{
+            margin-left:0;
+          }
+          margin-left:5px;
+        }
+        >div{
+          display:inline-block;
+        }
+      }
+      a{
+        &:first-child{
+          margin-left:0;
+        }
+        &:first-child{
+          margin-right:0;
+        }
+        margin:0 5px;
+      }
+      .amend-record{
+        padding-top:10px;
+        border-bottom:1px solid $mc;
+        padding-bottom:5px;
+      }
+    }
+
+    .alternate-airport{
+      .airport-list{
+        li{
+          background:$bg3;
+          height:28px;
+          border:1px solid $bm;
+          text-align center;
+          width:50px;
+          color:$mc;
+          font-size:12px;
+          line-height:28px;
+          float:left;
+          margin:0 2px;
+          setMar0();
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+
+//新周期入库
+.datastorage-wrap{
+  .aside-wrap{
+    padding:0 12px;
+  //时间选择
+    .select-thunk{
+      border-bottom:none;
+      >p{
+        color:$fc3;
+      }
+      .year-selece{
+        input{
+          width:46px;
+        }
+      }
+      .month-selece{
+        margin-left:5px;
+        input{
+          width:36px;
+        }
+      }
+      .bui-select{
+        .bui-select-input{
+          width:46px;
+        }
+        .bui-select-input,.x-icon-normal{
+          background:$bg7;
+          border-color:$bg9;
+        }
+      }
+      .filer{
+        margin-top:3px;
+        margin-left:10px;
+        position:relative;
+        >span{
+          top:4px;
+          left:2px;
+          position:absolute;
+        }
+        .uploadifive-button{
+          background:none;
+          border:none;
+          display:block;
+        }
+      }
+      .sign{
+        margin-top:4px;
+        margin-left:14px;
+        color:$ac3;
+        .ui-yes{
+          vertical-align middle;
+          width:5px;
+          height:10px;
+          border-bottom:1px solid $ac3;
+          border-right:1px solid $ac3;
+          transform :rotate(45deg);
+          margin-bottom:3px;
+          margin-right:5px;
+        }
+      }
+    }
+
+  //设置
+    .set-thunk{
+      >p{
+        color:$fc3;
+      }
+      .ui-textarea{
+        width:100%;
+        height:138px;
+        background:$bg7;
+        padding:12px 10px;
+        border:none;
+        color:$fc3;
+      }
+      .ui-form{
+        color :$fc3;
+        .ui-check-label{
+          &:before{
+            background:$bg7;
+            border:none;
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrap{
+    max-width:1024px;
+    width:1024/1440*100%;
+    min-width:(1024/1440*1280)px;
+    margin: 0 auto;
+    padding:0 20px;
+    .year-selece{
+      input{
+        width:56px;
+      }
+    }
+    .table-thunk{
+      .bui-grid-body{
+        max-height:200px;
+      }
+      .bui-grid-table{
+        .bui-grid-hd.center{
+            box-sizing: border-box;
+        }
+        .bui-grid-hd,.bui-grid-cell{
+          border-right:1px solid $bm;
+        }
+
+        //下拉子表格
+        .bui-grid-cascade-row{
+          .bui-grid-header-container{
+            display:none;
+          }
+          .bui-grid-body{
+            width:100% !important;
+            border:none;
+            .bui-grid-table{
+              border-bottom:none;
+            }
+            .center.bui-grid-cell{
+              .bui-grid-cascade{
+                display:none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+
+.airwaycontrast-wrap{
+  .aside-wrap{
+    .result-thunk{
+      top:35px;
+      .radio-thunk{
+        text-align center;
+        padding:0 8px;
+        >div{
+          display:inline-block;
+          color:$fc3;
+        }
+      }
+      .result-list{
+        li.active{
+          padding-right:28px;
+          .num{
+            background:$ac1;
+          }
+          .at{
+            color:$ac1;
+          }
+        }
+        li{
+          padding-left:20px;
+          padding-right:20px;
+          text-align center;
+          .num{
+            background:$ac;
+            height:16px;
+            width:25px;
+            text-align center;
+            line-height:16px;
+            color:$fc3;
+            margin-top:12px;
+            border-radius :8px;
+          }
+        }
+      }
+    }
+  }
+  .content-wrap{
+    max-width:1168px;
+    min-width:((1168/1440)*1280)px
+    width:(1168/1440)*100%;
+    margin:0 auto;
+    padding-left:20px;
+    padding-right:20px;
+    .identifying{
+      margin-bottom:45px;
+      p{
+        display:inline-block;
+        vertical-align middle;
+        span{
+          display:inline-block;
+          margin-right:4px;
+          width:15px;
+          height:8px;
+          border-radius :4px;
+          background:$ac1;
+        }
+      }
+      .old-period{
+        margin-right:20px;
+        span{
+          background:$ac3;
+        }
+      }
+    }
+    .table-thunk{
+      .bui-grid-body{
+        max-height:515px;
+      }
+    }
+    .table-thunk {
+      .bui-grid-body{
+        .bui-grid-table{
+          tbody{
+            tr:nth-child(2){
+              .bui-grid-cell{
+                border-top-color: $ac;
+              }
+            }
+          }
+        }
+      }
+      .bui-grid-table{
+        .bui-grid-hd-inner{
+          background:$bg6;
+        }
+        .bui-grid-hd{
+          border-color:$ac;
+        }
+      }
+      .bui-grid-body, .bui-grid-header {
+          border-right: 1px solid $ac;
+          border-left: 1px solid $ac;
+      }
+      .bui-grid-header{
+        border-top-color: $ac;
+      }
+      .bui-grid-body, .bui-grid-height .bui-grid-body .bui-grid-table{
+        border-bottom-color:$ac;
+      }
+    }
+    .btn-group{
+      text-align center;
+      a{
+        setMar0();
+        margin:0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../assets/css/common/var.styl";
+@import "../../assets/css/common/mixin.styl";
+.airlinecalculate-wrap{
+//侧边内容块
+  .aside-wrap{
+  //查询输入框
+    .query-form-chunk{
+      display:none;
+      }
+  //查询结果列表
+    .result-thunk{
+      top:35px;
+     }
+    .query-result-wrap{
+      li.active{
+        color:$ac1;
+        .air-name{
+          color:$ac1;
+        }
+      }
+      li{
+        .air-name{
+          display inline-block;
+          width:50%;
+          text-align :center;
+          color:$ac;
+        }
+      }
+    }
+  }
+
+//z内容
+  .content-wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 20px;
+
+    .keyval-chunk{
+      >p{
+        display:inline-block;
+        margin-right: 100px;
+      }
+    }
+    .select-thunk{
+      margin-bottom:10px;
+    }
+    .form-thunk-group{
+      .ui-form{
+        setMar0();
+        margin-right 10px;
+        input{
+          width:80px;
+        }
+      }
+    }
+    .table-thunk{
+      .bui-grid-body{
+        max-height:348px;
+      }
+    }
+    .margin-b{
+      margin-bottom:5px;
+    }
+    .ui-textarea{
+      resize: none;
+      width:100%;
+      height:90px;
+      border:1px solid $bm;
+      margin-bottom:30px;
+    }
+    .btn-group{
+      text-align center;
+      .ui-btn{
+        setMar0();
+        margin:0 20px;
+      }
+    }
+  }
+}

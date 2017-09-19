@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> 公司数据</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+   <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="../assets/css/common/common.styl">
+ </head>
+ <body>
+ <div class="linedata-wrap">
+ <!--侧板-->
+ <aside id="J-aside-panel" class="aside-panel aside-wrap">
+  <div class="query-wrap">
+   <!--标题-->
+   <div class="query-title-chunk clear">
+    <div class="query-title float-l">
+     <div class="lineup ui-strip1">
+      <div class="ui-strip2">
+       <span class="ui-strip-text"> 线上</span>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <!--查询按钮-->
+   <div id="J-tagglebtn" class="taggle-btn">
+    <a class="j-close ui-btn ui-btn-cancel float-r  ui-btn-wide ui-f14"> <i class="ips-ui-icon ui-icon-close1"></i>取消</a>
+    <a class="j-open ui-btn ui-btn-wide ui-btn-search none">
+     <i class="ips-ui-icon ui-icon-search"></i>
+     查询
+    </a>
+   </div>
+   <!--查询输入-->
+   <div id="J-searchForm" class="query-form-chunk">
+    <form class="ui-form">
+     <label class="ui-f12" for="airLineName">航线名</label>
+     <input id="airLineName" class="ui-f14 ui-input" type="text" placeholder=""/>
+    </form>
+    <form class="ui-form">
+     <label class="ui-f12" for="takeOff">起飞机场</label>
+     <input id="takeOff" class="ui-f14 ui-input" type="text" placeholder=""/>
+    </form>
+    <form class="ui-form">
+     <label class="ui-f12" for="LandingAirport">降落机场</label>
+     <input id="LandingAirport" class="ui-f14 ui-input" type="text" placeholder=""/>
+    </form>
+    <form class="ui-form">
+     <label class="ui-f12" for="pass">途径航路点</label>
+     <input id="pass" class="ui-f14 ui-input" type="text" placeholder=""/>
+    </form>
+    <form class="ui-form">
+     <label class="ui-f12" for="groupName">组名</label>
+     <input id="groupName" class="ui-f14 ui-input" type="text" placeholder=""/>
+    </form>
+     <a class="ui-btn ui-btn-wide ui-btn-search j-search">
+      <i class="ips-ui-icon ui-icon-search"></i>
+      查询
+     </a>
+   </div>
+   <!--查询结果-->
+
+   <div id="J-resultWrp" class="result-thunk">
+    <p class="ui-f14 result-num">查询结果（ <span id="J-resultNum">120</span>个 ）</p>
+    <ul id="J-tabWap" class="result-list query-result-wrap">
+     <li class="result-list-item active clear ui-f12">
+      <span class="air-name float-l">ZBAA-ZSSSFGG</span>
+      <span>ZBAA<i class="ips-ui-icon ui-icon-airplane"></i>ZSSS</span>
+      <span class="float-r">MMS</span>
+     </li>
+     <li class="result-list-item clear ui-f12">
+      <span class="air-name float-l">ZBAA-ZSSSFGG</span>
+      <span>ZBAA<i class="ips-ui-icon ui-icon-airplane"></i>ZSSS</span>
+      <span class="float-r">MMS</span>
+     </li>
+     <li class="result-list-item clear ui-f12">
+      <span class="air-name float-l">ZBAA-ZSSSFGG</span>
+      <span>ZBAA<i class="ips-ui-icon ui-icon-airplane"></i>ZSSS</span>
+      <span class="float-r">MMS</span>
+     </li>
+     <li class="result-list-item clear ui-f12">
+      <span class="air-name float-l">ZBAA-ZSSSFGG</span>
+      <span>ZBAA<i class="ips-ui-icon ui-icon-airplane"></i>ZSSS</span>
+      <span class="float-r">MMS</span>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </aside>
+
+ <section id="J-content" class="content">
+  <!--实际展示内容-->
+  <div data-val="1" class="active content-wrap weigh-wrap">
+   <div class="form-wrap-group serial1 clear">
+    <form class="ui-form float-l airline-name">
+     <label class="ui-f12 ui-key">航线名</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="ZBAA－ZSSS"/>
+     <i class="ips-ui-icon ui-icon-write"></i>
+    </form>
+    <form class="ui-form float-l take-airport">
+     <label class="ui-f12">起飞机场</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="ZBAA"/>
+    </form>
+    <form class="ui-form float-l podb">
+     <label class="ui-f12 ui-key">PODB</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="22"/>
+     <i class="ips-ui-icon ui-icon-download"></i>
+    </form>
+    <form class="ui-form float-l landing-airport">
+     <label class="ui-f12">目的地机场</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="ZSSS"/>
+    </form>
+    <form class="ui-form float-l poab">
+     <label class="ui-f12 ui-key">POAB</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="30"/>
+     <i class="ips-ui-icon ui-icon-download"></i>
+    </form>
+    <form class="ui-form float-l group-name">
+     <label class="ui-f12 ui-key">组名</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="M"/>
+    </form>
+    <a class="ui-btn ui-btn-wide ui-btn-full float-l">新增</a>
+   </div>
+   <div class="form-wrap-group serial2 clear">
+    <form class="ui-form float-l most-width">
+     <label class="ui-f12 ui-key" >主剖面</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="111"/>
+     <i class="ips-ui-icon ui-icon-raw"></i>
+    </form>
+    <form class="ui-form float-l most-width">
+     <label class="ips-ui-icon ui-icon-writein ui-key"></label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="bbb"/>
+     <i class="ips-ui-icon ui-icon-replace"></i>
+    </form>
+    <form class="ui-form take-time float-l">
+     <label class="ui-f12" class="calendar">生效时间</label>
+     <input  class="ui-f14 ui-input calendar"  type="text" placeholder=""/>
+     <i class="ips-ui-icon ui-icon-calendar"></i>
+    </form>
+   </div>
+   <div class="form-wrap-group serial2 clear">
+    <form class="ui-form float-l most-width">
+     <label class="ui-f12 ui-key" >备降剖面</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="111"/>
+     <i class="ips-ui-icon ui-icon-raw"></i>
+    </form>
+    <form class="ui-form float-l most-width">
+     <label class="ips-ui-icon ui-icon-writein ui-key"></label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="bbb"/>
+     <i class="ips-ui-icon ui-icon-replace"></i>
+    </form>
+    <form class="ui-form  take-time float-l">
+     <label class="ui-f12" class="calendar">生效时间</label>
+     <input  class="ui-f14 ui-input calendar"  type="text" placeholder=""/>
+     <i class="ips-ui-icon ui-icon-calendar"></i>
+    </form>
+   </div>
+   <div class="form-wrap-group serial3 clear">
+    <form class="ui-form float-l ">
+     <label class="ui-f12 ui-key">FPL高度</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="ZBAA－ZSSS"/>
+    </form>
+    <form class="ui-form float-l ">
+     <label class="ui-f12">航线距离</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="ZBAA"/>
+     <span>NM</span>
+    </form>
+    <form class="ui-form  float-l ">
+     <label class="ui-f12">航线额外油</label>
+     <input  class="ui-f14 ui-input" type="text" placeholder="22"/>
+     <span>KG</span>
+    </form>
+    <form class="ui-form float-l select-thunk">
+     <label class="ui-f12">是否空军一号</label>
+     <div>
+      <select class="ui-f14 ui-select">
+       <option>是</option>
+       <option >否</option>
+      </select>
+     </div>
+    </form>
+    <form class="ui-form float-l select-thunk">
+     <label class="ui-f12">中外籍属性</label>
+     <div>
+      <select class="ui-f14 ui-select">
+       <option>中外共用</option>
+       <option>外籍使用</option>
+       <option>国内使用</option>
+      </select>
+     </div>
+    </form>
+    <form class="ui-form float-l select-thunk">
+     <label class="ui-f12 ">NDB更新</label>
+     <div>
+      <select class="ui-f14 ui-select">
+       <option >是</option>
+       <option >否</option>
+      </select>
+     </div>
+    </form>
+   </div>
+   <div class="form-wrap-group serial4 clear">
+    <span class="ui-f12 ui-key float-l">航线走向</span>
+    <div class="row-text-wrap">
+      <!--原-->
+      <div class="row-text-thunk">
+       <i class="ips-ui-icon ui-icon-raw"></i>
+       <p class="ui-f-Lucida">-VARMI W190 ADPET DAKPA W189 IPMUN ESDEX W191 DNH G470 AKTOB (W-VARMI W190 ADPET DAKPA W189 IPMUN ESDEX W191 DNH G470 AKTOB (W-VARMI W190 ADPET DAKPA W189 IPMUN ESDEX W191 DNH G470 AKTOB (W-VARMI W190 ADPET DAKPA W189 IPMUN ESDEX W191 DNH G470 AKTOB (W-VARMI W190 ADPET DAKPA W189 IPMUN ESDEX W191 DNH G470 AKTOB (W</p>
+       <i class="ips-ui-icon ui-icon-writeout"></i>
+     </div>
+     <!--替-->
+     <div class="rep-text-thunk">
+      <i class="ips-ui-icon ui-icon-replace"></i>
+      <textarea class="rep-input" name="" id="" >
+
+                    </textarea>
+     </div>
+
+     <!--替-->
+     <div class="rep-text-thunk">
+      <i class="ips-ui-icon ui-icon-pas"></i>
+      <textarea class="rep-input" name="" id="" >
+
+                    </textarea>
+     </div>
+     <!--tab-->
+     <div class="tab-wrap">
+      <div class="tab-btn-wrap tab-thunk clear">
+       <div class="tab-child" id="tab">
+        <!--<ul class="bui-tab nav-tabs" aria-disabled="false" aria-pressed="false">
+         <li class="bui-tab-item" aria-disabled="false" aria-pressed="false">
+          <span class="bui-tab-item-text">FPL</span>
+         </li>
+         <li class="bui-tab-item bui-tab-item-selected" aria-disabled="false" aria-pressed="false">
+          <span class="bui-tab-item-text">JETPlan</span>
+         </li>
+         <li class="bui-tab-item" aria-disabled="false" aria-pressed="false">
+          <span class="bui-tab-item-text">NDB</span>
+         </li>
+        </ul>-->
+       </div>
+       <a class="ui-btn ui-btn-wring ui-btn-wide float-r">生成</a>
+       <form class="ui-form  take-time float-r">
+        <label class="ui-f12" class="calendar">生效时间</label>
+        <input  class="ui-f14 ui-input calendar"  type="text" placeholder=""/>
+        <i class="ips-ui-icon ui-icon-calendar"></i>
+       </form>
+      </div>
+      <div id="log" class="tab-conten">
+
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="form-wrap-group serial5 clear">
+    <span class="ui-key float-l ui-f12">释压航线</span>
+    <a class="ui-btn ui-btn-wide float-l ui-btn-empty">上传附件</a>
+    <p class="float-l">你出错了你知不知道？
+     <i class="ips-ui-icon ui-icon-close3"></i>
+    </p>
+   </div>
+   <div class="form-wrap-group serial6 clear">
+    <div class="clear btn-group">
+     <div class="left-group float-l">
+      <a id="standbyAirport" class="ui-btn ui-btn-wide float-l ui-btn-empty">航线备降场</a>
+      <a class="ui-btn ui-btn-wide float-l ui-btn-empty">下载KML文件</a>
+      <a class="ui-btn ui-btn-wide float-l ui-btn-empty">查看航路点详情</a>
+     </div>
+     <div class="center-group">
+      <a class="ui-btn ui-btn-wide float-l ui-btn-full">编辑</a>
+      <a class="ui-btn ui-btn-wide float-l ui-btn-full">提交</a>
+     </div>
+     <div class="right-group float-r">
+      <a class="ui-btn ui-btn-wide float-l ui-btn-empty">新建任务</a>
+      <a class="ui-btn ui-btn-wide float-l ui-btn-empty">任务列表</a>
+      <a class="ui-btn ui-btn-wide float-l ui-btn-empty">删除航线</a>
+     </div>
+    </div>
+    <div class="amend-record clear">
+     <a class="ui-f12 float-l">修改记录</a>
+     <a class="ui-f12 float-r">更多></a>
+    </div>
+   </div>
+  </div>
+  <div data-val="2" class="content-wrap">2</div>
+ </section>
+ </div>
+  <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+  <script type="text/javascript" src="../assets/js/bui-min.js"></script>
+ <script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="../assets/js/common/method.js"></script>
+  <script type="text/javascript" src="./js/linedata-config.js"></script>
+</body>
+</html>
